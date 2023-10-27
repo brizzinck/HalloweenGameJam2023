@@ -2,7 +2,6 @@ using CodeBase.Constants;
 using CodeBase.Extensions;
 using CodeBase.Services;
 using CodeBase.Services.Input;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +10,7 @@ namespace CodeBase.Hero
   public class HeroMove : MonoBehaviour
   { 
     [SerializeField] private float _movementSpeed;
-
+    [SerializeField] private Rigidbody2D _rigidbody2D;
     private IInputService _inputService;
     private Camera _camera;
 
@@ -22,21 +21,29 @@ namespace CodeBase.Hero
       _camera = Camera.main;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
       Vector3 movementVector = Vector3.zero;
-
       if (_inputService.Axis.sqrMagnitude > ConstantsValue.Epsilon)
       {
         movementVector = _camera.transform.TransformDirection(_inputService.Axis);
-        movementVector.z = 0;
-        movementVector.Normalize();
-        transform.up = movementVector;
       }
-    
-      transform.position += _movementSpeed * movementVector * Time.deltaTime;
+      Flip(movementVector);
+      Moving(movementVector);
     }
-  
+    private void Moving(Vector3 movementVector)
+    {
+      movementVector.z = -1;
+      movementVector.Normalize();
+      _rigidbody2D.velocity = movementVector * _movementSpeed;
+    }
+    private void Flip(Vector3 movementVector)
+    {
+      if (movementVector.x > 0)
+        transform.localScale = transform.localScale.WithToX(1);
+      if (movementVector.x < 0)
+        transform.localScale = transform.localScale.WithToX(-1);
+    }
     private static string CurrentLevel() => 
       SceneManager.GetActiveScene().name;
   

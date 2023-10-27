@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 5931571744795382501}
   - component: {fileID: 179382254993617822}
   - component: {fileID: 5212651775479003255}
+  - component: {fileID: -6549715453146091375}
   m_Layer: 7
   m_Name: InteractiveBoat
   m_TagString: Interactive
@@ -303,3 +304,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: InteractiveBoat_0df15424-b582-4bb5-8fc7-38c62f5e2961
+--- !u!50 &-6549715453146091375
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8475969361112416296}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
