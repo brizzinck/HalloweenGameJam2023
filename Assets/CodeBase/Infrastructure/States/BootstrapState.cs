@@ -75,7 +75,8 @@ namespace CodeBase.Infrastructure.States
       _services.RegisterSingle(staticData);
     }
     private void EnterLoadLevel() =>
-      _stateMachine.Enter<LoadProgressState>();
+      _stateMachine.Enter<MainMenuState>();
+
     private static IInputService InputService() =>
       Application.isEditor
         ? new StandaloneInputService()

@@ -1,6 +1,6 @@
 ﻿namespace CodeBase.Infrastructure.States
 {
-  public class GameLoopState : IState
+    public class GameLoopState : IState
   {
     public GameLoopState(GameStateMachine stateMachine)
     {
@@ -15,3 +15,4 @@
     }
   }
 }
+
