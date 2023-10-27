@@ -1,6 +1,5 @@
 ﻿using System.Threading.Tasks;
 using CodeBase.CameraLogic;
-using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
 using CodeBase.Logic.Scene;
@@ -13,7 +12,7 @@ using UnityEngine.SceneManagement;
 
 namespace CodeBase.Infrastructure.States
 {
-  public class LoadLevelState : IPayloadedState<string>
+  public class LoadGameLevelState : IPayloadedState<string>
   {
     private readonly GameStateMachine _stateMachine;
     private readonly SceneLoader _sceneLoader;
@@ -23,7 +22,7 @@ namespace CodeBase.Infrastructure.States
     private readonly IStaticDataService _staticData;
     private readonly IUIFactory _uiFactory;
 
-    public LoadLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, IGameFactory gameFactory, IPersistentProgressService progressService, IStaticDataService staticDataService, IUIFactory uiFactory)
+    public LoadGameLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain, IGameFactory gameFactory, IPersistentProgressService progressService, IStaticDataService staticDataService, IUIFactory uiFactory)
     {
       _stateMachine = gameStateMachine;
       _sceneLoader = sceneLoader;

@@ -6,5 +6,6 @@ namespace CodeBase.UI.Services.Factory
   public interface IUIFactory: IService
   {
     Task CreateUIRoot();
+    Task CreateMenuUI();
   }
 }

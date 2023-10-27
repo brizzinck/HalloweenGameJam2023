@@ -1,5 +1,3 @@
-using System;
-using CodeBase.Data;
 using CodeBase.Data.Player;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.SaveLoad;
@@ -24,7 +22,7 @@ namespace CodeBase.Infrastructure.States
     {
       LoadProgressOrInitNew();
       
-      _gameStateMachine.Enter<LoadLevelState, string>(_progressService.Progress.WorldData.PositionOnLevel.Level);
+      _gameStateMachine.Enter<LoadGameLevelState, string>(_progressService.Progress.WorldData.PositionOnLevel.Level);
     }
 
     public void Exit()
@@ -40,7 +38,7 @@ namespace CodeBase.Infrastructure.States
 
     private PlayerProgress NewProgress()
     {
-      var progress =  new PlayerProgress(initialLevel: InitialLevel);
+      var progress = new PlayerProgress(initialLevel: InitialLevel);
       return progress;
     }
   }

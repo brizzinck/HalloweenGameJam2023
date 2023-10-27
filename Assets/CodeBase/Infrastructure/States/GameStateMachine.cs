@@ -23,12 +23,24 @@ namespace CodeBase.Infrastructure.States
       _states = new Dictionary<Type, IExitableState>
       {
         [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
-        [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, loadingCurtain, services.Single<IGameFactory>(), services.Single<IPersistentProgressService>(), services.Single<IStaticDataService>(), services.Single<IUIFactory>()),
-        [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IPersistentProgressService>(), services.Single<ISaveLoadService>()),
+
+        [typeof(LoadGameLevelState)] = new LoadGameLevelState(this, sceneLoader, loadingCurtain,
+          services.Single<IGameFactory>(), services.Single<IPersistentProgressService>(),
+          services.Single<IStaticDataService>(), services.Single<IUIFactory>()),
+
+        [typeof(LoadMenuLevelState)] = new LoadMenuLevelState(this, sceneLoader, loadingCurtain,
+          services.Single<IPersistentProgressService>(),
+          services.Single<IStaticDataService>(), services.Single<IUIFactory>()),
+
+        [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IPersistentProgressService>(),
+          services.Single<ISaveLoadService>()),
+
         [typeof(GameLoopState)] = new GameLoopState(this),
+
+        [typeof(MenuStayLevelState)] = new MenuStayLevelState(this)
       };
     }
-    
+
     public void Enter<TState>() where TState : class, IState
     {
       IState state = ChangeState<TState>();
@@ -44,14 +56,14 @@ namespace CodeBase.Infrastructure.States
     private TState ChangeState<TState>() where TState : class, IExitableState
     {
       _activeState?.Exit();
-      
+
       TState state = GetState<TState>();
       _activeState = state;
-      
+
       return state;
     }
 
-    private TState GetState<TState>() where TState : class, IExitableState => 
+    private TState GetState<TState>() where TState : class, IExitableState =>
       _states[typeof(TState)] as TState;
   }
 }

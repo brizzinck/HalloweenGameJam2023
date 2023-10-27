@@ -16,6 +16,7 @@ namespace CodeBase.Infrastructure.States
   public class BootstrapState : IState
   {
     private const string Initial = "Initial";
+    private const string MenuLevel = "EntryMenu";
     private readonly GameStateMachine _stateMachine;
     private readonly SceneLoader _sceneLoader;
     private readonly AllServices _services;
@@ -49,6 +50,7 @@ namespace CodeBase.Infrastructure.States
       RegisterAssetProvider();
       RegisterStaticDataService();
       _services.RegisterSingle<IUIFactory>(new UIFactory(
+        stateMachine: _stateMachine,
         assets: _services.Single<IAssetProvider>(),
         staticData: _services.Single<IStaticDataService>(),
         progressService:_services.Single<IPersistentProgressService>()));
@@ -75,7 +77,7 @@ namespace CodeBase.Infrastructure.States
       _services.RegisterSingle(staticData);
     }
     private void EnterLoadLevel() =>
-      _stateMachine.Enter<LoadProgressState>();
+      _stateMachine.Enter<LoadMenuLevelState, string>(MenuLevel);
     private static IInputService InputService() =>
       Application.isEditor
         ? new StandaloneInputService()

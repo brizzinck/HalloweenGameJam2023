@@ -6,7 +6,7 @@ namespace CodeBase.UI.Elements
   {
     public void Construct()
     {
-
+      
     }
   }
 }
