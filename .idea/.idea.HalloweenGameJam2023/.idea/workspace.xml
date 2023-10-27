@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMove.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMove.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Extensions/VectorExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Extensions/VectorExtensions.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Hero/HeroMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Hero/HeroMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Base/InteractiveDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Base/InteractiveDetector.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/InteractiveBoat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/InteractiveBoat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Logic/InteractiveSpawnMarker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Logic/InteractiveSpawnMarker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +86,7 @@
       <workItem from="1698399084990" duration="2000" />
       <workItem from="1698411483984" duration="949000" />
       <workItem from="1698420648655" duration="207000" />
-      <workItem from="1698420880963" duration="17611000" />
+      <workItem from="1698420880963" duration="19300000" />
     </task>
     <servers />
   </component>
