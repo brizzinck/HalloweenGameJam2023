@@ -15,5 +15,7 @@ namespace CodeBase.Extensions
       new Vector3(0, vector.y, 0);
     public static Vector3 WithToX(this Vector3 vector, float x) => 
       new Vector3(x, vector.y, vector.y);
+    public static Vector3 WithToZ(this Vector3 vector, float Z) => 
+      new Vector3(vector.x, vector.y, Z);
   }
 }
