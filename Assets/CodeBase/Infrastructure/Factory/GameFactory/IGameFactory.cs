@@ -10,5 +10,6 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		List<ISavedProgressReader> ProgressReaders { get; }
 		List<ISavedProgress> ProgressWriters { get; }
 		Task<GameObject> CreateHud();
+		Task<GameObject> CreateHero();
 	}
 }

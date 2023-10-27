@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using CodeBase.CameraLogic;
 using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
@@ -65,12 +66,19 @@ namespace CodeBase.Infrastructure.States
     {
       LevelStaticData levelData = LevelStaticData();
       await InitHud();
+      await InitHero();
     }
     private async Task InitHud()
     {
       GameObject hud = await _gameFactory.CreateHud();
     }
-
+    private async Task InitHero()
+    {
+      GameObject hero = await _gameFactory.CreateHero();
+      CameraFollow(hero);
+    }
+    private void CameraFollow(GameObject hero) =>
+      Camera.main.GetComponent<CameraFollow>().Follow(hero);
     private LevelStaticData LevelStaticData() => 
       _staticData.ForLevel(SceneManager.GetActiveScene().name);
   }

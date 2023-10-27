@@ -20,7 +20,6 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			ProgressReaders.Clear();
 			ProgressWriters.Clear();
 		}
-
 		public Task WarmpUp()
 		{
 			return null;
@@ -30,13 +29,17 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			GameObject hud = await InstantiateRegisteredAsync(AssetAddress.Hud);
 			return hud;
 		}
+		public async Task<GameObject> CreateHero()
+		{
+			GameObject hero = await InstantiateRegisteredAsync(AssetAddress.Hero);
+			return hero;
+		}
 		private GameObject InstantiateRegistered(GameObject prefab, Vector3 at)
 		{
 			GameObject gameObject = Object.Instantiate(prefab, at, Quaternion.identity);
 			RegisterProgressWatchers(gameObject);
 			return gameObject;
 		}
-
 		private GameObject InstantiateRegistered(GameObject prefab)
 		{
 			GameObject gameObject = Object.Instantiate(prefab);
