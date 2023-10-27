@@ -1,4 +1,3 @@
-using CodeBase.Infrastructure;
 using UnityEngine;
 
 namespace CodeBase.Services.Input
@@ -7,6 +6,6 @@ namespace CodeBase.Services.Input
   {
     Vector2 Axis { get; }
 
-    bool IsAttackButtonUp();
+    bool PressInteractiveButton();
   }
 }

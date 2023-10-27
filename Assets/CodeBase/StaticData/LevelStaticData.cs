@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using CodeBase.InteractiveObjects.Logic;
 using UnityEngine;
 
 namespace CodeBase.StaticData
@@ -7,5 +8,6 @@ namespace CodeBase.StaticData
   public class LevelStaticData : ScriptableObject
   {
     public string LevelKey;
+    public List<InteractiveSpawnStaticData> InteractiveSpawnMarker;
   }
 }

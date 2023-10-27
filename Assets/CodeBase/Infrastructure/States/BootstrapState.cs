@@ -55,7 +55,9 @@ namespace CodeBase.Infrastructure.States
         staticData: _services.Single<IStaticDataService>(),
         progressService:_services.Single<IPersistentProgressService>()));
       _services.RegisterSingle<IGameFactory>(new GameFactory(
-        assets: _services.Single<IAssetProvider>()));
+        assets: _services.Single<IAssetProvider>(),
+        staticData: _services.Single<IStaticDataService>(),
+        inputService: _services.Single<IInputService>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
         uiFactory:_services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(

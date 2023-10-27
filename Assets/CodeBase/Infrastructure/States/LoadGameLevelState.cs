@@ -2,6 +2,7 @@
 using CodeBase.CameraLogic;
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
+using CodeBase.InteractiveObjects.Logic;
 using CodeBase.Logic.Scene;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
@@ -66,6 +67,7 @@ namespace CodeBase.Infrastructure.States
       LevelStaticData levelData = LevelStaticData();
       await InitHud();
       await InitHero();
+      await InitInteractiveSpawners(levelData);
     }
     private async Task InitHud()
     {
@@ -75,6 +77,11 @@ namespace CodeBase.Infrastructure.States
     {
       GameObject hero = await _gameFactory.CreateHero();
       CameraFollow(hero);
+    }
+    private async Task InitInteractiveSpawners(LevelStaticData levelStaticData)
+    {
+      foreach (InteractiveSpawnStaticData spawnerData in levelStaticData.InteractiveSpawnMarker)
+        await _gameFactory.CreateInteractiveSpawner(spawnerData.Id, spawnerData.Position, spawnerData.InteractiveID);
     }
     private void CameraFollow(GameObject hero) =>
       Camera.main.GetComponent<CameraFollow>().Follow(hero);

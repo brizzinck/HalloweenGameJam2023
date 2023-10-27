@@ -1,7 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CodeBase.Infrastructure.AssetManagement;
+using CodeBase.InteractiveObjects.Base;
+using CodeBase.InteractiveObjects.Logic;
+using CodeBase.Services.Input;
 using CodeBase.Services.PersistentProgress;
+using CodeBase.Services.StaticData;
+using CodeBase.Services.StaticData.Interactive;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.Factory.GameFactory
@@ -11,9 +16,14 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		public List<ISavedProgressReader> ProgressReaders { get; } = new List<ISavedProgressReader>();
 		public List<ISavedProgress> ProgressWriters { get; } = new List<ISavedProgress>();
 		private readonly IAssetProvider _assets;
-		public GameFactory(IAssetProvider assets)
+		private readonly IStaticDataService _staticData;
+		private readonly IInputService _inputService;
+
+		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService)
 		{
 			_assets = assets;
+			_staticData = staticData;
+			_inputService = inputService;
 		}
 		public void Cleanup()
 		{
@@ -33,6 +43,25 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		{
 			GameObject hero = await InstantiateRegisteredAsync(AssetAddress.Hero);
 			return hero;
+		}
+
+		public async Task CreateInteractiveSpawner(string spawnerId, Vector3 at, InteractiveID interactiveId)
+		{
+			GameObject prefab = await _assets.Load<GameObject>(AssetAddress.InteractiveSpawner);
+			InteractiveSpawnMarker spawner = InstantiateRegistered(prefab, at)
+				.GetComponent<InteractiveSpawnMarker>();
+			spawner.Construct(this);
+			spawner.InteractiveID = interactiveId;
+			spawner.UniqueId = spawnerId;		
+		}
+
+		public async Task<GameObject> CreateInteractiveObject(InteractiveID id, Transform parent)
+		{
+			InteractiveStaticData interactiveStaticData = _staticData.ForInteractiveObjects(id);
+			GameObject prefab = await _assets.Load<GameObject>(interactiveStaticData.PrefabReference);
+			GameObject interactive = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
+			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService);
+			return interactive;
 		}
 		private GameObject InstantiateRegistered(GameObject prefab, Vector3 at)
 		{
