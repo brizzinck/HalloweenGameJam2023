@@ -87,5 +87,11 @@ namespace CodeBase.NPC
           _currentSpeed = _defaultMovementSpeed;
       }
     }
+
+    public void ResetVelocity()
+    {
+      _rigidbody2D.velocity = Vector2.zero;
+      _currentSpeed = 0;
+    }
   }
 }

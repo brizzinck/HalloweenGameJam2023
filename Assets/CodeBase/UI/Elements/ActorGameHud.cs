@@ -23,6 +23,12 @@ namespace CodeBase.UI.Elements
       UpdateDisplayScore(_gameScoreService.HappyScore);
     }
 
+    private void OnDestroy()
+    {
+      _gameScoreService.ChangeHappyScore -= UpdateDisplayScore;
+    }
+    
+
     private void UpdateDisplayScore(int score) => 
       _slider.DOValue(score, 0.75f);
   }
