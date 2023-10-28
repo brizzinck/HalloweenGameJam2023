@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using CodeBase.InteractiveObjects.Logic;
+using CodeBase.NPC;
 using CodeBase.Services.StaticData.Interactive;
 using CodeBase.Services.StaticData.NPC;
 using CodeBase.StaticData;
@@ -55,6 +56,14 @@ namespace CodeBase.Services.StaticData
 
     public NPCStaticData ForRandomNPC() =>
       _npc[Random.Range(0, _npc.Count)];
+
+    public NPCStaticData ForIdNPC(NPCId npcId)
+    {
+      foreach (NPCStaticData npc in _npc)
+        if (npc.NpcId == npcId)
+          return npc;
+      return null;
+    }
 
     public WindowConfig ForWindow(WindowId windowId) =>
       _windowConfigs.TryGetValue(windowId, out WindowConfig windowConfig)

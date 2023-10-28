@@ -6,11 +6,13 @@ namespace CodeBase.NPC
   [Serializable]
   public class SpawnMarkerNPCStaticData
   {
+    public NPCId NpcId;
     public string Id;
     public Vector3 Position;
 
-    public SpawnMarkerNPCStaticData(string id, Vector3 position)
+    public SpawnMarkerNPCStaticData(NPCId npcId, string id, Vector3 position)
     {
+      NpcId = npcId;
       Id = id;
       Position = position;
     }

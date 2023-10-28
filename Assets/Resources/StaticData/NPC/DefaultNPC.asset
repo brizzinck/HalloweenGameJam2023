@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0bc5fca49be647ff9349dfba4744ad09, type: 3}
-  m_Name: BaseNPC
+  m_Name: DefaultNPC
   m_EditorClassIdentifier: 
+  NpcId: 0
   PrefabReference:
-    m_AssetGUID: a0d45f003b2821c45abd25e6b88abd2a
+    m_AssetGUID: dfe86a9c25b4dd44bbf58beac094974b
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
+    m_EditorAssetChanged: 1

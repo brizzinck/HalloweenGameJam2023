@@ -1,4 +1,5 @@
 ﻿using CodeBase.InteractiveObjects.Logic;
+using CodeBase.NPC;
 using CodeBase.Services.StaticData.Interactive;
 using CodeBase.Services.StaticData.NPC;
 using CodeBase.StaticData;
@@ -15,5 +16,6 @@ namespace CodeBase.Services.StaticData
     WindowConfig ForWindow(WindowId shop);
     InteractiveStaticData ForInteractiveObjects(InteractiveID id);
     NPCStaticData ForRandomNPC();
+    NPCStaticData ForIdNPC(NPCId npcId);
   }
 }

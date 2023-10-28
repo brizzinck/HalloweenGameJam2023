@@ -29,7 +29,7 @@ namespace CodeBase.Editor
         
         levelData.NPCSpawnMarker = FindObjectsOfType<SpawnMarkerNPC>()
           .Select(x => 
-            new SpawnMarkerNPCStaticData(x.GetComponent<UniqueId>().Id, x.transform.position))
+            new SpawnMarkerNPCStaticData(x.NpcId, x.GetComponent<UniqueId>().Id, x.transform.position))
           .ToList();
 
         levelData.HeroSpawnPoint = GameObject.FindWithTag(InitialPointTag).transform.position;

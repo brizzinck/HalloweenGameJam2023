@@ -90,7 +90,7 @@ namespace CodeBase.Infrastructure.States
     private async Task InitNPCSpawners(LevelStaticData levelStaticData, GameObject hero)
     {
       foreach (SpawnMarkerNPCStaticData spawnerData in levelStaticData.NPCSpawnMarker)
-        await _gameFactory.CreateNPCSpawner(spawnerData.Id, spawnerData.Position, hero);
+        await _gameFactory.CreateNPCSpawner(spawnerData.NpcId, spawnerData.Id, spawnerData.Position, hero);
     }
     private void CameraFollow(GameObject hero) =>
       Camera.main.GetComponent<CameraFollow>().Follow(hero);

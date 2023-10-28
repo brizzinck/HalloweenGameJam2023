@@ -59,13 +59,12 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			spawner.InteractiveID = interactiveId;
 			spawner.UniqueId = spawnerId;		
 		}
-		public async Task CreateNPCSpawner(string spawnerId, Vector3 at, GameObject hero)
+		public async Task CreateNPCSpawner(NPCId spawnerDataNpcId, string spawnerId, Vector3 at, GameObject hero)
 		{
 			GameObject prefab = await _assets.Load<GameObject>(AssetAddress.NPCSpawner);
 			SpawnMarkerNPC spawner = InstantiateRegistered(prefab, at)
 				.GetComponent<SpawnMarkerNPC>();
-			spawner.Construct(this, hero);
-			spawner.UniqueId = spawnerId;	
+			spawner.Construct(this, hero, spawnerDataNpcId, spawnerId);
 		}
 
 		public async Task<GameObject> CreateInteractiveObject(InteractiveID id, Transform parent)
@@ -77,15 +76,18 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			return interactive;
 		}
 
-		public async Task<GameObject> CreateRandomNPC(Transform parent, GameObject hero)
+		public async Task<GameObject> CreateNPC(Transform parent, GameObject hero, NPCId npcId = NPCId.Random)
 		{
-			NPCStaticData npcStaticData = _staticData.ForRandomNPC();
+			NPCStaticData npcStaticData;
+			if (npcId == NPCId.Random)
+				npcStaticData = _staticData.ForRandomNPC();
+			else
+				npcStaticData = _staticData.ForIdNPC(npcId);
 			GameObject prefab = await _assets.Load<GameObject>(npcStaticData.PrefabReference);
 			GameObject npc = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
 			npc.GetComponent<NPCAgroZone>().Construct(hero);
 			return npc;
 		}
-
 		private GameObject InstantiateRegistered(GameObject prefab, Vector3 at)
 		{
 			GameObject gameObject = Object.Instantiate(prefab, at, Quaternion.identity);

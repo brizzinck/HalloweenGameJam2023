@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CodeBase.InteractiveObjects.Logic;
+using CodeBase.NPC;
 using CodeBase.Services.PersistentProgress;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		Task<GameObject> CreateHud();
 		Task<GameObject> CreateHero();
 		Task CreateInteractiveSpawner(string spawnerId, Vector3 at, InteractiveID interactiveId);
-		Task<GameObject> CreateRandomNPC(Transform parent, GameObject hero);
+		Task<GameObject> CreateNPC(Transform parent, GameObject hero, NPCId npcId = NPCId.Random);
+		Task CreateNPCSpawner(NPCId spawnerDataNpcId, string spawnerId, Vector3 at, GameObject hero);
 	}
 }

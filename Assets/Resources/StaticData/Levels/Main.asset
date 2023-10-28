@@ -19,5 +19,12 @@ MonoBehaviour:
     InteractiveID: 1
     Position: {x: -4.97, y: 4.07, z: -0.021649772}
   NPCSpawnMarker:
-  - Id: Main_0c7451c6-494a-4456-9f39-51cc0e514619
+  - NpcId: 2
+    Id: Main_2d493d2f-e2d9-4d7c-a3b5-c2eee691f96b
+    Position: {x: 5.5, y: -2.76, z: 0}
+  - NpcId: 0
+    Id: Main_6331ec1e-3d61-48c1-90d7-ddda7cdbb624
+    Position: {x: 6.5, y: 2.85, z: 0}
+  - NpcId: 1
+    Id: Main_0c7451c6-494a-4456-9f39-51cc0e514619
     Position: {x: -5.21, y: 0.63, z: 0}
