@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: AbilityUI
+  m_EditorClassIdentifier: 
+  m_GroupName: AbilityUI
+  m_Data:
+    m_SerializedData: []
+  m_GUID: c986947bccfc3f042ae7af10ff26659d
+  m_SerializeEntries:
+  - m_GUID: 66913d7ec260928429ca587685f9ffab
+    m_Address: AbilityUI
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0e211eb58b328ad418ab6fdd11b2592d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f295381c0eb707542b987d263494ce3a, type: 2}
+    - {fileID: 11400000, guid: ec9039fa8026ce142a3859eff1260045, type: 2}

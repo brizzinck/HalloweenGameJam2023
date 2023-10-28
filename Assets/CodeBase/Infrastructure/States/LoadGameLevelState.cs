@@ -4,8 +4,10 @@ using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.Logic.Scene;
+using CodeBase.NPC;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
+using CodeBase.Services.StaticData.NPC;
 using CodeBase.StaticData;
 using CodeBase.UI.Services.Factory;
 using UnityEngine;
@@ -38,7 +40,7 @@ namespace CodeBase.Infrastructure.States
     {
       _loadingCurtain.Show();
       _gameFactory.Cleanup();
-      _gameFactory.WarmpUp();
+      _gameFactory.WarmUp();
       _sceneLoader.Load(sceneName, OnLoaded);
     }
 
@@ -48,6 +50,7 @@ namespace CodeBase.Infrastructure.States
     private async void OnLoaded()
     {
       await InitUIRoot();
+      await InitGameHud();
       await InitGameWorld();
       InformProgressReaders();
       _stateMachine.Enter<GameLoopState>();
@@ -55,6 +58,9 @@ namespace CodeBase.Infrastructure.States
 
     private async Task InitUIRoot() => 
       await _uiFactory.CreateUIRoot();
+    
+    private async Task InitGameHud() => 
+      await _uiFactory.CreateGameHud();
 
     private void InformProgressReaders()
     {
@@ -66,22 +72,29 @@ namespace CodeBase.Infrastructure.States
     {
       LevelStaticData levelData = LevelStaticData();
       await InitHud();
-      await InitHero();
+      GameObject hero = await InitHero();
       await InitInteractiveSpawners(levelData);
+      await InitNPCSpawners(levelData, hero);
     }
     private async Task InitHud()
     {
       GameObject hud = await _gameFactory.CreateHud();
     }
-    private async Task InitHero()
+    private async Task<GameObject> InitHero()
     {
       GameObject hero = await _gameFactory.CreateHero();
       CameraFollow(hero);
+      return hero;
     }
     private async Task InitInteractiveSpawners(LevelStaticData levelStaticData)
     {
       foreach (InteractiveSpawnStaticData spawnerData in levelStaticData.InteractiveSpawnMarker)
         await _gameFactory.CreateInteractiveSpawner(spawnerData.Id, spawnerData.Position, spawnerData.InteractiveID);
+    }
+    private async Task InitNPCSpawners(LevelStaticData levelStaticData, GameObject hero)
+    {
+      foreach (SpawnMarkerNPCStaticData spawnerData in levelStaticData.NPCSpawnMarker)
+        await _gameFactory.CreateNPCSpawner(spawnerData.NpcId, spawnerData.Id, spawnerData.Position, hero);
     }
     private void CameraFollow(GameObject hero) =>
       Camera.main.GetComponent<CameraFollow>().Follow(hero);

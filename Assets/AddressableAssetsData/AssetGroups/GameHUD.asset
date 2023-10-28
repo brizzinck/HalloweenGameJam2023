@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: GameHUD
+  m_EditorClassIdentifier: 
+  m_GroupName: GameHUD
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e6c9641dedde62440902839b1d1cbb19
+  m_SerializeEntries:
+  - m_GUID: bb19be8859b7ae64786e4d896c4825a7
+    m_Address: GameHud
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0e211eb58b328ad418ab6fdd11b2592d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b6895c6603c1b1949ae06348068aaf93, type: 2}
+    - {fileID: 11400000, guid: c8b4cfea744e7b34e9c1d6ee2aab67de, type: 2}

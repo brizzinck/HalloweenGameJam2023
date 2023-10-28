@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
 using CodeBase.Services;
+using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
 using CodeBase.Services.Randomizer;
@@ -41,6 +42,8 @@ namespace CodeBase.Infrastructure.States
     {
       _services.RegisterSingle<IInputService>(
         implementation: InputService());
+      _services.RegisterSingle<IGameScoreService>(
+        implementation: new GameScoreService());
       _services.RegisterSingle<IRandomService>(
         implementation: new RandomService());
       _services.RegisterSingle<IGameStateMachine>(
@@ -49,15 +52,18 @@ namespace CodeBase.Infrastructure.States
         implementation: new PersistentProgressService());
       RegisterAssetProvider();
       RegisterStaticDataService();
+      _services.RegisterSingle<IGameFactory>(new GameFactory(
+        assets: _services.Single<IAssetProvider>(),
+        staticData: _services.Single<IStaticDataService>(),
+        inputService: _services.Single<IInputService>(),
+        gameScoreService: _services.Single<IGameScoreService>()));
       _services.RegisterSingle<IUIFactory>(new UIFactory(
         stateMachine: _stateMachine,
         assets: _services.Single<IAssetProvider>(),
         staticData: _services.Single<IStaticDataService>(),
-        progressService:_services.Single<IPersistentProgressService>()));
-      _services.RegisterSingle<IGameFactory>(new GameFactory(
-        assets: _services.Single<IAssetProvider>(),
-        staticData: _services.Single<IStaticDataService>(),
-        inputService: _services.Single<IInputService>()));
+        progressService:_services.Single<IPersistentProgressService>(),
+        gameScoreService: _services.Single<IGameScoreService>(),
+        gameFactory: _services.Single<IGameFactory>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
         uiFactory:_services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(

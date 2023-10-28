@@ -9,19 +9,27 @@ namespace CodeBase.InteractiveObjects.Base
   {
     public Action HeroEnter;
     private IInputService _inputService;
-    public void Constructor(IInputService inputService)
-    {
+    private bool _checkPress;
+
+    public void Constructor(IInputService inputService) =>
       _inputService = inputService;
-    }
-    private void OnTriggerStay(Collider other)
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
       if (other.TryGetComponent(out HeroMove _))
-      {
-        if (_inputService.PressInteractiveButton())
-        {
-          HeroEnter?.Invoke();
-        }
-      }
+        _checkPress = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+      if (other.TryGetComponent(out HeroMove _))
+        _checkPress = false;
+    }
+
+    private void Update()
+    {
+      if (_checkPress && _inputService.PressInteractiveButton())
+        HeroEnter?.Invoke();
     }
   }
 }

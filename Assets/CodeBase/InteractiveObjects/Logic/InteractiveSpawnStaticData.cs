@@ -10,10 +10,10 @@ namespace CodeBase.InteractiveObjects.Logic
     public InteractiveID InteractiveID;
     public Vector3 Position;
 
-    public InteractiveSpawnStaticData(string id, InteractiveID monsterTypeId, Vector3 position)
+    public InteractiveSpawnStaticData(string id, InteractiveID interactiveID, Vector3 position)
     {
       Id = id;
-      InteractiveID = monsterTypeId;
+      InteractiveID = interactiveID;
       Position = position;
     }
   }

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - LoadingCurtain
   - Interactive
+  - HeroInitialPoint
+  - NPC
+  - Border
+  - Obstacle
   layers:
   - Default
   - TransparentFX
@@ -15,9 +19,9 @@ TagManager:
   - UI
   - Player
   - Interactive
-  - 
-  - 
-  - 
+  - NPCBorderDetect
+  - Border
+  - NPC
   - 
   - 
   - 

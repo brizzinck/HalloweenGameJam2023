@@ -1,13 +1,18 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CodeBase.Abilities;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.InteractiveObjects.Base;
 using CodeBase.InteractiveObjects.Logic;
+using CodeBase.NPC;
+using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
 using CodeBase.Services.StaticData.Interactive;
+using CodeBase.Services.StaticData.NPC;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CodeBase.Infrastructure.Factory.GameFactory
 {
@@ -18,19 +23,21 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		private readonly IAssetProvider _assets;
 		private readonly IStaticDataService _staticData;
 		private readonly IInputService _inputService;
-
-		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService)
+		private readonly IGameScoreService _gameScoreService;
+		private GameObject _hero;
+		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService, IGameScoreService gameScoreService)
 		{
 			_assets = assets;
 			_staticData = staticData;
 			_inputService = inputService;
+			_gameScoreService = gameScoreService;
 		}
 		public void Cleanup()
 		{
 			ProgressReaders.Clear();
 			ProgressWriters.Clear();
 		}
-		public Task WarmpUp()
+		public Task WarmUp()
 		{
 			return null;
 		}
@@ -42,6 +49,8 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		public async Task<GameObject> CreateHero()
 		{
 			GameObject hero = await InstantiateRegisteredAsync(AssetAddress.Hero);
+			hero.transform.position = _staticData.ForLevel(SceneManager.GetActiveScene().name).HeroSpawnPoint;
+			_hero = hero;
 			return hero;
 		}
 
@@ -54,14 +63,43 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			spawner.InteractiveID = interactiveId;
 			spawner.UniqueId = spawnerId;		
 		}
+		public async Task CreateNPCSpawner(NPCId spawnerDataNpcId, string spawnerId, Vector3 at, GameObject hero)
+		{
+			GameObject prefab = await _assets.Load<GameObject>(AssetAddress.NPCSpawner);
+			SpawnMarkerNPC spawner = InstantiateRegistered(prefab, at)
+				.GetComponent<SpawnMarkerNPC>();
+			spawner.Construct(this, hero, spawnerDataNpcId, spawnerId);
+		}
+
+		public async Task CreateAbility(AbilityID abilityID, IGameScoreService gameScoreService)
+		{
+			AbilityStaticData ability = _staticData.ForAbilities(abilityID);
+			GameObject prefab = await _assets.Load<GameObject>(ability.PrefabReference);
+			GameObject instance = Object.Instantiate(prefab, _hero.transform.position, Quaternion.identity);
+			instance.GetComponent<BaseAbility>().Construct(_gameScoreService);
+		}
 
 		public async Task<GameObject> CreateInteractiveObject(InteractiveID id, Transform parent)
 		{
 			InteractiveStaticData interactiveStaticData = _staticData.ForInteractiveObjects(id);
 			GameObject prefab = await _assets.Load<GameObject>(interactiveStaticData.PrefabReference);
 			GameObject interactive = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
-			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService);
+			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService, _gameScoreService);
 			return interactive;
+		}
+
+		public async Task<GameObject> CreateNPC(Transform parent, GameObject hero, NPCId npcId = NPCId.Random)
+		{
+			NPCStaticData npcStaticData;
+			if (npcId == NPCId.Random)
+				npcStaticData = _staticData.ForRandomNPC();
+			else
+				npcStaticData = _staticData.ForIdNPC(npcId);
+			GameObject prefab = await _assets.Load<GameObject>(npcStaticData.PrefabReference);
+			GameObject npc = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
+			npc.GetComponent<NPCAgroZone>().Construct(hero);
+			npc.GetComponent<NPCScore>().Construct(_gameScoreService);
+			return npc;
 		}
 		private GameObject InstantiateRegistered(GameObject prefab, Vector3 at)
 		{
@@ -69,6 +107,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			RegisterProgressWatchers(gameObject);
 			return gameObject;
 		}
+
 		private GameObject InstantiateRegistered(GameObject prefab)
 		{
 			GameObject gameObject = Object.Instantiate(prefab);
@@ -97,6 +136,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			foreach (ISavedProgressReader progressReader in gameObject.GetComponentsInChildren<ISavedProgressReader>())
 				Register(progressReader);
 		}
+
 		private void Register(ISavedProgressReader progressReader)
 		{
 			if (progressReader is ISavedProgress progressWriter)
