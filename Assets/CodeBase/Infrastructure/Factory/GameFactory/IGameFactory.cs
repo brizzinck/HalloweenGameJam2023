@@ -13,5 +13,6 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		Task<GameObject> CreateHud();
 		Task<GameObject> CreateHero();
 		Task CreateInteractiveSpawner(string spawnerId, Vector3 at, InteractiveID interactiveId);
+		Task<GameObject> CreateRandomNPC(Transform parent, GameObject hero);
 	}
 }

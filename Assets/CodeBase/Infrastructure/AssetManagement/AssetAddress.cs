@@ -6,6 +6,7 @@ namespace CodeBase.Infrastructure.AssetManagement
   {
     public const string Hud = "Hud";
     public const string InteractiveSpawner = "InteractiveSpawnerPoint";
-    public static string Hero = "Hero";
+    public const string NPCSpawner = "NPCSpawnerPoint";
+    public const string Hero = "Hero";
   }
 }

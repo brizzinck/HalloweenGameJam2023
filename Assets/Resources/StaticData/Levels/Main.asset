@@ -13,7 +13,11 @@ MonoBehaviour:
   m_Name: Main
   m_EditorClassIdentifier: 
   LevelKey: Main
+  HeroSpawnPoint: {x: 3.02, y: 0.88, z: -16.631432}
   InteractiveSpawnMarker:
-  - Id: Main_8c02246d-4338-4e9e-a296-d5cc82675c4d
+  - Id: InteractiveSpawnerPoint_b97a3fdc-5097-41a7-a11d-0fafa2d428da
     InteractiveID: 1
-    Position: {x: -5.290674, y: 0.29082167, z: -0.021649772}
+    Position: {x: -4.97, y: 4.07, z: -0.021649772}
+  NPCSpawnMarker:
+  - Id: Main_0c7451c6-494a-4456-9f39-51cc0e514619
+    Position: {x: -5.21, y: 0.63, z: 0}

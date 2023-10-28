@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace CodeBase.StaticData.Windows
 {
-  [CreateAssetMenu(menuName = "Static Data/Window static data", fileName = "WindowStaticData")]
+  [CreateAssetMenu(menuName = "StaticData/Window Static Data", fileName = "WindowStaticData")]
   public class WindowStaticData : ScriptableObject
   {
     public List<WindowConfig> Configs;

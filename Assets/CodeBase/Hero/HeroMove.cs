@@ -43,8 +43,5 @@ namespace CodeBase.Hero
       if (movementVector.x < 0)
         transform.localScale = transform.localScale.WithToX(-1);
     }
-    private static string CurrentLevel() => 
-      SceneManager.GetActiveScene().name;
-  
   }
 }
