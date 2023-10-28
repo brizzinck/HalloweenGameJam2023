@@ -11,7 +11,7 @@ namespace CodeBase.NPC
       {
         Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Collider2D point = Physics2D.OverlapPoint(clickPosition);
-        if (point.TryGetComponent(out NPCPoliceKill npcPoliceKill))
+        if (point.gameObject != null && point.TryGetComponent(out NPCPoliceKill npcPoliceKill))
         {
           npcPoliceKill._touch--;
           if (_touch <= 0)
