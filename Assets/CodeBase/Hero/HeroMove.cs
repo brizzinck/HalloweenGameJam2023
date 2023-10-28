@@ -1,4 +1,3 @@
-using CodeBase.Constants;
 using CodeBase.Extensions;
 using CodeBase.Services;
 using CodeBase.Services.Input;
@@ -17,12 +16,9 @@ namespace CodeBase.Hero
       _inputService = AllServices.Container.Single<IInputService>();
     private void Start() => 
       _camera = Camera.main;
-    private void Update()
-    {
-      _movementVector = Vector3.zero;
-      if (_inputService.Axis.sqrMagnitude > ConstantsValue.Epsilon)
-        _movementVector = _camera.transform.TransformDirection(new Vector3(_inputService.Axis.x, _inputService.Axis.y, 0));
-    }
+    private void Update() => 
+      _movementVector = _camera.transform.TransformDirection(new Vector3(_inputService.Axis.x, _inputService.Axis.y, 0));
+
     private void FixedUpdate()
     {
       Flip(_movementVector);

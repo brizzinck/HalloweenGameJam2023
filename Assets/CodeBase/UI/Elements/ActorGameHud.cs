@@ -1,3 +1,4 @@
+using System;
 using CodeBase.Infrastructure.States;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
@@ -14,6 +15,9 @@ namespace CodeBase.UI.Elements
     private IPersistentProgressService _progressService;
     private IGameScoreService _gameScoreService;
     
+    private void OnDestroy() => 
+      _gameScoreService.ChangeHappyScore -= UpdateDisplayScore;
+
     public void Construct(IGameStateMachine stateMachine, IPersistentProgressService progressService, IGameScoreService gameScoreService)
     {
       _stateMachine = stateMachine;
@@ -23,11 +27,6 @@ namespace CodeBase.UI.Elements
       UpdateDisplayScore(_gameScoreService.HappyScore);
     }
 
-    private void OnDestroy()
-    {
-      _gameScoreService.ChangeHappyScore -= UpdateDisplayScore;
-    }
-    
 
     private void UpdateDisplayScore(int score) => 
       _slider.DOValue(score, 0.75f);
