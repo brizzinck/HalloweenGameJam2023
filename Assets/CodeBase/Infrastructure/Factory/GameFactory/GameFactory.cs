@@ -82,7 +82,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			NPCStaticData npcStaticData = _staticData.ForRandomNPC();
 			GameObject prefab = await _assets.Load<GameObject>(npcStaticData.PrefabReference);
 			GameObject npc = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
-			npc.GetComponent<NPCMove>().Constructor(hero);
+			npc.GetComponent<NPCAgroZone>().Construct(hero);
 			return npc;
 		}
 

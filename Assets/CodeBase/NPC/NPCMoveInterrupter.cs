@@ -11,18 +11,12 @@ namespace CodeBase.NPC
     [SerializeField] private NPCMove _npcMove;
     private float _cooldownWalk;
     private float _currentCooldownWalk;
-
     private void Start() => 
       UpdateCurrentCooldown();
-
-    private void Update()
-    {
+    private void Update() => 
       CheckCooldownWalk();
-    }
-
     private void UpdateCooldownWalk() =>
       _cooldownWalk = Random.Range(1.2f, 2.2f);
-
     private void CheckCooldownWalk()
     {
       if (!_npcMove.enabled)
@@ -41,7 +35,6 @@ namespace CodeBase.NPC
           StartCoroutine(StopMove());
       }
     }
-
     private IEnumerator StopMove()
     {
       _npcMove.CurrentSpeed = 0;

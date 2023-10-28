@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 7432844914909144661}
   - component: {fileID: 845580776117359248}
   - component: {fileID: 900889696545852780}
-  - component: {fileID: 279872604415383320}
+  - component: {fileID: 1405250894308877341}
   - component: {fileID: 5039479035066839359}
-  - component: {fileID: -2940447715918340198}
+  - component: {fileID: 279872604415383320}
   m_Layer: 10
   m_Name: BaseNPC
   m_TagString: Untagged
@@ -190,33 +190,21 @@ MonoBehaviour:
   _maxMovementSpeed: 5
   _rigidbody2D: {fileID: 279872604415383320}
   _detector: {fileID: 2658265165491924948}
---- !u!50 &279872604415383320
-Rigidbody2D:
-  serializedVersion: 4
+  _npcAgroZone: {fileID: 1405250894308877341}
+--- !u!114 &1405250894308877341
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4175023013837163942}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fef3bdb28fb4d019042836355332202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanceToAgro: 5
+  _timeUntilCalm: 2
 --- !u!61 &5039479035066839359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -262,19 +250,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3931212, y: 1.408241}
   m_EdgeRadius: 0
---- !u!114 &-2940447715918340198
-MonoBehaviour:
+--- !u!50 &279872604415383320
+Rigidbody2D:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4175023013837163942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c7d597939b22a439b53f36dd5a0e69, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _npcMove: {fileID: 900889696545852780}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &5094778310607636356
 GameObject:
   m_ObjectHideFlags: 0
