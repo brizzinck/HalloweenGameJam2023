@@ -63,7 +63,8 @@ namespace CodeBase.Infrastructure.States
         staticData: _services.Single<IStaticDataService>(),
         progressService:_services.Single<IPersistentProgressService>(),
         gameScoreService: _services.Single<IGameScoreService>(),
-        gameFactory: _services.Single<IGameFactory>()));
+        gameFactory: _services.Single<IGameFactory>(),
+        inputService: _services.Single<IInputService>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
         uiFactory:_services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(

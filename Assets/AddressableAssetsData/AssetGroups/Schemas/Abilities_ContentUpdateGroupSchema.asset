@@ -9,12 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11dc9516f9ae4041ad3fd53a64cbd2a6, type: 3}
-  m_Name: AbilityStaticData
+  m_Script: {fileID: 11500000, guid: 5834b5087d578d24c926ce20cd31e6d6, type: 3}
+  m_Name: Abilities_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
-  AbilityID: 0
-  PrefabReference:
-    m_AssetGUID: c7406d3e742f43848bd5ce46df693af4
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  m_Group: {fileID: 11400000, guid: 2d44eda6b0b8b9940886a2d51a939cd4, type: 2}
+  m_StaticContent: 0

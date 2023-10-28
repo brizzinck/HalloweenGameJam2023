@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6057203027749035932}
   - component: {fileID: 9180450960919713609}
   - component: {fileID: 2743970263281714049}
+  - component: {fileID: 7640950162460395033}
   m_Layer: 5
   m_Name: Ability
   m_TagString: Untagged
@@ -66,14 +67,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!114 &2743970263281714049
@@ -120,6 +121,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &7640950162460395033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299974775943627609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac97ebbe83664a60a6efa79d129e8f63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _abilityID: 0
+  _createAbilityBtn: {fileID: 2743970263281714049}
+  _cooldown: 10
+  _fillImageCooldown: {fileID: 9180450960919713609}
 --- !u!1 &4445620687245141492
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +194,7 @@ GameObject:
   - component: {fileID: 4547605731439745595}
   - component: {fileID: 4547605731439745594}
   - component: {fileID: 4547605731439745605}
+  - component: {fileID: 8439943610128711249}
   m_Layer: 5
   m_Name: AbilityUI
   m_TagString: Untagged
@@ -267,6 +285,21 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 55
+--- !u!114 &8439943610128711249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4547605731439745604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcc97b2f3eda4110b11abc3822e41bf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _abilitiesPanel: {fileID: 4445620687245141492}
+  _abilityUIElements:
+  - {fileID: 7640950162460395033}
 --- !u!1 &4900917232904843070
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +313,7 @@ GameObject:
   - component: {fileID: 6037376244078485440}
   - component: {fileID: 3439354293872450975}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Action Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

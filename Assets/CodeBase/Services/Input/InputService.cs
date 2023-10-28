@@ -7,13 +7,17 @@ namespace CodeBase.Services.Input
     protected const string Horizontal = "Horizontal";
     protected const string Vertical = "Vertical";
     private const string InteractiveButton = "Interactive";
-
-    public abstract Vector2 Axis { get; }
+    private const string Abilities = "Abilities";
+    
+    public abstract Vector2Int Axis { get; }
 
     public bool PressInteractiveButton() => 
       SimpleInput.GetButtonDown(InteractiveButton);
+    
+    public bool PressAbilityButton() => 
+      SimpleInput.GetButtonDown(Abilities);
 
     protected static Vector2 SimpleInputAxis() => 
-      new Vector2(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));
+      new Vector2(SimpleInput.GetAxisRaw(Horizontal), SimpleInput.GetAxisRaw(Vertical));
   }
 }

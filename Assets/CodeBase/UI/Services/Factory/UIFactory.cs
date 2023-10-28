@@ -3,6 +3,7 @@ using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.States;
 using CodeBase.Services.GameScoreService;
+using CodeBase.Services.Input;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
 using CodeBase.UI.Elements;
@@ -22,10 +23,12 @@ namespace CodeBase.UI.Services.Factory
     private readonly IGameStateMachine _stateMachine;
     private readonly IGameScoreService _gameScoreService;
     private readonly IGameFactory _gameFactory;
+    private readonly IInputService _inputService;
     private Transform _uiRoot;
 
     public UIFactory(IGameStateMachine stateMachine, IAssetProvider assets, IStaticDataService staticData,
-      IPersistentProgressService progressService, IGameScoreService gameScoreService, IGameFactory gameFactory)
+      IPersistentProgressService progressService, IGameScoreService gameScoreService, IGameFactory gameFactory,
+      IInputService inputService)
     {
       _stateMachine = stateMachine;
       _assets = assets;
@@ -33,6 +36,7 @@ namespace CodeBase.UI.Services.Factory
       _progressService = progressService;
       _gameScoreService = gameScoreService;
       _gameFactory = gameFactory;
+      _inputService = inputService;
     }
 
     public async Task CreateUIRoot()
@@ -46,16 +50,18 @@ namespace CodeBase.UI.Services.Factory
       GameObject menuUi = await _assets.Instantiate(MenuUIPath);
       menuUi.GetComponent<ActorUIMenu>().Construct(_stateMachine, _progressService);
     }
-    
+
     public async Task CreateGameHud()
     {
       GameObject hud = await _assets.Instantiate(GameHud);
       hud.GetComponent<ActorGameHud>().Construct(_stateMachine, _progressService, _gameScoreService);
     }
+
     public async Task CreateAbilityUI()
     {
       GameObject hud = await _assets.Instantiate(AbilityUI);
-      hud.GetComponent<ActorAbilityUI>().Construct(_stateMachine, _progressService, _gameScoreService, _gameFactory);
+      hud.GetComponent<ActorAbilityUI>()
+        .Construct(_stateMachine, _progressService, _gameScoreService, _gameFactory, _inputService);
     }
   }
 }

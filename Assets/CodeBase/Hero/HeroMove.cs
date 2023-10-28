@@ -21,7 +21,7 @@ namespace CodeBase.Hero
     {
       _movementVector = Vector3.zero;
       if (_inputService.Axis.sqrMagnitude > ConstantsValue.Epsilon)
-        _movementVector = _camera.transform.TransformDirection(_inputService.Axis);
+        _movementVector = _camera.transform.TransformDirection(new Vector3(_inputService.Axis.x, _inputService.Axis.y, 0));
     }
     private void FixedUpdate()
     {

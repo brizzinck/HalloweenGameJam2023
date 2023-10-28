@@ -61,6 +61,8 @@ namespace CodeBase.Infrastructure.States
     
     private async Task InitGameHud() => 
       await _uiFactory.CreateGameHud();
+    private async Task InitAbilityUI() => 
+      await _uiFactory.CreateAbilityUI();
 
     private void InformProgressReaders()
     {
@@ -72,6 +74,7 @@ namespace CodeBase.Infrastructure.States
     {
       LevelStaticData levelData = LevelStaticData();
       await InitHud();
+      await InitAbilityUI();
       GameObject hero = await InitHero();
       await InitInteractiveSpawners(levelData);
       await InitNPCSpawners(levelData, hero);

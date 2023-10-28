@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Abilities
+  m_EditorClassIdentifier: 
+  m_GroupName: Abilities
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 4568555a058952d428c825799659facb
+  m_SerializeEntries:
+  - m_GUID: c7406d3e742f43848bd5ce46df693af4
+    m_Address: Cauldron
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0e211eb58b328ad418ab6fdd11b2592d, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 976951b763c1c3840b25c6e12691d1d7, type: 2}
+    - {fileID: 11400000, guid: b2bf6ffdbc6bd1548913c77eb03a611d, type: 2}

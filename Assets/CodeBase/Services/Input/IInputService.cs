@@ -4,8 +4,9 @@ namespace CodeBase.Services.Input
 {
   public interface IInputService : IService
   {
-    Vector2 Axis { get; }
+    Vector2Int Axis { get; }
 
     bool PressInteractiveButton();
+    bool PressAbilityButton();
   }
 }
