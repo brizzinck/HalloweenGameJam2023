@@ -42,6 +42,8 @@ namespace CodeBase.Infrastructure.States
     {
       _services.RegisterSingle<IInputService>(
         implementation: InputService());
+      _services.RegisterSingle<IDisplayInputService>(
+        implementation: new DisplayInputService());
       _services.RegisterSingle<IGameScoreService>(
         implementation: new GameScoreService());
       _services.RegisterSingle<IRandomService>(
@@ -56,7 +58,8 @@ namespace CodeBase.Infrastructure.States
         assets: _services.Single<IAssetProvider>(),
         staticData: _services.Single<IStaticDataService>(),
         inputService: _services.Single<IInputService>(),
-        gameScoreService: _services.Single<IGameScoreService>()));
+        gameScoreService: _services.Single<IGameScoreService>(),
+        displayInputService: _services.Single<IDisplayInputService>()));
       _services.RegisterSingle<IUIFactory>(new UIFactory(
         stateMachine: _stateMachine,
         assets: _services.Single<IAssetProvider>(),
@@ -64,7 +67,8 @@ namespace CodeBase.Infrastructure.States
         progressService:_services.Single<IPersistentProgressService>(),
         gameScoreService: _services.Single<IGameScoreService>(),
         gameFactory: _services.Single<IGameFactory>(),
-        inputService: _services.Single<IInputService>()));
+        inputService: _services.Single<IInputService>(),
+        displayInputService: _services.Single<IDisplayInputService>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
         uiFactory:_services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(

@@ -1,8 +1,11 @@
-using System;
 using System.Collections.Generic;
 using CodeBase.NPC;
 using CodeBase.Services.GameScoreService;
+using CodeBase.Services.StaticData;
+using CodeBase.StaticData;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 namespace CodeBase.Abilities
 {
@@ -10,16 +13,24 @@ namespace CodeBase.Abilities
   {
     [SerializeField] private AbilityID _abilityID;
     [SerializeField] protected float timeToComplete;
+    [SerializeField] protected float cooldown;
     [SerializeField] protected int countSouls;
     [SerializeField] protected int removeHappyBySoul;
     [SerializeField] protected List<NPCWithSoul> npcWithSouls = new List<NPCWithSoul>();
     [SerializeField] protected Transform _pointTorture;
+    protected float currenyCooldown;
     protected IGameScoreService gameScoreService;
+    protected IStaticDataService staticData;
     protected float currentTimeToComplete;
     protected bool processTorture;
+    protected LevelStaticData levelStaticData;
 
-    public void Construct(IGameScoreService gameScoreService) =>
+    public void Construct(IGameScoreService gameScoreService, IStaticDataService staticData)
+    {
       this.gameScoreService = gameScoreService;
+      this.staticData = staticData; 
+      levelStaticData = staticData.ForLevel(SceneManager.GetActiveScene().name);
+    }
 
     private void Update() =>
       UpdateTorture();
@@ -37,11 +48,13 @@ namespace CodeBase.Abilities
         if (currentTimeToComplete >= timeToComplete)
           ExitTorture();
       }
+      else
+        currenyCooldown += Time.deltaTime;
     }
 
     protected virtual void EnterTorture(NPCWithSoul npcWithSoul)
     {
-      if (npcWithSouls.Count >= countSouls)
+      if (npcWithSouls.Count >= countSouls && currenyCooldown >= cooldown)
         return;
       gameScoreService.MinusHappyScore(removeHappyBySoul);
       processTorture = true;
@@ -53,6 +66,7 @@ namespace CodeBase.Abilities
     {
       RemoveNPCWithSoul();
       processTorture = false;
+      currenyCooldown = 0;
     }
 
     protected virtual void AddNPCWithSoul(NPCWithSoul soul)
@@ -82,8 +96,8 @@ namespace CodeBase.Abilities
           npcMove.enabled = true;
         if (soul.GetComponentInChildren<NPCAnimator>().TryGetComponent(out NPCAnimator npcAnimator))
           npcAnimator.PlayIdeal();
+        soul.transform.position = levelStaticData.NPCSpawnMarker[Random.Range(0, levelStaticData.NPCSpawnMarker.Count)].Position;
       }
-
       npcWithSouls = new List<NPCWithSoul>();
     }
   }

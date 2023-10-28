@@ -294,3 +294,4 @@ MonoBehaviour:
   removeHappyBySoul: 10
   npcWithSouls: []
   _pointTorture: {fileID: 3940217742154646380}
+  cooldown: 1.2

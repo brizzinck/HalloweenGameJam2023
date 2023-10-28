@@ -15,22 +15,25 @@ namespace CodeBase.InteractiveObjects.Base
     [SerializeField] private int _costHappyScore;
     private IGameScoreService _gameScoreService;
     private bool _isDestroy;
+    public bool IsDestroy => _isDestroy;
+
     private void Awake() =>
       OnAwake();
     private void OnDestroy() =>
       OnDestroyAction();
 
-    public virtual void Constructor(IInputService inputService, IGameScoreService gameScoreService)
+    public virtual void Constructor(IInputService inputService, IGameScoreService gameScoreService,
+      IDisplayInputService displayInputService)
     {
-      _interactiveDetector.Constructor(inputService);
+      _interactiveDetector.Constructor(inputService, displayInputService);
       _gameScoreService = gameScoreService;
     }
 
     protected virtual void OnAwake() => 
-      _interactiveDetector.HeroEnter += ChangeToDestroySprite;
+      _interactiveDetector.HeroPress += ChangeToDestroySprite;
     
     protected virtual void OnDestroyAction() => 
-      _interactiveDetector.HeroEnter -= ChangeToDestroySprite;
+      _interactiveDetector.HeroPress -= ChangeToDestroySprite;
 
     protected virtual void ChangeToDestroySprite()
     {

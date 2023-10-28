@@ -24,13 +24,17 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		private readonly IStaticDataService _staticData;
 		private readonly IInputService _inputService;
 		private readonly IGameScoreService _gameScoreService;
+		private readonly IDisplayInputService _displayInputService;
 		private GameObject _hero;
-		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService, IGameScoreService gameScoreService)
+
+		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService,
+			IGameScoreService gameScoreService, IDisplayInputService displayInputService)
 		{
 			_assets = assets;
 			_staticData = staticData;
 			_inputService = inputService;
 			_gameScoreService = gameScoreService;
+			_displayInputService = displayInputService;
 		}
 		public void Cleanup()
 		{
@@ -71,12 +75,13 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			spawner.Construct(this, hero, spawnerDataNpcId, spawnerId);
 		}
 
-		public async Task CreateAbility(AbilityID abilityID, IGameScoreService gameScoreService)
+		public async Task CreateAbility(AbilityID abilityID, IGameScoreService gameScoreService,
+			IStaticDataService staticDataService)
 		{
 			AbilityStaticData ability = _staticData.ForAbilities(abilityID);
 			GameObject prefab = await _assets.Load<GameObject>(ability.PrefabReference);
 			GameObject instance = Object.Instantiate(prefab, _hero.transform.position, Quaternion.identity);
-			instance.GetComponent<BaseAbility>().Construct(_gameScoreService);
+			instance.GetComponent<BaseAbility>().Construct(_gameScoreService, _staticData);
 		}
 
 		public async Task<GameObject> CreateInteractiveObject(InteractiveID id, Transform parent)
@@ -84,7 +89,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			InteractiveStaticData interactiveStaticData = _staticData.ForInteractiveObjects(id);
 			GameObject prefab = await _assets.Load<GameObject>(interactiveStaticData.PrefabReference);
 			GameObject interactive = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
-			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService, _gameScoreService);
+			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService, _gameScoreService, _displayInputService);
 			return interactive;
 		}
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 424049403195864295}
   - component: {fileID: 8859832651863592517}
   m_Layer: 7
-  m_Name: Square
+  m_Name: Detector
   m_TagString: Interactive
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8f9f6a10bfbe8e418c19472943b3557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _interactiveObject: {fileID: 179382254993617822}
 --- !u!50 &8859832651863592517
 Rigidbody2D:
   serializedVersion: 4
