@@ -8,6 +8,8 @@ TagManager:
   - Interactive
   - HeroInitialPoint
   - NPC
+  - Border
+  - Obstacle
   layers:
   - Default
   - TransparentFX

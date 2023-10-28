@@ -1,10 +1,8 @@
-using System;
 using CodeBase.Constants;
 using CodeBase.Extensions;
 using CodeBase.Services;
 using CodeBase.Services.Input;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace CodeBase.Hero
 {

@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: -6549715453146091375}
   m_Layer: 7
   m_Name: InteractiveBoat
-  m_TagString: Interactive
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

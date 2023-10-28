@@ -2,47 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/NPC.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/NPC.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/NPC_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/NPC_BundledAssetGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/NPC_ContentUpdateGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/NPC_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/SpawnMarkerNPC.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/SpawnMarkerNPC.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/SpawnMarkerNPCStaticData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/SpawnMarkerNPCStaticData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/NPC.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/NPC/NPCStaticData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/NPC/NPCStaticData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Hero/HeroSpawnPoint.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Hero/HeroSpawnPoint.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/NPC.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/NPC/BaseNPC.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/NPC/BaseNPC.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/BaseNPC.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/BaseNPC.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/SpawnMarkerNPC.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/SpawnMarkerNPC.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCBorderDetector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCBorderDetector.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMoveInterrupter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMoveInterrupter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/BaseNPCPolice.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/BaseNPCPolice.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Editor/LevelStaticDataEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Editor/LevelStaticDataEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Hero/HeroMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Hero/HeroMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetAddress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/AssetManagement/AssetAddress.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/IGameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/IGameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/IFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadGameLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadGameLevelState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Logic/InteractiveSpawnStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Logic/InteractiveSpawnStaticData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/IService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/IService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/IStaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/IStaticDataService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/StaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/StaticDataService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/StaticData/LevelStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/StaticData/LevelStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/StaticData/Windows/WindowStaticData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/StaticData/Windows/WindowStaticData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Main.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Main.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/InteractiveBoat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/InteractiveBoat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/NPC/BaseNPC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/BaseNPC.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,13 +32,13 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.18/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.visualscripting@1.9.1/Editor/VisualScripting.Core/Documentation/XmlDocumentation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/TopMarkerList.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/Units.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/MarkerData.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b1fe495152fd4f0180f79e56e3bccacc173e00/32/7ce8a6ad/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/ProfileAnalyzerWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/MarkerData.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.performance.profile-analyzer@1.2.2/Editor/Units.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.addressables@1.21.18/Runtime/AddressablesImpl.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b1fe495152fd4f0180f79e56e3bccacc173e00/32/7ce8a6ad/Mathf.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -86,7 +59,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="rider.run.widget.enabled.cache" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys_rider" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -124,6 +97,10 @@
       <workItem from="1698420648655" duration="207000" />
       <workItem from="1698420880963" duration="22686000" />
       <workItem from="1698480575531" duration="1110000" />
+      <workItem from="1698488826968" duration="1492000" />
+      <workItem from="1698490710049" duration="4525000" />
+      <workItem from="1698495809078" duration="644000" />
+      <workItem from="1698497105751" duration="672000" />
     </task>
     <servers />
   </component>
