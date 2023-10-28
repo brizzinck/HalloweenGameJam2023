@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using CodeBase.Abilities;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.NPC;
 using CodeBase.Services.StaticData.Interactive;
@@ -17,8 +18,10 @@ namespace CodeBase.Services.StaticData
     private const string StaticDataWindowPath = "StaticData/UI/WindowStaticData";
     private const string InteractiveObjects = "StaticData/InteractiveObjects";
     private const string NPCs = "StaticData/NPC";
+    private const string Abilities = "StaticData/Abilities";
 
     private Dictionary<InteractiveID, InteractiveStaticData> _interactiveObjects;
+    private Dictionary<AbilityID, AbilityStaticData> _abilityStaticData;
     private List<NPCStaticData> _npc = new List<NPCStaticData>();
     private Dictionary<string, LevelStaticData> _levels;
     private Dictionary<WindowId, WindowConfig> _windowConfigs;
@@ -33,6 +36,10 @@ namespace CodeBase.Services.StaticData
       _interactiveObjects = Resources
         .LoadAll<InteractiveStaticData>(InteractiveObjects)
         .ToDictionary(x => x.InteractiveID, x => x);
+      
+      _abilityStaticData = Resources
+        .LoadAll<AbilityStaticData>(Abilities)
+        .ToDictionary(x => x.AbilityID, x => x);
 
       _npc = Resources
         .LoadAll<NPCStaticData>(NPCs)
@@ -64,6 +71,11 @@ namespace CodeBase.Services.StaticData
           return npc;
       return null;
     }
+
+    public AbilityStaticData ForAbilities(AbilityID abilityID)=>
+      _abilityStaticData.TryGetValue(abilityID, out AbilityStaticData abilityStaticData)
+        ? abilityStaticData
+        : null;
 
     public WindowConfig ForWindow(WindowId windowId) =>
       _windowConfigs.TryGetValue(windowId, out WindowConfig windowConfig)

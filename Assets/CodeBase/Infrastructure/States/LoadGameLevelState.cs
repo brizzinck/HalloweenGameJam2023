@@ -40,7 +40,7 @@ namespace CodeBase.Infrastructure.States
     {
       _loadingCurtain.Show();
       _gameFactory.Cleanup();
-      _gameFactory.WarmpUp();
+      _gameFactory.WarmUp();
       _sceneLoader.Load(sceneName, OnLoaded);
     }
 
@@ -50,6 +50,7 @@ namespace CodeBase.Infrastructure.States
     private async void OnLoaded()
     {
       await InitUIRoot();
+      await InitGameHud();
       await InitGameWorld();
       InformProgressReaders();
       _stateMachine.Enter<GameLoopState>();
@@ -57,6 +58,9 @@ namespace CodeBase.Infrastructure.States
 
     private async Task InitUIRoot() => 
       await _uiFactory.CreateUIRoot();
+    
+    private async Task InitGameHud() => 
+      await _uiFactory.CreateGameHud();
 
     private void InformProgressReaders()
     {

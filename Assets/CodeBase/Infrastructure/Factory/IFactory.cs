@@ -10,6 +10,6 @@ namespace CodeBase.Infrastructure.Factory
   public interface IFactory : IService
   {
     void Cleanup();
-    Task WarmpUp();
+    Task WarmUp();
   }
 }

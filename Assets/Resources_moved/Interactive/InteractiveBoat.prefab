@@ -321,6 +321,7 @@ MonoBehaviour:
   _interactiveDetector: {fileID: 424049403195864295}
   _spriteRenderer: {fileID: 2575611534107893588}
   _destroySprite: {fileID: 21300000, guid: d034e08b2788726409842f1003c1336b, type: 3}
+  _costHappyScore: 10
 --- !u!114 &5212651775479003255
 MonoBehaviour:
   m_ObjectHideFlags: 0

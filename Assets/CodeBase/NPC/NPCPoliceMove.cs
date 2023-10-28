@@ -16,8 +16,20 @@ namespace CodeBase.NPC
     {
       if (_npcAgroZone.IsAgro)
       {
-        _currentMovePoint = (_npcAgroZone.Hero.transform.position - transform.position).normalized;
-        _rigidbody2D.velocity = _currentMovePoint * _currentSpeed;
+        Vector3 directionToHero = (_npcAgroZone.Hero.transform.position - transform.position).normalized;
+        float distanceToHero = Vector3.Distance(transform.position, _npcAgroZone.Hero.transform.position);
+        float stoppingDistance = 2.0f;
+
+        if (distanceToHero > stoppingDistance)
+        {
+          _currentMovePoint = directionToHero;
+          _rigidbody2D.velocity = _currentMovePoint * _currentSpeed;
+        }
+        else
+        {
+          _rigidbody2D.velocity = Vector2.zero;
+        }
+
         _currentTimeToHappyScore += Time.deltaTime;
         if (_currentTimeToHappyScore >= _timeToAddHappyScore)
         {

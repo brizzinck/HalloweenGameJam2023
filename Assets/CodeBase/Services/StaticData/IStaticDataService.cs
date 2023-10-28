@@ -1,4 +1,5 @@
-﻿using CodeBase.InteractiveObjects.Logic;
+﻿using CodeBase.Abilities;
+using CodeBase.InteractiveObjects.Logic;
 using CodeBase.NPC;
 using CodeBase.Services.StaticData.Interactive;
 using CodeBase.Services.StaticData.NPC;
@@ -17,5 +18,6 @@ namespace CodeBase.Services.StaticData
     InteractiveStaticData ForInteractiveObjects(InteractiveID id);
     NPCStaticData ForRandomNPC();
     NPCStaticData ForIdNPC(NPCId npcId);
+    AbilityStaticData ForAbilities(AbilityID abilityID);
   }
-}
+} 

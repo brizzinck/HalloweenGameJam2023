@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CodeBase.Abilities;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.InteractiveObjects.Base;
 using CodeBase.InteractiveObjects.Logic;
@@ -23,7 +24,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		private readonly IStaticDataService _staticData;
 		private readonly IInputService _inputService;
 		private readonly IGameScoreService _gameScoreService;
-
+		private GameObject _hero;
 		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService, IGameScoreService gameScoreService)
 		{
 			_assets = assets;
@@ -36,7 +37,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			ProgressReaders.Clear();
 			ProgressWriters.Clear();
 		}
-		public Task WarmpUp()
+		public Task WarmUp()
 		{
 			return null;
 		}
@@ -49,6 +50,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		{
 			GameObject hero = await InstantiateRegisteredAsync(AssetAddress.Hero);
 			hero.transform.position = _staticData.ForLevel(SceneManager.GetActiveScene().name).HeroSpawnPoint;
+			_hero = hero;
 			return hero;
 		}
 
@@ -69,12 +71,20 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			spawner.Construct(this, hero, spawnerDataNpcId, spawnerId);
 		}
 
+		public async Task CreateAbility(AbilityID abilityID, IGameScoreService gameScoreService)
+		{
+			AbilityStaticData ability = _staticData.ForAbilities(abilityID);
+			GameObject prefab = await _assets.Load<GameObject>(ability.PrefabReference);
+			GameObject instance = Object.Instantiate(prefab, _hero.transform.position, Quaternion.identity);
+			instance.GetComponent<BaseAbility>().Construct(_gameScoreService);
+		}
+
 		public async Task<GameObject> CreateInteractiveObject(InteractiveID id, Transform parent)
 		{
 			InteractiveStaticData interactiveStaticData = _staticData.ForInteractiveObjects(id);
 			GameObject prefab = await _assets.Load<GameObject>(interactiveStaticData.PrefabReference);
 			GameObject interactive = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
-			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService);
+			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService, _gameScoreService);
 			return interactive;
 		}
 
@@ -89,7 +99,6 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			GameObject npc = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
 			npc.GetComponent<NPCAgroZone>().Construct(hero);
 			npc.GetComponent<NPCScore>().Construct(_gameScoreService);
-			_gameScoreService.AddNpc(npc.GetComponent<NPCScore>());
 			return npc;
 		}
 		private GameObject InstantiateRegistered(GameObject prefab, Vector3 at)
