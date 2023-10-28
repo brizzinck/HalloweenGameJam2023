@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 845580776117359248}
   - component: {fileID: 900889696545852780}
   - component: {fileID: 1405250894308877341}
+  - component: {fileID: -6244073701408337223}
   - component: {fileID: 5039479035066839359}
   - component: {fileID: 279872604415383320}
   m_Layer: 10
@@ -203,8 +204,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3bdb28fb4d019042836355332202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _npcScore: {fileID: -6244073701408337223}
   _distanceToAgro: 5
   _timeUntilCalm: 2
+--- !u!114 &-6244073701408337223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175023013837163942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294066148a834234a557bf63faf2a23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &5039479035066839359
 BoxCollider2D:
   m_ObjectHideFlags: 0

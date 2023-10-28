@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.States;
+using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
 using UnityEngine;
@@ -15,21 +16,25 @@ namespace CodeBase.UI.Services.Factory
     private readonly IStaticDataService _staticData;
     private readonly IPersistentProgressService _progressService;
     private readonly IGameStateMachine _stateMachine;
+    private readonly IGameScoreService _gameScoreService;
     private Transform _uiRoot;
 
-    public UIFactory(IGameStateMachine stateMachine, IAssetProvider assets, IStaticDataService staticData, IPersistentProgressService progressService)
+    public UIFactory(IGameStateMachine stateMachine, IAssetProvider assets, IStaticDataService staticData,
+      IPersistentProgressService progressService, IGameScoreService gameScoreService)
     {
       _stateMachine = stateMachine;
       _assets = assets;
       _staticData = staticData;
       _progressService = progressService;
+      _gameScoreService = gameScoreService;
     }
-    
+
     public async Task CreateUIRoot()
     {
       GameObject root = await _assets.Instantiate(UIRootPath);
       _uiRoot = root.transform;
     }
+
     public async Task CreateMenuUI()
     {
       GameObject menuUi = await _assets.Instantiate(MenuUIPath);

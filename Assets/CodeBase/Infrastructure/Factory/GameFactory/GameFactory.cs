@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CodeBase.Hero;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.InteractiveObjects.Base;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.NPC;
+using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
@@ -22,12 +22,14 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		private readonly IAssetProvider _assets;
 		private readonly IStaticDataService _staticData;
 		private readonly IInputService _inputService;
-		
-		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService)
+		private readonly IGameScoreService _gameScoreService;
+
+		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService, IGameScoreService gameScoreService)
 		{
 			_assets = assets;
 			_staticData = staticData;
 			_inputService = inputService;
+			_gameScoreService = gameScoreService;
 		}
 		public void Cleanup()
 		{
@@ -86,6 +88,8 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			GameObject prefab = await _assets.Load<GameObject>(npcStaticData.PrefabReference);
 			GameObject npc = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
 			npc.GetComponent<NPCAgroZone>().Construct(hero);
+			npc.GetComponent<NPCScore>().Construct(_gameScoreService);
+			_gameScoreService.AddNpc(npc.GetComponent<NPCScore>());
 			return npc;
 		}
 		private GameObject InstantiateRegistered(GameObject prefab, Vector3 at)

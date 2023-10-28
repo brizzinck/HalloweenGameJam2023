@@ -6,6 +6,7 @@ namespace CodeBase.NPC
   public class NPCAgroZone : MonoBehaviour
   {
     public Action<bool> ChangeAgro;
+    [SerializeField] private NPCScore _npcScore;
     [SerializeField] private float _distanceToAgro = 5;
     [SerializeField] private float _timeUntilCalm;
     private float _currentTimeUntilCalm;
@@ -22,16 +23,17 @@ namespace CodeBase.NPC
 
     private void CheckAgro()
     {
-      if (Vector3.Distance(_hero.transform.position, transform.position) < 5)
+      if (Vector3.Distance(_hero.transform.position, transform.position) < _distanceToAgro)
       {
         if (!_isAgro)
         {
           ChangeAgro?.Invoke(true);
           _isAgro = true;
+          _npcScore.GameScoreService.MinusHappyScore(1);
           _currentTimeUntilCalm = 0;
         }
       }
-      else if (_isAgro && Vector3.Distance(_hero.transform.position, transform.position) >= 5)
+      else if (_isAgro && Vector3.Distance(_hero.transform.position, transform.position) >= _distanceToAgro)
       {
         _currentTimeUntilCalm += Time.deltaTime;
         if (_currentTimeUntilCalm >= _timeUntilCalm)

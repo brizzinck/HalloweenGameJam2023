@@ -96,9 +96,10 @@ GameObject:
   - component: {fileID: 845580776117359248}
   - component: {fileID: 5028711785293731832}
   - component: {fileID: 1160101550819042736}
+  - component: {fileID: 8046188771746184523}
+  - component: {fileID: 1170995646991623000}
   - component: {fileID: 5039479035066839359}
   - component: {fileID: 279872604415383320}
-  - component: {fileID: 8046188771746184523}
   m_Layer: 10
   m_Name: PoliceNPC
   m_TagString: Untagged
@@ -187,6 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fef3bdb28fb4d019042836355332202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _npcScore: {fileID: 1170995646991623000}
   _distanceToAgro: 5
   _timeUntilCalm: 2
 --- !u!114 &1160101550819042736
@@ -206,6 +208,34 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 279872604415383320}
   _detector: {fileID: 2658265165491924948}
   _npcAgroZone: {fileID: 5028711785293731832}
+  _npcScore: {fileID: 1170995646991623000}
+  _timeToAddHappyScore: 1.2
+--- !u!114 &8046188771746184523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175023013837163942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0a57f8515d9467da9541f1d7e8159ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _npcScore: {fileID: 1170995646991623000}
+  _touch: 3
+--- !u!114 &1170995646991623000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175023013837163942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 294066148a834234a557bf63faf2a23c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &5039479035066839359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -278,19 +308,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &8046188771746184523
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4175023013837163942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0a57f8515d9467da9541f1d7e8159ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _touch: 3
 --- !u!1 &5094778310607636356
 GameObject:
   m_ObjectHideFlags: 0
