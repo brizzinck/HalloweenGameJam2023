@@ -94,9 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7432844914909144661}
   - component: {fileID: 845580776117359248}
-  - component: {fileID: 900889696545852780}
-  - component: {fileID: 279872604415383320}
+  - component: {fileID: 5028711785293731832}
+  - component: {fileID: 1160101550819042736}
   - component: {fileID: 5039479035066839359}
+  - component: {fileID: 279872604415383320}
   m_Layer: 10
   m_Name: BaseNPCPolice
   m_TagString: Untagged
@@ -173,7 +174,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &900889696545852780
+--- !u!114 &5028711785293731832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,40 +183,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4175023013837163942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e59e442bbbe83f546813e09aad48dc6d, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fef3bdb28fb4d019042836355332202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _defaultMovementSpeed: 2
-  _maxMovementSpeed: 5
-  _rigidbody2D: {fileID: 279872604415383320}
-  _detector: {fileID: 2658265165491924948}
---- !u!50 &279872604415383320
-Rigidbody2D:
-  serializedVersion: 4
+  _distanceToAgro: 5
+  _timeUntilCalm: 2
+--- !u!114 &1160101550819042736
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4175023013837163942}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43e61958612846d99420d4148c0de454, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultMovementSpeed: 2
+  _maxMovementSpeed: 6
+  _rigidbody2D: {fileID: 279872604415383320}
+  _detector: {fileID: 2658265165491924948}
+  _npcAgroZone: {fileID: 5028711785293731832}
 --- !u!61 &5039479035066839359
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -261,6 +250,33 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3931212, y: 1.408241}
   m_EdgeRadius: 0
+--- !u!50 &279872604415383320
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175023013837163942}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &5094778310607636356
 GameObject:
   m_ObjectHideFlags: 0

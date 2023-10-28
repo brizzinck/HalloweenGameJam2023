@@ -10,20 +10,16 @@ namespace CodeBase.NPC
     [SerializeField] private float _timeUntilCalm;
     private float _currentTimeUntilCalm;
     private bool _isAgro;
-
-    public bool IsAgro => _isAgro;
-
     private GameObject _hero;
+    public bool IsAgro => _isAgro;
+    public GameObject Hero => _hero;
 
-    public void Construct(GameObject hero)
-    {
+    public void Construct(GameObject hero) => 
       _hero = hero;
-    }
-    
-    private void Update()
-    {
+
+    private void Update() => 
       CheckAgro();
-    }
+
     private void CheckAgro()
     {
       if (Vector3.Distance(_hero.transform.position, transform.position) < 5)

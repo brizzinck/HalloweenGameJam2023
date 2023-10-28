@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -7,16 +6,16 @@ namespace CodeBase.NPC
 {
   public class NPCMove : MonoBehaviour
   {
-    [SerializeField] private float _defaultMovementSpeed;
-    [SerializeField] private float _maxMovementSpeed;
-    [SerializeField] private Rigidbody2D _rigidbody2D;
-    [SerializeField] private NPCBorderDetector _detector;
-    [SerializeField] private NPCAgroZone _npcAgroZone;
-    private Vector3 _currentMovePoint;
-    private float _currentSpeed;
-    private float _directionChangeInterval = 1.25f;
-    private float _timeSinceDirectionChange = 0.0f;
-    private bool _isStay;
+    [SerializeField] protected float _defaultMovementSpeed;
+    [SerializeField] protected float _maxMovementSpeed;
+    [SerializeField] protected Rigidbody2D _rigidbody2D;
+    [SerializeField] protected NPCBorderDetector _detector;
+    [SerializeField] protected NPCAgroZone _npcAgroZone;
+    protected Vector3 _currentMovePoint;
+    protected float _currentSpeed;
+    protected float _directionChangeInterval = 1.25f;
+    protected float _timeSinceDirectionChange = 0.0f;
+    protected bool _isStay;
     public float CurrentSpeed
     {
       get => _currentSpeed;
@@ -37,7 +36,7 @@ namespace CodeBase.NPC
     private void OnDestroy() => 
       _detector.EntryObstacle -= MoveToPoint;
 
-    private void Move()
+    protected virtual void Move()
     {
       if (!_isStay)
       {
@@ -56,25 +55,23 @@ namespace CodeBase.NPC
         _rigidbody2D.velocity = Vector2.zero;
     }
     
-    private void ChangeRandomVelocity()
+    protected void ChangeRandomVelocity()
     {
       _directionChangeInterval = Random.Range(1.25f, 2f);
       float angle = Random.Range(0f, 2f * Mathf.PI);
       _currentMovePoint = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
     }
-
     private IEnumerator CheckStay()
     {
       _isStay = true;
       yield return new WaitForSeconds(0.55f);
       _isStay = false;
     }
-    private void MoveToPoint(Vector3 to)
+    protected void MoveToPoint(Vector3 to)
     {
       _currentMovePoint = (to - transform.position).normalized;
       _timeSinceDirectionChange = 0.0f;
     }
-    
     private void SpeedCorrector(bool agro)
     {
       if (agro)
