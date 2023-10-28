@@ -9,7 +9,8 @@ namespace CodeBase.InteractiveObjects.Base
   {
     [SerializeField] private InteractiveID _interactiveID;
     [SerializeField] private InteractiveDetector _interactiveDetector;
-
+    [SerializeField] private SpriteRenderer _spriteRenderer;
+    [SerializeField] private Sprite _destroySprite;
     private void Awake() =>
       OnAwake();
     private void OnDestroy() =>
@@ -17,11 +18,14 @@ namespace CodeBase.InteractiveObjects.Base
 
     public virtual void Constructor(IInputService inputService) => 
       _interactiveDetector.Constructor(inputService);
-
+    
     protected virtual void OnAwake() => 
-      _interactiveDetector.HeroEnter += OpenInteractiveWindow;
+      _interactiveDetector.HeroEnter += ChangeToDestroySprite;
+    
     protected virtual void OnDestroyAction() => 
-      _interactiveDetector.HeroEnter -= OpenInteractiveWindow;
-    protected abstract void OpenInteractiveWindow();
+      _interactiveDetector.HeroEnter -= ChangeToDestroySprite;
+
+    protected virtual void ChangeToDestroySprite() => 
+      _spriteRenderer.sprite = _destroySprite;
   }
 }
