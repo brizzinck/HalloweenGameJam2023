@@ -734,7 +734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!95 &117717699
 Animator:
   serializedVersion: 5
@@ -10750,6 +10750,10 @@ PrefabInstance:
     - target: {fileID: 4175023013837163942, guid: dfe86a9c25b4dd44bbf58beac094974b, type: 3}
       propertyPath: m_Name
       value: DefaultNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 4175023013837163942, guid: dfe86a9c25b4dd44bbf58beac094974b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7432844914909144661, guid: dfe86a9c25b4dd44bbf58beac094974b, type: 3}
       propertyPath: m_LocalPosition.x
