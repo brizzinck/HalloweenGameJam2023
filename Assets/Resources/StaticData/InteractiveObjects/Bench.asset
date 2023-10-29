@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7815bd27a75f4781b314e58de5ecbf98, type: 3}
-  m_Name: InteractiveObjectData
+  m_Name: Bench
   m_EditorClassIdentifier: 
-  InteractiveID: 2
+  InteractiveID: 3
   PrefabReference:
-    m_AssetGUID: d71d032dc2fc5df40a12b0e1a649a910
+    m_AssetGUID: 9bb4918e7a8140e4d93396621aaafda3
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
