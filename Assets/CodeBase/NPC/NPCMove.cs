@@ -100,13 +100,16 @@ namespace CodeBase.NPC
     {
       Vector3 toTarget = (targetPoint - transform.position).normalized;
       Vector3 forward = transform.right;
-      float dotProduct = Vector3.Dot(forward, toTarget);
 
-      if (dotProduct < 0)
+      // Кросс-продукт
+      float crossProduct = forward.x * toTarget.y - forward.y * toTarget.x;
+
+      if (crossProduct > 0)
         _spriteFlip.localScale = _spriteFlip.localScale.WithToX(-Mathf.Abs(_spriteFlip.localScale.x));
       else
         _spriteFlip.localScale = _spriteFlip.localScale.WithToX(Mathf.Abs(_spriteFlip.localScale.x));
     }
+
 
     public void ResetVelocity()
     {
