@@ -3,6 +3,7 @@ namespace CodeBase.Abilities
   public enum AbilityID
   {
     Cauldron,
-    Stitch
+    Stitch,
+    Kites
   }
 }

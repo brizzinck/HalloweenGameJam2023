@@ -494,9 +494,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _abilityID: 1
-  timeToComplete: 2.45
-  cooldown: 1
-  countSouls: 1
+  timeToComplete: 2.7
+  countToDestroy: 1
   removeHappyBySoul: 4
   npcWithSouls: []
   _pointTorture: {fileID: 8043912146941388669}

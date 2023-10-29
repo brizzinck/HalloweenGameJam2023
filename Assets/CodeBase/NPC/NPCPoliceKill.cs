@@ -26,7 +26,6 @@ namespace CodeBase.NPC
       _currentTouch = _touch;
       _defaultScale = transform.localScale;
     }
-
     private void Update()
     {
       if (_isTouch && Input.GetMouseButtonDown(0) && _npcAgroZone.IsAgro)
@@ -58,5 +57,6 @@ namespace CodeBase.NPC
         }
       }
     }
+    
   }
 }

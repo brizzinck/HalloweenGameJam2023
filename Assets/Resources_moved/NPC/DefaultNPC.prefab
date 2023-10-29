@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 7713623611936643879}
   m_Layer: 10
   m_Name: DefaultNPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -764,6 +764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf44eaabe0b64f85b1df145408020165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsTorture: 0
 --- !u!114 &7713623611936643879
 MonoBehaviour:
   m_ObjectHideFlags: 0

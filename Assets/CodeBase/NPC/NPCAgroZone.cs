@@ -49,6 +49,7 @@ namespace CodeBase.NPC
     public void Refresh()
     {
       _isAgro = false;
+      _currentTimeUntilCalm = 0;
       ChangeAgro?.Invoke(false);
     }
   }

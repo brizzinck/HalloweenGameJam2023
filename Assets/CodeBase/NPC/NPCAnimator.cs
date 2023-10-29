@@ -58,6 +58,7 @@ namespace CodeBase.NPC
           PlayCirculationCauldron();
           break;
         case AbilityID.Stitch:
+        case AbilityID.Kites:
           PlayWhip();
           break;
         default:

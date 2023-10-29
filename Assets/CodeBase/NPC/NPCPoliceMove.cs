@@ -6,12 +6,20 @@ namespace CodeBase.NPC
   {
     [SerializeField] private NPCScore _npcScore;
     [SerializeField] private float _timeToAddHappyScore;
+    [SerializeField] private NPCAgroZone _npcAgroZone;
     private float _currentTimeToHappyScore;
     protected override void Move()
     {
       base.Move();
       MoveToHero();
     }
+
+    protected override void MoveToPoint(Vector3 to)
+    {
+      base.MoveToPoint(to);
+      _npcAgroZone.Refresh();
+    }
+
     private void MoveToHero()
     {
       if (_npcAgroZone.IsAgro)
@@ -28,6 +36,7 @@ namespace CodeBase.NPC
         else
         {
           _rigidbody2D.velocity = Vector2.zero;
+          _npcAnimator.SetIdle();
         }
 
         _currentTimeToHappyScore += Time.deltaTime;

@@ -7,7 +7,7 @@ namespace CodeBase.NPC
 {
   public class NPCMove : MonoBehaviour
   {
-    [SerializeField] private NPCAnimator _npcAnimator;
+    [SerializeField] protected NPCAnimator _npcAnimator;
     [SerializeField] protected float _defaultMovementSpeed;
     [SerializeField] protected float _maxMovementSpeed;
     [SerializeField] protected Rigidbody2D _rigidbody2D;
@@ -75,7 +75,7 @@ namespace CodeBase.NPC
       yield return new WaitForSeconds(0.55f);
       _isStay = false;
     }
-    protected void MoveToPoint(Vector3 to)
+    protected virtual void MoveToPoint(Vector3 to)
     {
       _currentMovePoint = (to - transform.position).normalized;
       _timeSinceDirectionChange = 0.0f;
