@@ -4,6 +4,9 @@ namespace CodeBase.NPC
   {
     Unknown,
     Ideal,
-    CirculationCauldron
+    CirculationCauldron,
+    Walk,
+    Scare,
+    Whip
   }
 }
