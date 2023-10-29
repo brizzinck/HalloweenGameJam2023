@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
 using CodeBase.Services;
+using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
@@ -50,6 +51,8 @@ namespace CodeBase.Infrastructure.States
         implementation: new RandomService());
       _services.RegisterSingle<IGameStateMachine>(
         implementation: _stateMachine);
+      _services.RegisterSingle<IGameTimer>(
+        implementation: new GameTimer(_services.Single<IGameStateMachine>()));
       _services.RegisterSingle<IPersistentProgressService>(
         implementation: new PersistentProgressService());
       RegisterAssetProvider();
@@ -59,7 +62,8 @@ namespace CodeBase.Infrastructure.States
         staticData: _services.Single<IStaticDataService>(),
         inputService: _services.Single<IInputService>(),
         gameScoreService: _services.Single<IGameScoreService>(),
-        displayInputService: _services.Single<IDisplayInputService>()));
+        displayInputService: _services.Single<IDisplayInputService>(),
+        gameTimer: _services.Single<IGameTimer>()));
       _services.RegisterSingle<IUIFactory>(new UIFactory(
         stateMachine: _stateMachine,
         assets: _services.Single<IAssetProvider>(),
@@ -68,7 +72,8 @@ namespace CodeBase.Infrastructure.States
         gameScoreService: _services.Single<IGameScoreService>(),
         gameFactory: _services.Single<IGameFactory>(),
         inputService: _services.Single<IInputService>(),
-        displayInputService: _services.Single<IDisplayInputService>()));
+        displayInputService: _services.Single<IDisplayInputService>(),
+        gameTimer: _services.Single<IGameTimer>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
         uiFactory:_services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(

@@ -18,7 +18,8 @@ namespace CodeBase.Infrastructure.States
     private Dictionary<Type, IExitableState> _states;
     private IExitableState _activeState;
 
-    public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain, AllServices services)
+    public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain, AllServices services,
+      LoadingCurtain endGameCurtain)
     {
       _states = new Dictionary<Type, IExitableState>
       {
@@ -35,6 +36,8 @@ namespace CodeBase.Infrastructure.States
         [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IPersistentProgressService>(),
           services.Single<ISaveLoadService>()),
 
+        [typeof(LoadEndMenuState)] = new LoadEndMenuState(this, endGameCurtain, sceneLoader),
+        
         [typeof(GameLoopState)] = new GameLoopState(this),
 
         [typeof(MenuStayLevelState)] = new MenuStayLevelState(this)

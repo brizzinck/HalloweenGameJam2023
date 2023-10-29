@@ -20,5 +20,6 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		Task<GameObject> CreateNPC(Transform parent, GameObject hero, NPCId npcId = NPCId.Random);
 		Task CreateNPCSpawner(NPCId spawnerDataNpcId, string spawnerId, Vector3 at, GameObject hero);
 		Task CreateAbility(AbilityID abilityID, IGameScoreService gameScoreService, IStaticDataService staticDataService);
+		Task<GameLoop.GameLoop> CreateGameLoop();
 	}
 }

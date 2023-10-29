@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.InteractiveObjects.Base;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.NPC;
+using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
 using CodeBase.Services.PersistentProgress;
@@ -25,16 +26,18 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		private readonly IInputService _inputService;
 		private readonly IGameScoreService _gameScoreService;
 		private readonly IDisplayInputService _displayInputService;
+		private IGameTimer _gameTimer;
 		private GameObject _hero;
 
 		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService,
-			IGameScoreService gameScoreService, IDisplayInputService displayInputService)
+			IGameScoreService gameScoreService, IDisplayInputService displayInputService, IGameTimer gameTimer)
 		{
 			_assets = assets;
 			_staticData = staticData;
 			_inputService = inputService;
 			_gameScoreService = gameScoreService;
 			_displayInputService = displayInputService;
+			_gameTimer = gameTimer;
 		}
 		public void Cleanup()
 		{
@@ -91,6 +94,14 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			GameObject interactive = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
 			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService, _gameScoreService, _displayInputService);
 			return interactive;
+		}
+		public async Task<GameLoop.GameLoop> CreateGameLoop()
+		{
+			GameObject prefab = await _assets.Load<GameObject>(AssetAddress.GameLoop);
+			GameLoop.GameLoop gameLoop = InstantiateRegistered(prefab)
+				.GetComponent<GameLoop.GameLoop>();
+			gameLoop.Construct(_gameTimer);
+			return gameLoop;
 		}
 
 		public async Task<GameObject> CreateNPC(Transform parent, GameObject hero, NPCId npcId = NPCId.Random)

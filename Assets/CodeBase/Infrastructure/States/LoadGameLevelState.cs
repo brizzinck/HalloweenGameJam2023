@@ -7,7 +7,6 @@ using CodeBase.Logic.Scene;
 using CodeBase.NPC;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
-using CodeBase.Services.StaticData.NPC;
 using CodeBase.StaticData;
 using CodeBase.UI.Services.Factory;
 using UnityEngine;
@@ -81,11 +80,17 @@ namespace CodeBase.Infrastructure.States
       GameObject hero = await InitHero();
       await InitInteractiveSpawners(levelData);
       await InitNPCSpawners(levelData, hero);
+      await InitGameLoop();
     }
 
     private async Task InitHud()
     {
       GameObject hud = await _gameFactory.CreateHud();
+    }
+
+    private async Task InitGameLoop()
+    {
+      GameLoop.GameLoop hud = await _gameFactory.CreateGameLoop();
     }
 
     private async Task<GameObject> InitHero()

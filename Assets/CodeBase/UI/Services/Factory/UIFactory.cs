@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.States;
+using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
 using CodeBase.Services.PersistentProgress;
@@ -25,11 +26,12 @@ namespace CodeBase.UI.Services.Factory
     private readonly IGameFactory _gameFactory;
     private readonly IInputService _inputService;
     private readonly IDisplayInputService _displayInputService;
+    private readonly IGameTimer _gameTimer;
     private Transform _uiRoot;
 
     public UIFactory(IGameStateMachine stateMachine, IAssetProvider assets, IStaticDataService staticData,
       IPersistentProgressService progressService, IGameScoreService gameScoreService, IGameFactory gameFactory,
-      IInputService inputService, IDisplayInputService displayInputService)
+      IInputService inputService, IDisplayInputService displayInputService, IGameTimer gameTimer)
     {
       _stateMachine = stateMachine;
       _assets = assets;
@@ -39,6 +41,7 @@ namespace CodeBase.UI.Services.Factory
       _gameFactory = gameFactory;
       _inputService = inputService;
       _displayInputService = displayInputService;
+      _gameTimer = gameTimer;
     }
 
     public async Task CreateUIRoot()
@@ -57,7 +60,7 @@ namespace CodeBase.UI.Services.Factory
     {
       GameObject hud = await _assets.Instantiate(GameHud);
       hud.GetComponent<ActorGameHud>()
-        .Construct(_stateMachine, _progressService, _gameScoreService, _displayInputService);
+        .Construct(_stateMachine, _progressService, _gameScoreService, _displayInputService, _gameTimer);
     }
 
     public async Task CreateAbilityUI()
