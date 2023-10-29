@@ -139,6 +139,8 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
       npc.GetComponent<NPCScore>().Construct(_gameScoreService);
       if (npc.TryGetComponent(out NPCSkinSetter npcSkinSetter))
         npcSkinSetter.BaseConstruct(_staticData.ForDefaultSkinNPC());
+      if (npc.TryGetComponent(out NPCPoliceKill npcPoliceKill))
+        npcPoliceKill.Construct(_staticData);
       return npc;
     }
 

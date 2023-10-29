@@ -45,5 +45,11 @@ namespace CodeBase.NPC
       }
       _npcAnimator.SetAgro(_isAgro);
     }
+
+    public void Refresh()
+    {
+      _isAgro = false;
+      ChangeAgro?.Invoke(false);
+    }
   }
 }

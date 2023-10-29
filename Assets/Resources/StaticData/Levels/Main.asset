@@ -23,6 +23,6 @@ MonoBehaviour:
     InteractiveID: 5
     Position: {x: -6.91, y: 8.25, z: -0.021649772}
   NPCSpawnMarker:
-  - NpcId: 0
+  - NpcId: 1
     Id: Main_b8f1c297-9efe-4ae8-8213-9515bd728a32
     Position: {x: 4.883338, y: -14.894008, z: 0}

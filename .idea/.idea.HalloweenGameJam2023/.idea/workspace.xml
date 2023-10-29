@@ -2,8 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Base/BaseInteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Base/BaseInteractiveObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Base/InteractiveDetector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Base/InteractiveDetector.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Hero.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Hero/GabrielArm.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Hero/GabrielArm.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Hero/GabrielBackEye.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Hero/GabrielBackEye.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Hero/GabrielBody.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Hero/GabrielBody.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Police.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Police/Guard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Police/Guard.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Police/GuardLegs.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Police/GuardLegs.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCAgroZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCAgroZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCPoliceKill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCPoliceKill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Guard.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Guard.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/NPC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/NPC.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Main.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Main.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/GabrielArm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/GabrielArm.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/GabrielBackEye.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/GabrielBackEye.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/GabrielBody.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/GabrielBody.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Guard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Guard.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Guard.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/Guard.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/GuardLegs.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/GuardLegs.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/NPC/PoliceNPC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/PoliceNPC.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +125,7 @@
       <workItem from="1698497105751" duration="3041000" />
       <workItem from="1698501401087" duration="3168000" />
       <workItem from="1698505438195" duration="1979000" />
-      <workItem from="1698565243524" duration="34049000" />
+      <workItem from="1698565243524" duration="36519000" />
     </task>
     <servers />
   </component>
