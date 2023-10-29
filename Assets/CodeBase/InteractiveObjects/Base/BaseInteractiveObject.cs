@@ -47,9 +47,6 @@ namespace CodeBase.InteractiveObjects.Base
     {
       if (_isDestroy)
         return;
-      _gameScoreService.MinusHappyScore(_costHappyScore);
-      _spriteRenderer.sprite = _destroySprite;
-      _isDestroy = true;
       StartCoroutine(StopMoveHero());
     }
 
@@ -65,6 +62,9 @@ namespace CodeBase.InteractiveObjects.Base
         _interactive.EventActionBraking(waitCount < _waitToDestroy, waitCount, _waitToDestroy);
         yield return null;
       }
+      _gameScoreService.MinusHappyScore(_costHappyScore);
+      _spriteRenderer.sprite = _destroySprite;
+      _isDestroy = true;
       HeroMove.enabled = true;
     }
   }
