@@ -63,6 +63,7 @@ namespace CodeBase.Infrastructure.States
       await InitGameHud();
       await InitAbilityUI();
       await InitGameWorld();
+      await InitGuideUI();
       await _audioPlayer.CreateAudio();
       InformProgressReaders();
       RefreshGameData();
@@ -80,6 +81,8 @@ namespace CodeBase.Infrastructure.States
 
     private async Task InitGameHud() =>
       await _uiFactory.CreateGameHud();
+    private async Task InitGuideUI() =>
+      await _uiFactory.CreateGameGuideUI();
 
     private async Task InitAbilityUI() =>
       await _uiFactory.CreateAbilityUI();

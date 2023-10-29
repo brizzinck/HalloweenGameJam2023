@@ -7,5 +7,6 @@ namespace CodeBase.Services.Input
     Vector2Int Axis { get; }
     bool PressInteractiveButton();
     bool PressAbilityButton();
+    bool PressGuideButton();
   }
 }

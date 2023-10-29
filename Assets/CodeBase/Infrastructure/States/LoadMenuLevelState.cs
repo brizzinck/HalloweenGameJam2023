@@ -41,6 +41,7 @@ namespace CodeBase.Infrastructure.States
     {
       await _uiFactory.CreateMenuUI();
       await _audioPlayer.CreateAudio();
+      await _uiFactory.CreateGuideUI();
       _loadingCurtain.Hide();
       _stateMachine.Enter<MenuStayLevelState>();
     }

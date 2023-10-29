@@ -21,6 +21,8 @@ namespace CodeBase.UI.Services.Factory
     private const string AbilityUI = "AbilityUI";
     private const string ShopUI = "ShopUI";
     private const string EndMenuUI = "EndMenuUI";
+    private const string GameGuideUI = "GuideUI";
+    private const string MenuGuideUI = "MenuGuideUI";
     private readonly IAssetProvider _assets;
     private readonly IStaticDataService _staticData;
     private readonly IPersistentProgressService _progressService;
@@ -61,6 +63,17 @@ namespace CodeBase.UI.Services.Factory
       GameObject menuUi = await _assets.Instantiate(MenuUIPath);
       menuUi.GetComponent<ActorUIMenu>().Construct(_stateMachine, _progressService, _audioPlayer);
     }
+    public async Task CreateGuideUI()
+    {
+      GameObject guideUI = await _assets.Instantiate(MenuGuideUI);
+    }
+
+    public async Task CreateGameGuideUI()
+    {
+      GameObject guideUI = await _assets.Instantiate(GameGuideUI);
+      guideUI.GetComponent<ActorGuideUI>().Construct(_inputService);
+    }
+
     public async Task CreateEndUI()
     {
       GameObject shopUI = await _assets.Instantiate(ShopUI);
