@@ -2321,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
     - target: {fileID: 369843679036205677, guid: c047f056ecfcd1a498f09b71c1454eea, type: 3}
       propertyPath: m_Name
-      value: SandKingdom
+      value: SandCastle
       objectReference: {fileID: 0}
     - target: {fileID: 3650597029793558193, guid: c047f056ecfcd1a498f09b71c1454eea, type: 3}
       propertyPath: Id
@@ -2369,7 +2369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7188737912452983324, guid: c047f056ecfcd1a498f09b71c1454eea, type: 3}
       propertyPath: InteractiveID
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
