@@ -378,7 +378,7 @@ MonoBehaviour:
   timeToComplete: 2
   cooldown: 1.2
   countSouls: 1
-  removeHappyBySoul: 10
+  removeHappyBySoul: 5
   npcWithSouls: []
   _pointTorture: {fileID: 3940217742154646380}
 --- !u!95 &4173180751710729898

@@ -458,12 +458,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buyBtn: {fileID: 2996825325050780404}
   buyData:
-  - UpgradeToScore: 75
-    Cost: 10
-  - UpgradeToScore: 85
-    Cost: 10
-  - UpgradeToScore: 100
-    Cost: 10
+  - UpgradeToScore: 30
+    Cost: 30
+  - UpgradeToScore: 45
+    Cost: 80
+  - UpgradeToScore: 55
+    Cost: 190
   _costText: {fileID: 9106935624714295525}
   _upgradeScoreText: {fileID: 1491143750012865782}
   _offObject:
@@ -2860,7 +2860,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60
+  m_text: 45
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4686c11c1c2fd4c47a96396dab035552, type: 2}
   m_sharedMaterial: {fileID: -2741469803356114790, guid: 4686c11c1c2fd4c47a96396dab035552, type: 2}

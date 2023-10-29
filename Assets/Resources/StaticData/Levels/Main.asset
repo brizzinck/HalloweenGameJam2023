@@ -20,9 +20,57 @@ MonoBehaviour:
     InteractiveID: 2
     Position: {x: -4.97, y: 4.07, z: -0.021649772}
   - Id: Main_b7bce769-afce-4365-9e91-2c73d281ff7b
-    InteractiveID: 2
+    InteractiveID: 5
     Position: {x: -6.91, y: 8.25, z: -0.021649772}
   NPCSpawnMarker:
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 30.26334, y: -2.7840073, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 25.51334, y: -7.784007, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 24.76334, y: 0.4659927, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 17.76334, y: 0.21599269, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 10.513339, y: -4.284007, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 3.763339, y: 0.7159927, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: -1.196662, y: -2.3240073, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: -3.986661, y: -5.034007, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: -7.986661, y: -10.034007, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: -4.986661, y: -16.284008, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 23.51334, y: -10.534007, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 20.51334, y: -13.534007, z: 0}
+  - NpcId: 0
+    Id: Main_734e6c3e-ea33-4e39-986c-bf77444d841d
+    Position: {x: 29.80334, y: -13.354007, z: 0}
+  - NpcId: 0
+    Id: Main_60adcf2e-bb5d-47e2-8991-a3ec2a19a214
+    Position: {x: 9.013339, y: -12.534007, z: 0}
+  - NpcId: 0
+    Id: Main_60adcf2e-bb5d-47e2-8991-a3ec2a19a214
+    Position: {x: 14.763339, y: -14.034007, z: 0}
+  - NpcId: 0
+    Id: Main_c0163b61-a716-428d-8c3c-97c09b22eecf
+    Position: {x: 0.2633381, y: -14.534007, z: 0}
   - NpcId: 0
     Id: Main_b8f1c297-9efe-4ae8-8213-9515bd728a32
     Position: {x: 4.883338, y: -14.894008, z: 0}

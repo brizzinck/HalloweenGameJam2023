@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GameStaticData
   m_EditorClassIdentifier: 
   GameTempData:
-    TimeToEnd: 10
-    SpeedHero: 10
+    TimeToEnd: 15
+    SpeedHero: 4
     AvailableAbilityIds: 00000000
