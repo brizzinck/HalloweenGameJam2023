@@ -98,13 +98,7 @@ namespace CodeBase.NPC
     }
     private void Flip(Vector3 targetPoint)
     {
-      Vector3 toTarget = (targetPoint - transform.position).normalized;
-      Vector3 forward = transform.right;
-
-      // Кросс-продукт
-      float crossProduct = forward.x * toTarget.y - forward.y * toTarget.x;
-
-      if (crossProduct > 0)
+      if (_rigidbody2D.velocity.x > 0)
         _spriteFlip.localScale = _spriteFlip.localScale.WithToX(-Mathf.Abs(_spriteFlip.localScale.x));
       else
         _spriteFlip.localScale = _spriteFlip.localScale.WithToX(Mathf.Abs(_spriteFlip.localScale.x));
