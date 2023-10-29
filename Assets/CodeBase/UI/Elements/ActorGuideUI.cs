@@ -18,7 +18,7 @@ namespace CodeBase.UI.Elements
 
     private void Update()
     {
-      if (_inputService.PressGuideButton()) 
+      if (_inputService != null && _inputService.PressGuideButton()) 
         _guidePanel.SetActive(!_guidePanel.activeSelf);
     }
   }
