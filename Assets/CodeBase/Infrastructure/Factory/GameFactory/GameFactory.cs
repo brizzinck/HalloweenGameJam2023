@@ -68,7 +68,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			GameObject prefab = await _assets.Load<GameObject>(AssetAddress.InteractiveSpawner);
 			InteractiveSpawnMarker spawner = InstantiateRegistered(prefab, at)
 				.GetComponent<InteractiveSpawnMarker>();
-			spawner.Construct(this);
+			spawner.Construct(this, interactiveId);
 			spawner.InteractiveID = interactiveId;
 			spawner.UniqueId = spawnerId;		
 		}

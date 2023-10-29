@@ -8,9 +8,10 @@ namespace CodeBase.InteractiveObjects.Logic
     public InteractiveID InteractiveID;
     public string UniqueId;
     private GameFactory _gameFactory;
-    public void Construct(GameFactory gameFactory)
+    public void Construct(GameFactory gameFactory, InteractiveID interactiveID)
     {
       _gameFactory = gameFactory;
+      InteractiveID = interactiveID;
       Spawn();
     }
     private async void Spawn()

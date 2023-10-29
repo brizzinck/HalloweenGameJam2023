@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7815bd27a75f4781b314e58de5ecbf98, type: 3}
-  m_Name: InteractiveObjectData
+  m_Name: Camp
   m_EditorClassIdentifier: 
-  InteractiveID: 1
+  InteractiveID: 2
   PrefabReference:
-    m_AssetGUID: 7ae460574f78ca0498b2afcf2179b347
+    m_AssetGUID: d71d032dc2fc5df40a12b0e1a649a910
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0

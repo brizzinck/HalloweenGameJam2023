@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7815bd27a75f4781b314e58de5ecbf98, type: 3}
+  m_Name: SunLounger
+  m_EditorClassIdentifier: 
+  InteractiveID: 7
+  PrefabReference:
+    m_AssetGUID: da9ea0f2db314ee4bb80463d6f875577
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

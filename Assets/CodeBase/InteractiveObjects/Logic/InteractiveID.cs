@@ -4,7 +4,11 @@ namespace CodeBase.InteractiveObjects.Logic
   {
     None,
     Default,
-    Camp
-
+    Camp,
+    Bench,
+    Lamp,
+    SandCastel,
+    SunUmbrella,
+    SunLounger
   }
 }

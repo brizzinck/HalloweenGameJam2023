@@ -17,13 +17,38 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: d8977794381f6bc4ab0871a5288b0b77
   m_SerializeEntries:
-  - m_GUID: 7ae460574f78ca0498b2afcf2179b347
-    m_Address: InteractiveBoat
+  - m_GUID: c047f056ecfcd1a498f09b71c1454eea
+    m_Address: InteractiveSpawnerPoint
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: c047f056ecfcd1a498f09b71c1454eea
-    m_Address: InteractiveSpawnerPoint
+  - m_GUID: d71d032dc2fc5df40a12b0e1a649a910
+    m_Address: Camp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 34e5a9f8c7604464191e8aceaf8e1514
+    m_Address: Lamp
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b1e97692d876156469ba3ab658ae929e
+    m_Address: SandCastel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b30ea25720a22f40a725bf93bac9000
+    m_Address: SunUmbrella
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da9ea0f2db314ee4bb80463d6f875577
+    m_Address: SunLounger
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9bb4918e7a8140e4d93396621aaafda3
+    m_Address: Bench
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

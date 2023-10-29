@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="" />
+    <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Bench.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Bench.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Lamp 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Lamp 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Lamp.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Lamp.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Interactives.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Interactives.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Logic/InteractiveID.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Logic/InteractiveID.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Logic/InteractiveSpawnMarker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Logic/InteractiveSpawnMarker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/InteractiveObjects/InteractiveObjectData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/InteractiveObjects/InteractiveObjectData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Main.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Main.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/CampInteractive.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/CampInteractive.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/InteractiveBoat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/InteractiveBoat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +108,7 @@
       <workItem from="1698497105751" duration="3041000" />
       <workItem from="1698501401087" duration="3168000" />
       <workItem from="1698505438195" duration="1979000" />
-      <workItem from="1698565243524" duration="14393000" />
+      <workItem from="1698565243524" duration="15671000" />
     </task>
     <servers />
   </component>
