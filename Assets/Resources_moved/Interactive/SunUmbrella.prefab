@@ -104,6 +104,8 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 901668210589667068}
   _destroySprite: {fileID: -1892874690, guid: 7e5414a44598f9843ad1c92cffa6c858, type: 3}
   _costHappyScore: 4
+  _waitToDestroy: 0.4
+  HeroMove: {fileID: 0}
 --- !u!114 &-2586321375830892969
 MonoBehaviour:
   m_ObjectHideFlags: 0
