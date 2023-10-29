@@ -1,5 +1,5 @@
+using System;
 using CodeBase.Extensions;
-using CodeBase.Services;
 using CodeBase.Services.Input;
 using CodeBase.Services.StaticData;
 using UnityEngine;
@@ -52,10 +52,11 @@ namespace CodeBase.Hero
 
     private void Flip(Vector3 movementVector)
     {
+      Debug.Log(transform.localScale);
       if (movementVector.x > 0)
-        transform.localScale = transform.localScale.WithToX(1);
+        transform.localScale = transform.localScale.WithToX(Mathf.Abs(transform.localScale.z));
       if (movementVector.x < 0)
-        transform.localScale = transform.localScale.WithToX(-1);
+        transform.localScale = transform.localScale.WithToX(-transform.localScale.z);
     }
   }
 }
