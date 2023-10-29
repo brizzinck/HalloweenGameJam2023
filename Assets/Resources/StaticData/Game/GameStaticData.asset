@@ -15,4 +15,4 @@ MonoBehaviour:
   GameTempData:
     TimeToEnd: 15
     SpeedHero: 4
-    AvailableAbilityIds: 000000000100000002000000
+    AvailableAbilityIds: 

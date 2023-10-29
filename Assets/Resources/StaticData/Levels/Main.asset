@@ -16,55 +16,121 @@ MonoBehaviour:
   SceneClip: {fileID: 8300000, guid: aa75e76510aba1c4c86c28c2540ca5a6, type: 3}
   HeroSpawnPoint: {x: 1.6, y: -2.2, z: 0}
   InteractiveSpawnMarker:
-  - Id: Main_b7d6a409-23b5-47ce-9685-615d1dca4356
+  - Id: Main_7b70fc1f-c1ee-4391-b784-1c066b5c8f19
+    InteractiveID: 3
+    Position: {x: -41.55, y: 8.55, z: -0.021649772}
+  - Id: Main_99fab90e-8a8c-4252-90e1-857472bfeac1
+    InteractiveID: 3
+    Position: {x: -44.07, y: -4.27, z: -0.021649772}
+  - Id: Main_0500730b-b72f-4277-96bd-585a2e425058
+    InteractiveID: 3
+    Position: {x: -30.32, y: -7.09, z: -0.021649772}
+  - Id: Main_ed3d28c1-7069-44ad-9311-fda5110eeeef
+    InteractiveID: 3
+    Position: {x: 40.52, y: -11.44, z: -0.021649772}
+  - Id: Main_394eef2f-6cba-4892-b8e2-c8556f3917c2
+    InteractiveID: 3
+    Position: {x: 26.45, y: -0.37, z: -0.021649772}
+  - Id: Main_618e7677-6800-423c-9699-094cd8c21ade
+    InteractiveID: 4
+    Position: {x: 6.61, y: 1.9, z: -0.021649772}
+  - Id: Main_db119c04-0dc5-485e-9489-ad05b19705c7
+    InteractiveID: 4
+    Position: {x: 31.94, y: 0.84, z: -0.021649772}
+  - Id: Main_f3bc0d20-c6c9-493f-88a8-b49c247c9cf0
+    InteractiveID: 4
+    Position: {x: 36.2, y: -9, z: -0.021649772}
+  - Id: Main_cc0eb3f1-91c9-48ab-83b8-5f086e221515
+    InteractiveID: 4
+    Position: {x: 56.9, y: 8.3, z: -0.021649772}
+  - Id: Main_6ce2c0d2-2ef1-4a1d-8647-ff7078f1046f
+    InteractiveID: 4
+    Position: {x: -11.1, y: 8.7, z: -0.021649772}
+  - Id: Main_a1773393-dd80-4676-a52b-14fcefcec023
+    InteractiveID: 4
+    Position: {x: -26.7, y: -10.4, z: -0.021649772}
+  - Id: Main_db0012d9-b1e4-4646-a913-ca9d6a61fb2a
+    InteractiveID: 4
+    Position: {x: -48.9, y: -2.4, z: -0.021649772}
+  - Id: Main_465c78e5-dc11-4540-a750-3160213a7b1b
+    InteractiveID: 4
+    Position: {x: -46.9, y: 11.5, z: -0.021649772}
+  - Id: Main_efbb448f-9ece-4871-aa48-2ad21494d276
+    InteractiveID: 3
+    Position: {x: 2.61, y: 1.37, z: -0.021649772}
+  - Id: Main_f5576f1f-95c6-4c08-b2d8-709e8a15fb84
+    InteractiveID: 2
+    Position: {x: -37.1, y: 16.3, z: -0.021649772}
+  - Id: Main_883c42ae-0186-480d-882f-6468e11bf56b
+    InteractiveID: 2
+    Position: {x: -52.5, y: -0.2, z: -0.021649772}
+  - Id: Main_7d68a721-0c7a-4b29-a61f-b89bebe516ec
+    InteractiveID: 2
+    Position: {x: -49.4, y: -17.5, z: -0.021649772}
+  - Id: Main_f2a3a28c-0de7-4966-8165-2113766f829c
+    InteractiveID: 2
+    Position: {x: 47.9, y: -15.5, z: -0.021649772}
+  - Id: Main_0edc1e0b-56a8-4c10-9618-93d42111fc9e
+    InteractiveID: 2
+    Position: {x: 27.9, y: 15.7, z: -0.021649772}
+  - Id: Main_160e3256-bbea-4708-8b0c-18f8657b1de1
+    InteractiveID: 2
+    Position: {x: 33, y: -2.8, z: -0.021649772}
+  - Id: Main_d0d76999-265d-4b38-ad70-2b71f56f3e20
+    InteractiveID: 2
+    Position: {x: 19.3, y: -0.1, z: -0.021649772}
+  - Id: Main_15543a88-44bf-4a14-821e-a7c980b23c18
+    InteractiveID: 5
+    Position: {x: 3.28, y: -15.99, z: -0.021649772}
+  - Id: Main_23431134-5e55-4c36-958f-7cc12d0beda4
+    InteractiveID: 5
+    Position: {x: 13.99, y: -12.48, z: -0.021649772}
+  - Id: Main_9e5d1c69-83ad-42d5-8eb5-71c4e0f41eca
     InteractiveID: 7
-    Position: {x: 6.98, y: -14.43, z: -0.021649772}
+    Position: {x: -28.1, y: -18.4, z: -0.021649772}
+  - Id: Main_b27c6570-1bdd-4c9a-b421-0cae136bdd7a
+    InteractiveID: 7
+    Position: {x: -20.67, y: -16.06, z: -0.021649772}
+  - Id: Main_b4ee0e36-3e3c-44a0-86b9-6d965fe34cbb
+    InteractiveID: 7
+    Position: {x: -11.37, y: -16.74, z: -0.021649772}
+  - Id: Main_042ba241-8a3f-410f-aa7e-86c8d4d7ca95
+    InteractiveID: 7
+    Position: {x: 24.61, y: -15.93, z: -0.021649772}
+  - Id: Main_c4f044a4-5dd0-4e1d-85b1-dfe5361207d4
+    InteractiveID: 7
+    Position: {x: 22.65, y: -13.35, z: -0.021649772}
+  - Id: Main_a535c656-836a-4324-9ccb-bd6d2db8ea61
+    InteractiveID: 7
+    Position: {x: -6.63, y: -15.67, z: -0.021649772}
+  - Id: Main_1ec499d3-e8ba-4cf8-9aa8-7d3f7382cef2
+    InteractiveID: 6
+    Position: {x: -25.79, y: -16.39, z: -0.021649772}
+  - Id: Main_9f2a5d34-b9be-4674-beca-719437e7463c
+    InteractiveID: 6
+    Position: {x: -15.98, y: -15.81, z: -0.021649772}
+  - Id: Main_3b3c4dcd-7b75-4420-aea8-5076eb3a6452
+    InteractiveID: 6
+    Position: {x: -1.02, y: -15.16, z: -0.021649772}
+  - Id: Main_a410fdec-3485-4830-a73e-e636506019ed
+    InteractiveID: 6
+    Position: {x: 27.57, y: -18.27, z: -0.021649772}
+  - Id: Main_02bf9aa9-b535-4fc8-8f59-0c482473d759
+    InteractiveID: 6
+    Position: {x: 18.32, y: -13.66, z: -0.021649772}
   - Id: Main_b7bce769-afce-4365-9e91-2c73d281ff7b
     InteractiveID: 5
     Position: {x: 9.75, y: -11.46, z: -0.021649772}
   - Id: InteractiveSpawnerPoint_b97a3fdc-5097-41a7-a11d-0fafa2d428da
     InteractiveID: 2
-    Position: {x: -4.97, y: 4.07, z: -0.021649772}
+    Position: {x: -6.9, y: 7.2, z: -0.021649772}
+  - Id: Main_b7d6a409-23b5-47ce-9685-615d1dca4356
+    InteractiveID: 7
+    Position: {x: 6.98, y: -14.43, z: -0.021649772}
   - Id: Main_68ce3234-d4fb-4491-83ad-6dd638f67bde
     InteractiveID: 6
-    Position: {x: 9.5, y: -14.46, z: -0.021649772}
+    Position: {x: 10.38, y: -14.46, z: -0.021649772}
   NPCSpawnMarker:
-  - NpcId: 2
-    Id: Main_35aaa9e8-6b45-4c2b-9874-2ae7e72588ad
-    Position: {x: 36.23334, y: 18.865992, z: 0}
-  - NpcId: 0
-    Id: Main_4ceb8ab0-aadc-40b6-8b6c-5dd1f2b69ec6
-    Position: {x: 57.503338, y: 13.545993, z: 0}
-  - NpcId: 0
-    Id: Main_4ceb8ab0-aadc-40b6-8b6c-5dd1f2b69ec6
-    Position: {x: 45.74334, y: 16.295992, z: 0}
-  - NpcId: 2
-    Id: Main_70150367-5542-4150-a27c-f3323da126bd
-    Position: {x: 57.253338, y: 5.2959924, z: 0}
-  - NpcId: 2
-    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
-    Position: {x: 50.33334, y: -13.104007, z: 0}
-  - NpcId: 0
-    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
-    Position: {x: 44.08334, y: -19.104008, z: 0}
-  - NpcId: 2
-    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
-    Position: {x: 29.83334, y: -12.604007, z: 0}
-  - NpcId: 2
-    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
-    Position: {x: 36.83334, y: -3.8540075, z: 0}
-  - NpcId: 0
-    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
-    Position: {x: 32.60334, y: 8.425993, z: 0}
-  - NpcId: 2
-    Id: Main_ae96981c-b225-4a39-b44b-ca2d553a2e44
-    Position: {x: 58.08334, y: -7.354007, z: 0}
-  - NpcId: 2
-    Id: Main_cd3a1a79-c2f6-4a7d-969b-ff2987bdb0d4
-    Position: {x: 24.85334, y: 16.175993, z: 0}
-  - NpcId: 0
-    Id: Main_2cf12cc9-b96f-4461-a275-219c5134c3af
-    Position: {x: 10.493339, y: 16.065992, z: 0}
   - NpcId: 2
     Id: Main_97faf1e6-a364-43b0-bd66-b526642defe4
     Position: {x: -1.6766615, y: 15.855992, z: 0}
@@ -74,60 +140,96 @@ MonoBehaviour:
   - NpcId: 0
     Id: Main_e0691275-9306-48ae-a773-e222859d7d5a
     Position: {x: -44.95666, y: 10.4059925, z: 0}
-  - NpcId: 2
-    Id: Main_e0691275-9306-48ae-a773-e222859d7d5a
-    Position: {x: -53.496662, y: 3.8359926, z: 0}
-  - NpcId: 0
-    Id: Main_3aa390e0-130f-4a84-a6a1-a69a1173088a
-    Position: {x: -49.05666, y: -1.9540074, z: 0}
-  - NpcId: 2
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -58.22666, y: -8.174006, z: 0}
-  - NpcId: 0
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -57.57666, y: -18.184008, z: 0}
-  - NpcId: 0
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -49.97666, y: -14.424006, z: 0}
-  - NpcId: 2
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -44.22666, y: -17.924007, z: 0}
-  - NpcId: 0
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -33.72666, y: -18.674007, z: 0}
-  - NpcId: 0
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -26.726662, y: -12.174006, z: 0}
-  - NpcId: 2
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -39.47666, y: -6.4240074, z: 0}
-  - NpcId: 0
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -24.09666, y: 14.275992, z: 0}
-  - NpcId: 2
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -32.25666, y: 8.005993, z: 0}
   - NpcId: 0
     Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
     Position: {x: -14.476663, y: 8.825993, z: 0}
   - NpcId: 0
     Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -3.1566615, y: 6.4659925, z: 0}
+    Position: {x: -33.72666, y: -18.674007, z: 0}
   - NpcId: 2
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: 20.273338, y: -1.1740077, z: 0}
+    Id: Main_e0691275-9306-48ae-a773-e222859d7d5a
+    Position: {x: -53.496662, y: 3.8359926, z: 0}
   - NpcId: 2
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: 3.5033388, y: -0.9840076, z: 0}
+    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
+    Position: {x: 50.33334, y: -13.104007, z: 0}
   - NpcId: 0
-    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
-    Position: {x: -6.2766614, y: -6.8340073, z: 0}
-  - NpcId: 2
-    Id: Main_953baf58-a6a1-4e4d-9823-ff5b62343dda
-    Position: {x: 4.473338, y: -12.624007, z: 0}
+    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
+    Position: {x: 44.08334, y: -19.104008, z: 0}
   - NpcId: 0
     Id: Main_31f3291a-17dc-4546-99b8-91377df30dd0
     Position: {x: -36.98666, y: 16.555992, z: 0}
   - NpcId: 2
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: 3.5033388, y: -0.9840076, z: 0}
+  - NpcId: 2
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: 20.273338, y: -1.1740077, z: 0}
+  - NpcId: 0
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -57.57666, y: -18.184008, z: 0}
+  - NpcId: 0
+    Id: Main_3aa390e0-130f-4a84-a6a1-a69a1173088a
+    Position: {x: -49.05666, y: -1.9540074, z: 0}
+  - NpcId: 2
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -44.22666, y: -17.924007, z: 0}
+  - NpcId: 2
     Id: Main_b8f1c297-9efe-4ae8-8213-9515bd728a32
     Position: {x: 9.773339, y: -11.174007, z: 0}
+  - NpcId: 2
+    Id: Main_ae96981c-b225-4a39-b44b-ca2d553a2e44
+    Position: {x: 58.08334, y: -7.354007, z: 0}
+  - NpcId: 0
+    Id: Main_4ceb8ab0-aadc-40b6-8b6c-5dd1f2b69ec6
+    Position: {x: 45.74334, y: 16.295992, z: 0}
+  - NpcId: 2
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -32.25666, y: 8.005993, z: 0}
+  - NpcId: 0
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -49.97666, y: -14.424006, z: 0}
+  - NpcId: 2
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -58.22666, y: -8.174006, z: 0}
+  - NpcId: 0
+    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
+    Position: {x: 32.60334, y: 8.425993, z: 0}
+  - NpcId: 0
+    Id: Main_4ceb8ab0-aadc-40b6-8b6c-5dd1f2b69ec6
+    Position: {x: 57.503338, y: 13.545993, z: 0}
+  - NpcId: 0
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -24.09666, y: 14.275992, z: 0}
+  - NpcId: 2
+    Id: Main_70150367-5542-4150-a27c-f3323da126bd
+    Position: {x: 57.253338, y: 5.2959924, z: 0}
+  - NpcId: 0
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -3.1566615, y: 6.4659925, z: 0}
+  - NpcId: 0
+    Id: Main_2cf12cc9-b96f-4461-a275-219c5134c3af
+    Position: {x: 10.493339, y: 16.065992, z: 0}
+  - NpcId: 2
+    Id: Main_953baf58-a6a1-4e4d-9823-ff5b62343dda
+    Position: {x: 4.473338, y: -12.624007, z: 0}
+  - NpcId: 2
+    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
+    Position: {x: 36.83334, y: -3.8540075, z: 0}
+  - NpcId: 2
+    Id: Main_cd3a1a79-c2f6-4a7d-969b-ff2987bdb0d4
+    Position: {x: 24.85334, y: 16.175993, z: 0}
+  - NpcId: 2
+    Id: Main_85bb51b8-eab0-4345-a74b-76d996b6644f
+    Position: {x: 29.83334, y: -12.604007, z: 0}
+  - NpcId: 2
+    Id: Main_35aaa9e8-6b45-4c2b-9874-2ae7e72588ad
+    Position: {x: 36.23334, y: 18.865992, z: 0}
+  - NpcId: 0
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -6.2766614, y: -6.8340073, z: 0}
+  - NpcId: 2
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -39.47666, y: -6.4240074, z: 0}
+  - NpcId: 0
+    Id: Main_32d29477-1ecf-441b-bf61-a03000c674e9
+    Position: {x: -26.726662, y: -12.174006, z: 0}
