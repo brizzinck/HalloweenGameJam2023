@@ -2,68 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/EndMenuUI.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/EndMenuUI.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/EndMenuUI_BundledAssetGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/EndMenuUI_BundledAssetGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/EndMenuUI_ContentUpdateGroupSchema.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/EndMenuUI_ContentUpdateGroupSchema.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/AbilityItemBuy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/AbilityItemBuy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/ActorEndMenuUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/ActorEndMenuUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/ActorShopUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/ActorShopUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/UpgradeHeroSpeed.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/UpgradeHeroSpeed.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/UpgradeItemBuy.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/UpgradeItemBuy.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/UpgradeTimeToEnd.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/UpgradeTimeToEnd.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Hud/StartCurtain.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Hud/StartCurtain.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Hud/Hero.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Hud/Hero/Hero.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/Hud/Hero/Hero.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/EndMenu.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/EndMenu/MenuUI.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/EndMenu/MenuUI.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/EndMenu/ShopUI.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/EndMenu/ShopUI.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/EntryMenu.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/EntryMenu/MenuUI.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/EntryMenu/MenuUI.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Abilities/AbilityUIElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Abilities/AbilityUIElement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Constants/ConstantsValue.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Constants/ConstantsValue.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game/Game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game/Game.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game/GameBootstrapper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Game/GameBootstrapper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/GameStateMachine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadEndMenuState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadEndMenuState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadGameLevelState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/LoadGameLevelState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Logic/Scene/LoadingCurtain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Logic/Scene/LoadingCurtain.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCPoliceKill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCPoliceKill.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/GameScoreService/GameScoreService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/GameScoreService/GameScoreService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/GameScoreService/IGameScoreService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/GameScoreService/IGameScoreService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/GameTempData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/GameTempData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/IStaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/IStaticDataService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/StaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/StaticDataService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/Factory/IUIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/Factory/IUIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/Factory/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/Factory/UIFactory.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Game/GameBootstrapper.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Game/GameBootstrapper.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Hud/Curtain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Hud/Curtain.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Hud/EndCurtain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Hud/EndCurtain.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Game/GameStaticData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Game/GameStaticData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Hero.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Hero/Hero.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Hero/Hero.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/NPC/PoliceNPC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/PoliceNPC.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/MenuUI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/UI/Menu/MenuUI.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Menu.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +97,7 @@
       <workItem from="1698497105751" duration="3041000" />
       <workItem from="1698501401087" duration="3168000" />
       <workItem from="1698505438195" duration="1979000" />
-      <workItem from="1698565243524" duration="12995000" />
+      <workItem from="1698565243524" duration="13885000" />
     </task>
     <servers />
   </component>

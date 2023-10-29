@@ -45,7 +45,7 @@ namespace CodeBase.UI.Elements
       _displayInputService.PressE += DisplayE;
       _displayInputService.PressF += DisplayF;
       _gameTimer.OnUpdateTime += UpdateTimeText;
-      UpdateDisplayScore(_gameScoreService.HappyScore);
+      _slider.value = _gameScoreService.HappyScore;
     }
 
     private void UpdateTimeText(float time) => 

@@ -1,4 +1,7 @@
+using CodeBase.Services.StaticData;
+using CodeBase.StaticData;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace CodeBase.NPC
 {
@@ -7,6 +10,16 @@ namespace CodeBase.NPC
     [SerializeField] private NPCAgroZone _npcAgroZone;
     [SerializeField] private NPCScore _npcScore;
     [SerializeField] private int _touch = 3;
+    private int _currentTouch;
+    private IStaticDataService _staticData;
+    private LevelStaticData _levelStaticData;
+
+    public void Construct(IStaticDataService staticData)
+    {
+      _staticData = staticData;
+      _levelStaticData = _staticData.ForLevel(SceneManager.GetActiveScene().name);
+      _currentTouch = _touch;
+    }
 
     private void Update()
     {
@@ -16,10 +29,14 @@ namespace CodeBase.NPC
         Collider2D point = Physics2D.OverlapPoint(clickPosition);
         if (point != null && point.TryGetComponent(out NPCPoliceKill npcPoliceKill))
         {
-          npcPoliceKill._touch--;
+          npcPoliceKill._currentTouch--;
           _npcScore.GameScoreService.MinusHappyScore(1);
-          if (_touch <= 0)
-            Destroy(npcPoliceKill.gameObject);
+          if (_currentTouch <= 0)
+          {
+            transform.position = _levelStaticData
+              .InteractiveSpawnMarker[Random.Range(0, _levelStaticData.InteractiveSpawnMarker.Count)].Position;
+            _currentTouch = _touch;
+          }
         }
       }
     }
