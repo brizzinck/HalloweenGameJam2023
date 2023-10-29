@@ -10,6 +10,7 @@ using CodeBase.Services.Audio;
 using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
+using CodeBase.Services.InteractiveObject;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
 using CodeBase.Services.StaticData.Interactive;
@@ -30,10 +31,11 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
     private readonly IGameScoreService _gameScoreService;
     private readonly IDisplayInputService _displayInputService;
     private readonly IGameTimer _gameTimer;
+    private readonly IInteractive _interactive;
     private GameObject _hero;
 
     public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService,
-      IGameScoreService gameScoreService, IDisplayInputService displayInputService, IGameTimer gameTimer)
+      IGameScoreService gameScoreService, IDisplayInputService displayInputService, IGameTimer gameTimer, IInteractive interactive)
     {
       _assets = assets;
       _staticData = staticData;
@@ -41,6 +43,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
       _gameScoreService = gameScoreService;
       _displayInputService = displayInputService;
       _gameTimer = gameTimer;
+      _interactive = interactive;
     }
 
     public void Cleanup()
@@ -102,7 +105,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
       GameObject prefab = await _assets.Load<GameObject>(interactiveStaticData.PrefabReference);
       GameObject interactive = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
       interactive.GetComponent<BaseInteractiveObject>()
-        .Constructor(_inputService, _gameScoreService, _displayInputService);
+        .Constructor(_inputService, _gameScoreService, _displayInputService, _interactive);
       return interactive;
     }
 

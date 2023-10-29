@@ -6,6 +6,7 @@ using CodeBase.Services.Audio;
 using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
+using CodeBase.Services.InteractiveObject;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
 using CodeBase.UI.Elements;
@@ -33,12 +34,13 @@ namespace CodeBase.UI.Services.Factory
     private readonly IDisplayInputService _displayInputService;
     private readonly IGameTimer _gameTimer;
     private readonly IAudioPlayer _audioPlayer;
+    private readonly IInteractive _interactive;
     private Transform _uiRoot;
 
     public UIFactory(IGameStateMachine stateMachine, IAssetProvider assets, IStaticDataService staticData,
       IPersistentProgressService progressService, IGameScoreService gameScoreService, IGameFactory gameFactory,
       IInputService inputService, IDisplayInputService displayInputService, IGameTimer gameTimer,
-      IAudioPlayer audioPlayer)
+      IAudioPlayer audioPlayer, IInteractive interactive)
     {
       _stateMachine = stateMachine;
       _assets = assets;
@@ -50,6 +52,7 @@ namespace CodeBase.UI.Services.Factory
       _displayInputService = displayInputService;
       _gameTimer = gameTimer;
       _audioPlayer = audioPlayer;
+      _interactive = interactive;
     }
 
     public async Task CreateUIRoot()
@@ -63,6 +66,7 @@ namespace CodeBase.UI.Services.Factory
       GameObject menuUi = await _assets.Instantiate(MenuUIPath);
       menuUi.GetComponent<ActorUIMenu>().Construct(_stateMachine, _progressService, _audioPlayer);
     }
+
     public async Task CreateGuideUI()
     {
       GameObject guideUI = await _assets.Instantiate(MenuGuideUI);
@@ -86,7 +90,8 @@ namespace CodeBase.UI.Services.Factory
     {
       GameObject hud = await _assets.Instantiate(GameHud);
       hud.GetComponent<ActorGameHud>()
-        .Construct(_stateMachine, _progressService, _gameScoreService, _displayInputService, _gameTimer);
+        .Construct(_stateMachine, _progressService, 
+          _gameScoreService, _displayInputService, _gameTimer, _interactive);
     }
 
     public async Task CreateAbilityUI()
