@@ -19,6 +19,9 @@ MonoBehaviour:
   - Id: InteractiveSpawnerPoint_b97a3fdc-5097-41a7-a11d-0fafa2d428da
     InteractiveID: 2
     Position: {x: -4.97, y: 4.07, z: -0.021649772}
+  - Id: Main_b7bce769-afce-4365-9e91-2c73d281ff7b
+    InteractiveID: 2
+    Position: {x: -6.91, y: 8.25, z: -0.021649772}
   NPCSpawnMarker:
   - NpcId: 2
     Id: Main_b8f1c297-9efe-4ae8-8213-9515bd728a32
