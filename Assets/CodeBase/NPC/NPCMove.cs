@@ -1,4 +1,5 @@
 using System.Collections;
+using CodeBase.Extensions;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -65,6 +66,7 @@ namespace CodeBase.NPC
       _directionChangeInterval = Random.Range(1.25f, 2f);
       float angle = Random.Range(0f, 2f * Mathf.PI);
       _currentMovePoint = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+      Flip(_currentMovePoint);
     }
     private IEnumerator CheckStay()
     {
@@ -76,6 +78,7 @@ namespace CodeBase.NPC
     {
       _currentMovePoint = (to - transform.position).normalized;
       _timeSinceDirectionChange = 0.0f;
+      Flip(_currentMovePoint);
     }
     private void SpeedCorrector(bool agro)
     {
@@ -92,7 +95,13 @@ namespace CodeBase.NPC
           _currentSpeed = _defaultMovementSpeed;
       }
     }
-
+    private void Flip(Vector3 movementVector)
+    {
+      if (movementVector.x > transform.position.x)
+        transform.localScale = transform.localScale.WithToX(Mathf.Abs(transform.localScale.x));
+      else
+        transform.localScale = transform.localScale.WithToX(-Mathf.Abs(transform.localScale.x));
+    }
     public void ResetVelocity()
     {
       _rigidbody2D.velocity = Vector2.zero;

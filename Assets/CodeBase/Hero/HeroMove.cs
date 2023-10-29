@@ -22,6 +22,12 @@ namespace CodeBase.Hero
       _movementSpeed = _staticData.GameTempData.SpeedHero;
     }
 
+    public void StopMove()
+    {
+      _rigidbody2D.velocity = Vector2.zero;
+      enabled = false;
+    }
+    
     private void Start() =>
       _camera = Camera.main;
 

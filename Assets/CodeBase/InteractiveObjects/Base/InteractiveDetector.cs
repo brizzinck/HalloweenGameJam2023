@@ -21,11 +21,12 @@ namespace CodeBase.InteractiveObjects.Base
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      if (other.TryGetComponent(out HeroMove _))
+      if (other.TryGetComponent(out HeroMove heroMove))
       {
         _heroEnter = true;
         if (!_interactiveObject.IsDestroy)
           _displayInputService.OnActionF(_heroEnter);
+        _interactiveObject.HeroMove = heroMove;
       }
     }
 
@@ -35,6 +36,7 @@ namespace CodeBase.InteractiveObjects.Base
       {
         _heroEnter = false;
         _displayInputService.OnActionF(_heroEnter);
+        _interactiveObject.HeroMove = null;
       }
     }
 

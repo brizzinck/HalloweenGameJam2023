@@ -34,8 +34,9 @@ namespace CodeBase.NPC
           if (_currentTouch <= 0)
           {
             transform.position = _levelGameStaticData
-              .InteractiveSpawnMarker[Random.Range(0, _levelGameStaticData.InteractiveSpawnMarker.Count)].Position;
+              .InteractiveSpawnMarker[Random.Range(0, _levelGameStaticData.NPCSpawnMarker.Count)].Position;
             _currentTouch = _touch;
+            _npcAgroZone.Refresh();
           }
         }
       }
