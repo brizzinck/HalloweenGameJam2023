@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -6,8 +5,9 @@ namespace CodeBase.Logic.Scene
 {
   public class LoadingCurtain : MonoBehaviour
   {
+    [SerializeField] private float _duraction = 0.03f; 
     public CanvasGroup Curtain;
-
+    
     private void Awake() => 
       DontDestroyOnLoad(this);
 
@@ -27,9 +27,8 @@ namespace CodeBase.Logic.Scene
       while (Curtain.alpha > 0)
       {
         Curtain.alpha -= 0.03f;
-        yield return new WaitForSeconds(0.03f);
+        yield return new WaitForSeconds(_duraction);
       }
-      
       gameObject.SetActive(false);
     }
   }

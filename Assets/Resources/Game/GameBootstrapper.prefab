@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aba90ad3e2054559b75afaa4a09b14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  StartCurtain: {fileID: 8713324141352661597, guid: f7251acbc63f30442bf982d8f6336fb9, type: 3}
   CurtainPrefab: {fileID: 8713324141352661597, guid: 9999f750a9cb62f4e95f2b25c7f6aec2, type: 3}
   EndGameCurtain: {fileID: 8713324141352661597, guid: e941270e32d4c124eaa57e90b791c10c, type: 3}

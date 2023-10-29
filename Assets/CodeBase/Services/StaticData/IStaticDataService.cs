@@ -20,5 +20,6 @@ namespace CodeBase.Services.StaticData
     NPCStaticData ForIdNPC(NPCId npcId);
     AbilityStaticData ForAbilities(AbilityID abilityID);
     public GameTempData GameTempData { get; }
+    bool ForAvailableAbilities(AbilityID abilityID);
   }
 }

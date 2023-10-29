@@ -38,7 +38,8 @@ namespace CodeBase.Services.StaticData
         .Load<GameStaticData>(GameStaticDataPath);
       _gameTempData = new GameTempData(
         gameStaticData.GameTempData.TimeToEnd,
-        gameStaticData.GameTempData.SpeedHero);
+        gameStaticData.GameTempData.SpeedHero,
+        gameStaticData.GameTempData.AvailableAbilityIds);
       
       _interactiveObjects = Resources
         .LoadAll<InteractiveStaticData>(InteractiveObjects)
@@ -83,7 +84,14 @@ namespace CodeBase.Services.StaticData
       _abilityStaticData.TryGetValue(abilityID, out AbilityStaticData abilityStaticData)
         ? abilityStaticData
         : null;
-    
+
+    public bool ForAvailableAbilities(AbilityID abilityID)
+    {
+      foreach (AbilityID id in _gameTempData.AvailableAbilityIds)
+        if (id == abilityID)
+          return true;
+      return false;
+    }
     public WindowConfig ForWindow(WindowId windowId) =>
       _windowConfigs.TryGetValue(windowId, out WindowConfig windowConfig)
         ? windowConfig

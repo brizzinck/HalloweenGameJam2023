@@ -45,8 +45,6 @@ namespace CodeBase.Infrastructure.States
         implementation: InputService());
       _services.RegisterSingle<IDisplayInputService>(
         implementation: new DisplayInputService());
-      _services.RegisterSingle<IGameScoreService>(
-        implementation: new GameScoreService());
       _services.RegisterSingle<IRandomService>(
         implementation: new RandomService());
       _services.RegisterSingle<IGameStateMachine>(
@@ -58,6 +56,9 @@ namespace CodeBase.Infrastructure.States
       _services.RegisterSingle<IGameTimer>(new GameTimer(
         stateMachine: _services.Single<IGameStateMachine>(),
         staticData: _services.Single<IStaticDataService>()));
+      _services.RegisterSingle<IGameScoreService>(new GameScoreService(
+        staticData: _services.Single<IStaticDataService>(),
+        gameTimer: _services.Single<IGameTimer>()));
       _services.RegisterSingle<IGameFactory>(new GameFactory(
         assets: _services.Single<IAssetProvider>(),
         staticData: _services.Single<IStaticDataService>(),

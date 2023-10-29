@@ -8,5 +8,7 @@ namespace CodeBase.Services.GameScoreService
     int HappyScore { get; }
     public void AddHappyScore(int score);
     public void MinusHappyScore(int score);
+    void RefreshScore();
+    void CalculateEndScore();
   }
 }

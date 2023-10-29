@@ -34,7 +34,10 @@ namespace CodeBase.Abilities
       _staticData = staticData;
       _currentCooldown = _cooldown;
       UpdateFill();
-      _createAbilityBtn.onClick.AddListener(SpawnAbility);
+      if (_staticData.ForAvailableAbilities(_abilityID))
+        _createAbilityBtn.onClick.AddListener(SpawnAbility);
+      else
+        _createAbilityBtn.interactable = false;
     }
 
     private void SpawnAbility()

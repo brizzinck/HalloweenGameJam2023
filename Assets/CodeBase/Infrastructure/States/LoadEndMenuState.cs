@@ -1,5 +1,6 @@
 using CodeBase.Infrastructure.Scene;
 using CodeBase.Logic.Scene;
+using CodeBase.UI.Services.Factory;
 
 namespace CodeBase.Infrastructure.States
 {
@@ -8,12 +9,15 @@ namespace CodeBase.Infrastructure.States
     private readonly IGameStateMachine _stateMachine;
     private readonly LoadingCurtain _endGameCurtain;
     private readonly SceneLoader _sceneLoader;
+    private readonly IUIFactory _uiFactory;
 
-    public LoadEndMenuState(IGameStateMachine stateMachine, LoadingCurtain endGameCurtain, SceneLoader sceneLoader)
+    public LoadEndMenuState(IGameStateMachine stateMachine, LoadingCurtain endGameCurtain, SceneLoader sceneLoader,
+      IUIFactory uiFactory)
     {
       _stateMachine = stateMachine;
       _endGameCurtain = endGameCurtain;
       _sceneLoader = sceneLoader;
+      _uiFactory = uiFactory;
     }
 
     public void Enter(string payload = "Menu")
@@ -25,6 +29,7 @@ namespace CodeBase.Infrastructure.States
     private async void OnLoaded()
     {
       _stateMachine.Enter<MenuStayLevelState>();
+      await _uiFactory.CreateEndUI();
     }
 
     public void Exit() =>

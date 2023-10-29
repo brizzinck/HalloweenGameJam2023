@@ -9,5 +9,6 @@ namespace CodeBase.UI.Services.Factory
     Task CreateMenuUI();
     Task CreateGameHud();
     Task CreateAbilityUI();
+    Task CreateEndUI();
   }
 }

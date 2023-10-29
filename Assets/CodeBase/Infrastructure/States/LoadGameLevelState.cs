@@ -5,6 +5,8 @@ using CodeBase.Infrastructure.Scene;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.Logic.Scene;
 using CodeBase.NPC;
+using CodeBase.Services.GameLoopService;
+using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
 using CodeBase.StaticData;
@@ -23,10 +25,12 @@ namespace CodeBase.Infrastructure.States
     private readonly IPersistentProgressService _progressService;
     private readonly IStaticDataService _staticData;
     private readonly IUIFactory _uiFactory;
+    private readonly IGameScoreService _gameScoreService;
+    private readonly IGameTimer _gameTimer;
 
     public LoadGameLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
       IGameFactory gameFactory, IPersistentProgressService progressService, IStaticDataService staticDataService,
-      IUIFactory uiFactory)
+      IUIFactory uiFactory, IGameScoreService gameScoreService, IGameTimer gameTimer)
     {
       _stateMachine = gameStateMachine;
       _sceneLoader = sceneLoader;
@@ -35,6 +39,8 @@ namespace CodeBase.Infrastructure.States
       _progressService = progressService;
       _staticData = staticDataService;
       _uiFactory = uiFactory;
+      _gameScoreService = gameScoreService;
+      _gameTimer = gameTimer;
     }
 
     public void Enter(string sceneName)
@@ -55,7 +61,14 @@ namespace CodeBase.Infrastructure.States
       await InitAbilityUI();
       await InitGameWorld();
       InformProgressReaders();
+      RefreshGameData();
       _stateMachine.Enter<GameLoopState>();
+    }
+
+    private void RefreshGameData()
+    {
+      _gameTimer.CurrentTime = _staticData.GameTempData.TimeToEnd;
+      _gameScoreService.RefreshScore();
     }
 
     private async Task InitUIRoot() =>

@@ -258,6 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0a57f8515d9467da9541f1d7e8159ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _npcAgroZone: {fileID: 5028711785293731832}
   _npcScore: {fileID: 1170995646991623000}
   _touch: 3
 --- !u!114 &1170995646991623000

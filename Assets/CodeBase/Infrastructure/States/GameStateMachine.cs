@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using CodeBase.Infrastructure.Factory;
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
-using CodeBase.Logic;
 using CodeBase.Logic.Scene;
 using CodeBase.Services;
+using CodeBase.Services.GameLoopService;
+using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.SaveLoad;
 using CodeBase.Services.StaticData;
@@ -19,25 +19,30 @@ namespace CodeBase.Infrastructure.States
     private IExitableState _activeState;
 
     public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain loadingCurtain, AllServices services,
-      LoadingCurtain endGameCurtain)
+      LoadingCurtain endGameCurtain, LoadingCurtain startCurtain)
     {
       _states = new Dictionary<Type, IExitableState>
       {
         [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
 
         [typeof(LoadGameLevelState)] = new LoadGameLevelState(this, sceneLoader, loadingCurtain,
-          services.Single<IGameFactory>(), services.Single<IPersistentProgressService>(),
-          services.Single<IStaticDataService>(), services.Single<IUIFactory>()),
+          services.Single<IGameFactory>(), 
+          services.Single<IPersistentProgressService>(),
+          services.Single<IStaticDataService>(), 
+          services.Single<IUIFactory>(), 
+          services.Single<IGameScoreService>(),
+          services.Single<IGameTimer>()),
 
-        [typeof(LoadMenuLevelState)] = new LoadMenuLevelState(this, sceneLoader, loadingCurtain,
+        [typeof(LoadMenuLevelState)] = new LoadMenuLevelState(this, sceneLoader, startCurtain,
           services.Single<IPersistentProgressService>(),
           services.Single<IStaticDataService>(), services.Single<IUIFactory>()),
 
         [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IPersistentProgressService>(),
           services.Single<ISaveLoadService>()),
 
-        [typeof(LoadEndMenuState)] = new LoadEndMenuState(this, endGameCurtain, sceneLoader),
-        
+        [typeof(LoadEndMenuState)] =
+          new LoadEndMenuState(this, endGameCurtain, sceneLoader, services.Single<IUIFactory>()),
+
         [typeof(GameLoopState)] = new GameLoopState(this),
 
         [typeof(MenuStayLevelState)] = new MenuStayLevelState(this)
