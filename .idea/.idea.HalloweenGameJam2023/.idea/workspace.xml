@@ -2,8 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCSkinSetter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCSkinSetter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/StaticData/DefaultNPCSkinsBodyData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/StaticData/DefaultNPCSkinsBodyData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/DefaulNPCSkins.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/DefaulNPCSkins/Skin1.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/DefaulNPCSkins/Skin1.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/DefaulNPCSkins/Skin2.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/DefaulNPCSkins/Skin2.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/DefaulNPCSkins/Skin3.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/DefaulNPCSkins/Skin3.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Abilities/BaseAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Abilities/BaseAbility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCAgroZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCAgroZone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCAnimator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCAnimator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/NPC/NPCMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/IStaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/IStaticDataService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/StaticDataService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/StaticData/StaticDataService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/NPC.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/NPC.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/NPCscare.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/NPCscare.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/NPCwalk.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/NPCwalk.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Main.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Levels/Main.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/SkinsWardobe.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Skins/SkinsWardobe.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/NPC/DefaultNPC.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/NPC/DefaultNPC.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +118,7 @@
       <workItem from="1698497105751" duration="3041000" />
       <workItem from="1698501401087" duration="3168000" />
       <workItem from="1698505438195" duration="1979000" />
-      <workItem from="1698565243524" duration="22278000" />
+      <workItem from="1698565243524" duration="24785000" />
     </task>
     <servers />
   </component>

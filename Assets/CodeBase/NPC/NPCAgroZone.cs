@@ -6,6 +6,7 @@ namespace CodeBase.NPC
   public class NPCAgroZone : MonoBehaviour
   {
     public Action<bool> ChangeAgro;
+    [SerializeField] private NPCAnimator _npcAnimator;
     [SerializeField] private NPCScore _npcScore;
     [SerializeField] private float _distanceToAgro = 5;
     [SerializeField] private float _timeUntilCalm;
@@ -42,6 +43,7 @@ namespace CodeBase.NPC
           ChangeAgro?.Invoke(false);
         }
       }
+      _npcAnimator.SetAgro(_isAgro);
     }
   }
 }

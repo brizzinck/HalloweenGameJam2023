@@ -8,8 +8,12 @@ namespace CodeBase.NPC
   public class NPCAnimator : MonoBehaviour, IAnimationStateReader
   {
     [SerializeField] private Animator _animator;
-    private static readonly int IdealHash = Animator.StringToHash("Ideal");
-    private static readonly int CirculationCauldronHash = Animator.StringToHash("CirculationCauldron");
+    private static readonly int IdleHash = Animator.StringToHash("Idle");
+    private static readonly int CirculationCauldronHash = Animator.StringToHash("Cauldron");
+    private static readonly int WhipHash = Animator.StringToHash("Whip");
+    private static readonly int CauldronHash = Animator.StringToHash("Cauldron");
+    private static readonly int IsWalkHash = Animator.StringToHash("IsWalk");
+    private static readonly int IsAgroHsh = Animator.StringToHash("IsAgro");
     public event Action<NPCAnimationState> StateEntered;
     public event Action<NPCAnimationState> StateExited;
     public NPCAnimationState State { get; private set; }
@@ -21,15 +25,23 @@ namespace CodeBase.NPC
     public void ExitedState(int stateHash) => 
       StateExited?.Invoke(StateFor(stateHash));
 
-    public void PlayIdeal() => 
-      _animator.SetTrigger(IdealHash);
+    public void SetIdle() => 
+      _animator.SetTrigger(IdleHash);
+    public void SetCauldron() => 
+      _animator.SetTrigger(CauldronHash);
+    public void SetWhip() => 
+      _animator.SetTrigger(WhipHash);
+    public void SetWalk(bool walk) => 
+      _animator.SetBool(IsWalkHash, walk);
+    public void SetAgro(bool agro) => 
+      _animator.SetBool(IsAgroHsh, agro);
     
-    public void PlayCirculationCauldron() => 
+    private void PlayCirculationCauldron() => 
       _animator.SetTrigger(CirculationCauldronHash);
     
     private NPCAnimationState StateFor(int stateHash)
     {
-      if (stateHash == IdealHash)
+      if (stateHash == IdleHash)
         return NPCAnimationState.Ideal;
       else if (stateHash == CirculationCauldronHash)
         return NPCAnimationState.CirculationCauldron;

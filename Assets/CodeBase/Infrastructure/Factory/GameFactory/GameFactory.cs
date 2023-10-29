@@ -14,6 +14,7 @@ using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
 using CodeBase.Services.StaticData.Interactive;
 using CodeBase.Services.StaticData.NPC;
+using CodeBase.StaticData;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -136,6 +137,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
       GameObject npc = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
       npc.GetComponent<NPCAgroZone>().Construct(hero);
       npc.GetComponent<NPCScore>().Construct(_gameScoreService);
+      npc.GetComponent<NPCSkinSetter>().BaseConstruct(_staticData.ForDefaultSkinNPC());
       return npc;
     }
 

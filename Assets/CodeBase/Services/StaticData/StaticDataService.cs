@@ -19,10 +19,12 @@ namespace CodeBase.Services.StaticData
     private const string NPCs = "StaticData/NPC";
     private const string Abilities = "StaticData/Abilities";
     private const string GameStaticDataPath = "StaticData/Game/GameStaticData";
+    private const string DefaultNPCSkins = "StaticData/DefaulNPCSkins";
 
     private Dictionary<InteractiveID, InteractiveStaticData> _interactiveObjects;
     private Dictionary<AbilityID, AbilityStaticData> _abilityStaticData;
     private List<NPCStaticData> _npc = new List<NPCStaticData>();
+    private List<DefaultNPCSkinsBodyData> _npcDefaultSkins = new List<DefaultNPCSkinsBodyData>();
     private Dictionary<string, LevelGameStaticData> _gameLevels;
     private Dictionary<string, LevelStaticData> _levels;
     private Dictionary<WindowId, WindowConfig> _windowConfigs;
@@ -37,6 +39,10 @@ namespace CodeBase.Services.StaticData
       _levels = Resources
         .LoadAll<LevelStaticData>(LevelsDataPath)
         .ToDictionary(x => x.LevelKey, x => x);
+      
+      _npcDefaultSkins = Resources
+        .LoadAll<DefaultNPCSkinsBodyData>(DefaultNPCSkins)
+        .ToList();
       
       GameStaticData gameStaticData = Resources
         .Load<GameStaticData>(GameStaticDataPath);
@@ -67,6 +73,9 @@ namespace CodeBase.Services.StaticData
       _gameLevels.TryGetValue(sceneKey, out LevelGameStaticData staticData)
         ? staticData
         : null;
+
+    public DefaultNPCSkinsBodyData ForDefaultSkinNPC() =>
+      _npcDefaultSkins[Random.Range(0, _npcDefaultSkins.Count)];
 
     public LevelStaticData ForLevel(string sceneKey)=>
       _levels.TryGetValue(sceneKey, out LevelStaticData staticData)
