@@ -22,5 +22,6 @@ namespace CodeBase.Services.StaticData
     AbilityStaticData ForAbilities(AbilityID abilityID);
     public GameTempData GameTempData { get; }
     bool ForAvailableAbilities(AbilityID abilityID);
+    DefaultNPCSkinsBodyData ForDefaultSkinNPC();
   }
 }

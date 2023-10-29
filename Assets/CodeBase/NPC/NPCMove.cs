@@ -6,6 +6,7 @@ namespace CodeBase.NPC
 {
   public class NPCMove : MonoBehaviour
   {
+    [SerializeField] private NPCAnimator _npcAnimator;
     [SerializeField] protected float _defaultMovementSpeed;
     [SerializeField] protected float _maxMovementSpeed;
     [SerializeField] protected Rigidbody2D _rigidbody2D;
@@ -50,9 +51,13 @@ namespace CodeBase.NPC
         }
         SpeedCorrector(_npcAgroZone.IsAgro);
         _rigidbody2D.velocity = _currentMovePoint * _currentSpeed;
+        _npcAnimator.SetWalk(true);
       }
       else
+      {
         _rigidbody2D.velocity = Vector2.zero;
+        _npcAnimator.SetWalk(false);
+      }
     }
     
     protected void ChangeRandomVelocity()

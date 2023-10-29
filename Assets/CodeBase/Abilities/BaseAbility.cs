@@ -95,7 +95,7 @@ namespace CodeBase.Abilities
         if (soul.TryGetComponent(out NPCMove npcMove))
           npcMove.enabled = true;
         if (soul.GetComponentInChildren<NPCAnimator>().TryGetComponent(out NPCAnimator npcAnimator))
-          npcAnimator.PlayIdeal();
+          npcAnimator.SetIdle();
         soul.transform.position = LevelGameStaticData.NPCSpawnMarker[Random.Range(0, LevelGameStaticData.NPCSpawnMarker.Count)].Position;
       }
       npcWithSouls = new List<NPCWithSoul>();

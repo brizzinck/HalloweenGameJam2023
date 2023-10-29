@@ -1,7 +1,7 @@
 using System;
 using CodeBase.Services.GameLoopService;
 using CodeBase.Services.StaticData;
-
+using Random = UnityEngine.Random;
 namespace CodeBase.Services.GameScoreService
 {
   public class GameScoreService : IGameScoreService
@@ -27,8 +27,10 @@ namespace CodeBase.Services.GameScoreService
     
     public void CalculateEndScore()
     {
-      _staticData.GameTempData.ChangeRating((100 - _happyScore) / 2);
-      _staticData.GameTempData.ChangeSoul((int)(_happyScore / (_staticData.GameTempData.TimeToEnd * 0.5f)));
+      _staticData.GameTempData.ChangeRating((int)
+        (_staticData.GameTempData.TimeToEnd / Random.Range(1, 100 -_happyScore)));
+      _staticData.GameTempData.ChangeSoul((int)
+        (_staticData.GameTempData.CountRating / _staticData.GameTempData.TimeToEnd));
     }
     
     public void AddHappyScore(int score)
