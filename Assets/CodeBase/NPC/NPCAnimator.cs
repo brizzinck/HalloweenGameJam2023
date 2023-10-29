@@ -38,6 +38,8 @@ namespace CodeBase.NPC
     
     private void PlayCirculationCauldron() => 
       _animator.SetTrigger(CirculationCauldronHash);
+    private void PlayWhip() => 
+      _animator.SetTrigger(WhipHash);
     
     private NPCAnimationState StateFor(int stateHash)
     {
@@ -54,6 +56,9 @@ namespace CodeBase.NPC
       {
         case AbilityID.Cauldron:
           PlayCirculationCauldron();
+          break;
+        case AbilityID.Stitch:
+          PlayWhip();
           break;
         default:
           Debug.LogError("Non exist animation");

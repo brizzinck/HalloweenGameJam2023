@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11dc9516f9ae4041ad3fd53a64cbd2a6, type: 3}
-  m_Name: AbilityStaticData
+  m_Name: Stick
   m_EditorClassIdentifier: 
-  AbilityID: 0
+  AbilityID: 1
   PrefabReference:
-    m_AssetGUID: c7406d3e742f43848bd5ce46df693af4
+    m_AssetGUID: 2f82732abec651b428177eae7bcdac54
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
