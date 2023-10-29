@@ -12,12 +12,12 @@ namespace CodeBase.NPC
     [SerializeField] private int _touch = 3;
     private int _currentTouch;
     private IStaticDataService _staticData;
-    private LevelStaticData _levelStaticData;
+    private LevelGameStaticData _levelGameStaticData;
 
     public void Construct(IStaticDataService staticData)
     {
       _staticData = staticData;
-      _levelStaticData = _staticData.ForLevel(SceneManager.GetActiveScene().name);
+      _levelGameStaticData = _staticData.ForGameLevel(SceneManager.GetActiveScene().name);
       _currentTouch = _touch;
     }
 
@@ -33,8 +33,8 @@ namespace CodeBase.NPC
           _npcScore.GameScoreService.MinusHappyScore(1);
           if (_currentTouch <= 0)
           {
-            transform.position = _levelStaticData
-              .InteractiveSpawnMarker[Random.Range(0, _levelStaticData.InteractiveSpawnMarker.Count)].Position;
+            transform.position = _levelGameStaticData
+              .InteractiveSpawnMarker[Random.Range(0, _levelGameStaticData.InteractiveSpawnMarker.Count)].Position;
             _currentTouch = _touch;
           }
         }

@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
 using CodeBase.Services;
+using CodeBase.Services.Audio;
 using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
@@ -66,6 +67,10 @@ namespace CodeBase.Infrastructure.States
         gameScoreService: _services.Single<IGameScoreService>(),
         displayInputService: _services.Single<IDisplayInputService>(),
         gameTimer: _services.Single<IGameTimer>()));
+      _services.RegisterSingle<IAudioPlayer>(new AudioPlayer(
+        gameFactory: _services.Single<IGameFactory>(),
+        staticData: _services.Single<IStaticDataService>(),
+        gameTimer: _services.Single<IGameTimer>()));
       _services.RegisterSingle<IUIFactory>(new UIFactory(
         stateMachine: _stateMachine,
         assets: _services.Single<IAssetProvider>(),
@@ -75,7 +80,8 @@ namespace CodeBase.Infrastructure.States
         gameFactory: _services.Single<IGameFactory>(),
         inputService: _services.Single<IInputService>(),
         displayInputService: _services.Single<IDisplayInputService>(),
-        gameTimer: _services.Single<IGameTimer>()));
+        gameTimer: _services.Single<IGameTimer>(),
+        audioPlayer: _services.Single<IAudioPlayer>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
         uiFactory: _services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(

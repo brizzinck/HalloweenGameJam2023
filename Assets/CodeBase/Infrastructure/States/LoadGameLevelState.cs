@@ -5,6 +5,7 @@ using CodeBase.Infrastructure.Scene;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.Logic.Scene;
 using CodeBase.NPC;
+using CodeBase.Services.Audio;
 using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
@@ -27,10 +28,11 @@ namespace CodeBase.Infrastructure.States
     private readonly IUIFactory _uiFactory;
     private readonly IGameScoreService _gameScoreService;
     private readonly IGameTimer _gameTimer;
+    private readonly IAudioPlayer _audioPlayer;
 
     public LoadGameLevelState(GameStateMachine gameStateMachine, SceneLoader sceneLoader, LoadingCurtain loadingCurtain,
       IGameFactory gameFactory, IPersistentProgressService progressService, IStaticDataService staticDataService,
-      IUIFactory uiFactory, IGameScoreService gameScoreService, IGameTimer gameTimer)
+      IUIFactory uiFactory, IGameScoreService gameScoreService, IGameTimer gameTimer, IAudioPlayer audioPlayer)
     {
       _stateMachine = gameStateMachine;
       _sceneLoader = sceneLoader;
@@ -41,8 +43,9 @@ namespace CodeBase.Infrastructure.States
       _uiFactory = uiFactory;
       _gameScoreService = gameScoreService;
       _gameTimer = gameTimer;
+      _audioPlayer = audioPlayer;
     }
-
+    
     public void Enter(string sceneName)
     {
       _loadingCurtain.Show();
@@ -60,6 +63,7 @@ namespace CodeBase.Infrastructure.States
       await InitGameHud();
       await InitAbilityUI();
       await InitGameWorld();
+      await _audioPlayer.CreateAudio();
       InformProgressReaders();
       RefreshGameData();
       _stateMachine.Enter<GameLoopState>();
@@ -88,11 +92,11 @@ namespace CodeBase.Infrastructure.States
 
     private async Task InitGameWorld()
     {
-      LevelStaticData levelData = LevelStaticData();
+      LevelGameStaticData levelGameData = LevelStaticData();
       await InitHud();
       GameObject hero = await InitHero();
-      await InitInteractiveSpawners(levelData);
-      await InitNPCSpawners(levelData, hero);
+      await InitInteractiveSpawners(levelGameData);
+      await InitNPCSpawners(levelGameData, hero);
       await InitGameLoop();
     }
 
@@ -113,22 +117,22 @@ namespace CodeBase.Infrastructure.States
       return hero;
     }
 
-    private async Task InitInteractiveSpawners(LevelStaticData levelStaticData)
+    private async Task InitInteractiveSpawners(LevelGameStaticData levelGameStaticData)
     {
-      foreach (InteractiveSpawnStaticData spawnerData in levelStaticData.InteractiveSpawnMarker)
+      foreach (InteractiveSpawnStaticData spawnerData in levelGameStaticData.InteractiveSpawnMarker)
         await _gameFactory.CreateInteractiveSpawner(spawnerData.Id, spawnerData.Position, spawnerData.InteractiveID);
     }
 
-    private async Task InitNPCSpawners(LevelStaticData levelStaticData, GameObject hero)
+    private async Task InitNPCSpawners(LevelGameStaticData levelGameStaticData, GameObject hero)
     {
-      foreach (SpawnMarkerNPCStaticData spawnerData in levelStaticData.NPCSpawnMarker)
+      foreach (SpawnMarkerNPCStaticData spawnerData in levelGameStaticData.NPCSpawnMarker)
         await _gameFactory.CreateNPCSpawner(spawnerData.NpcId, spawnerData.Id, spawnerData.Position, hero);
     }
 
     private void CameraFollow(GameObject hero) =>
       Camera.main.GetComponent<CameraFollow>().Follow(hero);
 
-    private LevelStaticData LevelStaticData() =>
-      _staticData.ForLevel(SceneManager.GetActiveScene().name);
+    private LevelGameStaticData LevelStaticData() =>
+      _staticData.ForGameLevel(SceneManager.GetActiveScene().name);
   }
 }

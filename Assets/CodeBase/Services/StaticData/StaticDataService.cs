@@ -24,16 +24,21 @@ namespace CodeBase.Services.StaticData
     private Dictionary<InteractiveID, InteractiveStaticData> _interactiveObjects;
     private Dictionary<AbilityID, AbilityStaticData> _abilityStaticData;
     private List<NPCStaticData> _npc = new List<NPCStaticData>();
+    private Dictionary<string, LevelGameStaticData> _gameLevels;
     private Dictionary<string, LevelStaticData> _levels;
     private Dictionary<WindowId, WindowConfig> _windowConfigs;
     private GameTempData _gameTempData;
     public GameTempData GameTempData => _gameTempData;
     public void Load()
     {
+      _gameLevels = Resources
+        .LoadAll<LevelGameStaticData>(LevelsDataPath)
+        .ToDictionary(x => x.LevelKey, x => x);
+      
       _levels = Resources
         .LoadAll<LevelStaticData>(LevelsDataPath)
         .ToDictionary(x => x.LevelKey, x => x);
-
+      
       GameStaticData gameStaticData = Resources
         .Load<GameStaticData>(GameStaticDataPath);
       _gameTempData = new GameTempData(
@@ -59,7 +64,12 @@ namespace CodeBase.Services.StaticData
         .ToDictionary(x => x.WindowId, x => x);
     }
 
-    public LevelStaticData ForLevel(string sceneKey) =>
+    public LevelGameStaticData ForGameLevel(string sceneKey) =>
+      _gameLevels.TryGetValue(sceneKey, out LevelGameStaticData staticData)
+        ? staticData
+        : null;
+
+    public LevelStaticData ForLevel(string sceneKey)=>
       _levels.TryGetValue(sceneKey, out LevelStaticData staticData)
         ? staticData
         : null;

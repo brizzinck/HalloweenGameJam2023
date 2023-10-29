@@ -4,6 +4,7 @@ using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
 using CodeBase.Logic.Scene;
 using CodeBase.Services;
+using CodeBase.Services.Audio;
 using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
@@ -26,16 +27,21 @@ namespace CodeBase.Infrastructure.States
         [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
 
         [typeof(LoadGameLevelState)] = new LoadGameLevelState(this, sceneLoader, loadingCurtain,
-          services.Single<IGameFactory>(), 
+          services.Single<IGameFactory>(),
           services.Single<IPersistentProgressService>(),
-          services.Single<IStaticDataService>(), 
-          services.Single<IUIFactory>(), 
+          services.Single<IStaticDataService>(),
+          services.Single<IUIFactory>(),
           services.Single<IGameScoreService>(),
-          services.Single<IGameTimer>()),
+          services.Single<IGameTimer>(),
+          services.Single<IAudioPlayer>()),
 
-        [typeof(LoadMenuLevelState)] = new LoadMenuLevelState(this, sceneLoader, startCurtain,
+        [typeof(LoadMenuLevelState)] = new LoadMenuLevelState(
+          this,
+          sceneLoader,
+          startCurtain,
           services.Single<IPersistentProgressService>(),
-          services.Single<IStaticDataService>(), services.Single<IUIFactory>()),
+          services.Single<IStaticDataService>(), services.Single<IUIFactory>(),
+          services.Single<IAudioPlayer>()),
 
         [typeof(LoadProgressState)] = new LoadProgressState(this, services.Single<IPersistentProgressService>(),
           services.Single<ISaveLoadService>()),

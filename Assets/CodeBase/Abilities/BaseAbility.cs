@@ -23,13 +23,13 @@ namespace CodeBase.Abilities
     protected IStaticDataService staticData;
     protected float currentTimeToComplete;
     protected bool processTorture;
-    protected LevelStaticData levelStaticData;
+    protected LevelGameStaticData LevelGameStaticData;
 
     public void Construct(IGameScoreService gameScoreService, IStaticDataService staticData)
     {
       this.gameScoreService = gameScoreService;
       this.staticData = staticData; 
-      levelStaticData = staticData.ForLevel(SceneManager.GetActiveScene().name);
+      LevelGameStaticData = staticData.ForGameLevel(SceneManager.GetActiveScene().name);
     }
 
     private void Update() =>
@@ -96,7 +96,7 @@ namespace CodeBase.Abilities
           npcMove.enabled = true;
         if (soul.GetComponentInChildren<NPCAnimator>().TryGetComponent(out NPCAnimator npcAnimator))
           npcAnimator.PlayIdeal();
-        soul.transform.position = levelStaticData.NPCSpawnMarker[Random.Range(0, levelStaticData.NPCSpawnMarker.Count)].Position;
+        soul.transform.position = LevelGameStaticData.NPCSpawnMarker[Random.Range(0, LevelGameStaticData.NPCSpawnMarker.Count)].Position;
       }
       npcWithSouls = new List<NPCWithSoul>();
     }

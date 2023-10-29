@@ -9,5 +9,6 @@ namespace CodeBase.Infrastructure.AssetManagement
     public const string NPCSpawner = "NPCSpawnerPoint";
     public const string Hero = "Hero";
     public const string GameLoop = "GameLoop";
+    public const string AudioSource = "AudioSource";
   }
 }

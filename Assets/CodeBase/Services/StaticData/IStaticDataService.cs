@@ -13,6 +13,7 @@ namespace CodeBase.Services.StaticData
   public interface IStaticDataService : IService
   {
     void Load();
+    LevelGameStaticData ForGameLevel(string sceneKey);
     LevelStaticData ForLevel(string sceneKey);
     WindowConfig ForWindow(WindowId shop);
     InteractiveStaticData ForInteractiveObjects(InteractiveID id);

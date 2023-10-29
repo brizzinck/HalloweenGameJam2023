@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.States;
+using CodeBase.Services.Audio;
 using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
@@ -29,11 +30,13 @@ namespace CodeBase.UI.Services.Factory
     private readonly IInputService _inputService;
     private readonly IDisplayInputService _displayInputService;
     private readonly IGameTimer _gameTimer;
+    private readonly IAudioPlayer _audioPlayer;
     private Transform _uiRoot;
 
     public UIFactory(IGameStateMachine stateMachine, IAssetProvider assets, IStaticDataService staticData,
       IPersistentProgressService progressService, IGameScoreService gameScoreService, IGameFactory gameFactory,
-      IInputService inputService, IDisplayInputService displayInputService, IGameTimer gameTimer)
+      IInputService inputService, IDisplayInputService displayInputService, IGameTimer gameTimer,
+      IAudioPlayer audioPlayer)
     {
       _stateMachine = stateMachine;
       _assets = assets;
@@ -44,6 +47,7 @@ namespace CodeBase.UI.Services.Factory
       _inputService = inputService;
       _displayInputService = displayInputService;
       _gameTimer = gameTimer;
+      _audioPlayer = audioPlayer;
     }
 
     public async Task CreateUIRoot()
@@ -55,7 +59,7 @@ namespace CodeBase.UI.Services.Factory
     public async Task CreateMenuUI()
     {
       GameObject menuUi = await _assets.Instantiate(MenuUIPath);
-      menuUi.GetComponent<ActorUIMenu>().Construct(_stateMachine, _progressService);
+      menuUi.GetComponent<ActorUIMenu>().Construct(_stateMachine, _progressService, _audioPlayer);
     }
     public async Task CreateEndUI()
     {

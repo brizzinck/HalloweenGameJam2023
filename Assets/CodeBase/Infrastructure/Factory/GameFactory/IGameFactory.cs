@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using CodeBase.Abilities;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.NPC;
+using CodeBase.Services.Audio;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
@@ -21,5 +22,6 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		Task CreateNPCSpawner(NPCId spawnerDataNpcId, string spawnerId, Vector3 at, GameObject hero);
 		Task CreateAbility(AbilityID abilityID, IGameScoreService gameScoreService, IStaticDataService staticDataService);
 		Task<GameLoop.GameLoop> CreateGameLoop();
+		Task<AudioSource> CreateAudioSource(IAudioPlayer audioPlayer);
 	}
 }
