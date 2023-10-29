@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 35be05ab5d7f54346893f8d738da149e
+guid: 4958e8d35b706b847be063d7b2b4000e
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - CoopBlack Cyrillic
+  - Multiround Pro
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
