@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/InteractiveObject.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/InteractiveObject/IInteractive.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/InteractiveObject/IInteractive.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/InteractiveObject/Interactive.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/CodeBase/Services/InteractiveObject/Interactive.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HalloweenGameJam2023/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/Factory/GameFactory/GameFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/Infrastructure/States/BootstrapState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Base/BaseInteractiveObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/InteractiveObjects/Base/BaseInteractiveObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/ActorGameHud.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Elements/ActorGameHud.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/Factory/UIFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeBase/UI/Services/Factory/UIFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Hud/GameHud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Hud/GameHud.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Bench.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Bench.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Camp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Camp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Lamp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/Lamp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/SandCastel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/SandCastel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/SunLounger.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/SunLounger.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/SunUmbrella.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources_moved/Interactive/SunUmbrella.prefab" afterDir="false" />
-    </list>
+    <list default="true" id="9e775dd0-5d95-42be-8d08-b2e6a664b110" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +91,7 @@
       <workItem from="1698497105751" duration="3041000" />
       <workItem from="1698501401087" duration="3168000" />
       <workItem from="1698505438195" duration="1979000" />
-      <workItem from="1698565243524" duration="42919000" />
+      <workItem from="1698565243524" duration="43286000" />
     </task>
     <servers />
   </component>
