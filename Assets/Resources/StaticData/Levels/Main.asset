@@ -42,7 +42,7 @@ MonoBehaviour:
     Position: {x: -11.1, y: 9.52, z: -0.021649772}
   - Id: Main_9f2a5d34-b9be-4674-beca-719437e7463c
     InteractiveID: 6
-    Position: {x: -15.98, y: -15.81, z: -0.021649772}
+    Position: {x: -15.98, y: -15.57, z: -0.021649772}
   - Id: Main_160e3256-bbea-4708-8b0c-18f8657b1de1
     InteractiveID: 2
     Position: {x: 33, y: -2.8, z: -0.021649772}
@@ -75,7 +75,7 @@ MonoBehaviour:
     Position: {x: 44.9, y: -17.91, z: -0.021649772}
   - Id: Main_db119c04-0dc5-485e-9489-ad05b19705c7
     InteractiveID: 4
-    Position: {x: 31.94, y: 0.84, z: -0.021649772}
+    Position: {x: 28.28, y: -4.34, z: -0.021649772}
   - Id: Main_7d68a721-0c7a-4b29-a61f-b89bebe516ec
     InteractiveID: 2
     Position: {x: -49.4, y: -17.5, z: -0.021649772}
