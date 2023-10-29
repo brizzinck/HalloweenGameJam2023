@@ -10,7 +10,7 @@ namespace CodeBase.Infrastructure.Game
   {
     public GameStateMachine StateMachine;
 
-    public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain) => 
-      StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain, AllServices.Container);
+    public Game(ICoroutineRunner coroutineRunner, LoadingCurtain loadingCurtain, LoadingCurtain endGameCurtain) => 
+      StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), loadingCurtain, AllServices.Container, endGameCurtain);
   }
 }

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CodeBase.Abilities;
+using CodeBase.Hero;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.InteractiveObjects.Base;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.NPC;
+using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
 using CodeBase.Services.PersistentProgress;
@@ -24,13 +26,19 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		private readonly IStaticDataService _staticData;
 		private readonly IInputService _inputService;
 		private readonly IGameScoreService _gameScoreService;
+		private readonly IDisplayInputService _displayInputService;
+		private IGameTimer _gameTimer;
 		private GameObject _hero;
-		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService, IGameScoreService gameScoreService)
+
+		public GameFactory(IAssetProvider assets, IStaticDataService staticData, IInputService inputService,
+			IGameScoreService gameScoreService, IDisplayInputService displayInputService, IGameTimer gameTimer)
 		{
 			_assets = assets;
 			_staticData = staticData;
 			_inputService = inputService;
 			_gameScoreService = gameScoreService;
+			_displayInputService = displayInputService;
+			_gameTimer = gameTimer;
 		}
 		public void Cleanup()
 		{
@@ -49,6 +57,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		public async Task<GameObject> CreateHero()
 		{
 			GameObject hero = await InstantiateRegisteredAsync(AssetAddress.Hero);
+			hero.GetComponent<HeroMove>().Construct(_staticData, _inputService);
 			hero.transform.position = _staticData.ForLevel(SceneManager.GetActiveScene().name).HeroSpawnPoint;
 			_hero = hero;
 			return hero;
@@ -71,12 +80,13 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			spawner.Construct(this, hero, spawnerDataNpcId, spawnerId);
 		}
 
-		public async Task CreateAbility(AbilityID abilityID, IGameScoreService gameScoreService)
+		public async Task CreateAbility(AbilityID abilityID, IGameScoreService gameScoreService,
+			IStaticDataService staticDataService)
 		{
 			AbilityStaticData ability = _staticData.ForAbilities(abilityID);
 			GameObject prefab = await _assets.Load<GameObject>(ability.PrefabReference);
 			GameObject instance = Object.Instantiate(prefab, _hero.transform.position, Quaternion.identity);
-			instance.GetComponent<BaseAbility>().Construct(_gameScoreService);
+			instance.GetComponent<BaseAbility>().Construct(_gameScoreService, _staticData);
 		}
 
 		public async Task<GameObject> CreateInteractiveObject(InteractiveID id, Transform parent)
@@ -84,8 +94,16 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 			InteractiveStaticData interactiveStaticData = _staticData.ForInteractiveObjects(id);
 			GameObject prefab = await _assets.Load<GameObject>(interactiveStaticData.PrefabReference);
 			GameObject interactive = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
-			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService, _gameScoreService);
+			interactive.GetComponent<BaseInteractiveObject>().Constructor(_inputService, _gameScoreService, _displayInputService);
 			return interactive;
+		}
+		public async Task<GameLoop.GameLoop> CreateGameLoop()
+		{
+			GameObject prefab = await _assets.Load<GameObject>(AssetAddress.GameLoop);
+			GameLoop.GameLoop gameLoop = InstantiateRegistered(prefab)
+				.GetComponent<GameLoop.GameLoop>();
+			gameLoop.Construct(_gameTimer);
+			return gameLoop;
 		}
 
 		public async Task<GameObject> CreateNPC(Transform parent, GameObject hero, NPCId npcId = NPCId.Random)

@@ -17,7 +17,7 @@ namespace CodeBase.Services.Input
     public bool PressAbilityButton() => 
       SimpleInput.GetButtonDown(Abilities);
 
-    protected static Vector2 SimpleInputAxis() => 
-      new Vector2(SimpleInput.GetAxisRaw(Horizontal), SimpleInput.GetAxisRaw(Vertical));
+    protected static Vector2Int SimpleInputAxisRaw() => 
+      new Vector2Int((int)SimpleInput.GetAxisRaw(Horizontal), (int)SimpleInput.GetAxisRaw(Vertical));
   }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,10 +8,11 @@ namespace CodeBase.Logic.Scene
   {
     public CanvasGroup Curtain;
 
-    private void Awake()
-    {
+    private void Awake() => 
       DontDestroyOnLoad(this);
-    }
+
+    private void Start() => 
+      gameObject.SetActive(false);
 
     public void Show()
     {

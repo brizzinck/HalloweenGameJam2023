@@ -7,29 +7,44 @@ namespace CodeBase.InteractiveObjects.Base
 {
   public class InteractiveDetector : MonoBehaviour
   {
-    public Action HeroEnter;
+    [SerializeField] private BaseInteractiveObject _interactiveObject;
+    public Action HeroPress;
     private IInputService _inputService;
-    private bool _checkPress;
+    private IDisplayInputService _displayInputService;
+    private bool _heroEnter;
 
-    public void Constructor(IInputService inputService) =>
+    public void Constructor(IInputService inputService, IDisplayInputService displayInputService)
+    {
       _inputService = inputService;
+      _displayInputService = displayInputService;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
       if (other.TryGetComponent(out HeroMove _))
-        _checkPress = true;
+      {
+        _heroEnter = true;
+        if (!_interactiveObject.IsDestroy)
+          _displayInputService.OnActionF(_heroEnter);
+      }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
       if (other.TryGetComponent(out HeroMove _))
-        _checkPress = false;
+      {
+        _heroEnter = false;
+        _displayInputService.OnActionF(_heroEnter);
+      }
     }
 
     private void Update()
     {
-      if (_checkPress && _inputService.PressInteractiveButton())
-        HeroEnter?.Invoke();
+      if (_heroEnter && _inputService.PressInteractiveButton())
+      {
+        HeroPress?.Invoke();
+        _displayInputService.OnActionF(false);
+      }
     }
   }
 }

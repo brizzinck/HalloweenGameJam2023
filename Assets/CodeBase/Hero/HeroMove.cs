@@ -1,39 +1,55 @@
-using CodeBase.Constants;
 using CodeBase.Extensions;
 using CodeBase.Services;
 using CodeBase.Services.Input;
+using CodeBase.Services.StaticData;
 using UnityEngine;
 
 namespace CodeBase.Hero
 {
   public class HeroMove : MonoBehaviour
-  { 
+  {
     [SerializeField] private float _movementSpeed;
     [SerializeField] private Rigidbody2D _rigidbody2D;
     private IInputService _inputService;
+    private IStaticDataService _staticData;
     private Camera _camera;
     private Vector3 _movementVector;
-    private void Awake() => 
-      _inputService = AllServices.Container.Single<IInputService>();
-    private void Start() => 
-      _camera = Camera.main;
-    private void Update()
+
+    public void Construct(IStaticDataService staticData, IInputService inputService)
     {
-      _movementVector = Vector3.zero;
-      if (_inputService.Axis.sqrMagnitude > ConstantsValue.Epsilon)
-        _movementVector = _camera.transform.TransformDirection(new Vector3(_inputService.Axis.x, _inputService.Axis.y, 0));
+      _inputService = inputService;
+      _staticData = staticData;
+      _movementSpeed = _staticData.GameTempData.SpeedHero;
     }
+
+    private void Start() =>
+      _camera = Camera.main;
+
+    private void Update() => 
+      SetDirection();
+
+    private void SetDirection()
+    {
+      if (_inputService != null)
+      {
+        _movementVector =
+          _camera.transform.TransformDirection(new Vector3(_inputService.Axis.x, _inputService.Axis.y, 0));
+      }
+    }
+
     private void FixedUpdate()
     {
       Flip(_movementVector);
       Moving(_movementVector);
     }
+
     private void Moving(Vector3 movementVector)
     {
       movementVector.Normalize();
       _rigidbody2D.velocity = movementVector * _movementSpeed;
       transform.position = transform.position.WithToZ(-1);
     }
+
     private void Flip(Vector3 movementVector)
     {
       if (movementVector.x > 0)

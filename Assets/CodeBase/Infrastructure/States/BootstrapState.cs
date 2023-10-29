@@ -2,6 +2,7 @@
 using CodeBase.Infrastructure.Factory.GameFactory;
 using CodeBase.Infrastructure.Scene;
 using CodeBase.Services;
+using CodeBase.Services.GameLoopService;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.PersistentProgress;
 using CodeBase.Services.StaticData;
@@ -42,6 +43,8 @@ namespace CodeBase.Infrastructure.States
     {
       _services.RegisterSingle<IInputService>(
         implementation: InputService());
+      _services.RegisterSingle<IDisplayInputService>(
+        implementation: new DisplayInputService());
       _services.RegisterSingle<IGameScoreService>(
         implementation: new GameScoreService());
       _services.RegisterSingle<IRandomService>(
@@ -52,21 +55,28 @@ namespace CodeBase.Infrastructure.States
         implementation: new PersistentProgressService());
       RegisterAssetProvider();
       RegisterStaticDataService();
+      _services.RegisterSingle<IGameTimer>(new GameTimer(
+        stateMachine: _services.Single<IGameStateMachine>(),
+        staticData: _services.Single<IStaticDataService>()));
       _services.RegisterSingle<IGameFactory>(new GameFactory(
         assets: _services.Single<IAssetProvider>(),
         staticData: _services.Single<IStaticDataService>(),
         inputService: _services.Single<IInputService>(),
-        gameScoreService: _services.Single<IGameScoreService>()));
+        gameScoreService: _services.Single<IGameScoreService>(),
+        displayInputService: _services.Single<IDisplayInputService>(),
+        gameTimer: _services.Single<IGameTimer>()));
       _services.RegisterSingle<IUIFactory>(new UIFactory(
         stateMachine: _stateMachine,
         assets: _services.Single<IAssetProvider>(),
         staticData: _services.Single<IStaticDataService>(),
-        progressService:_services.Single<IPersistentProgressService>(),
+        progressService: _services.Single<IPersistentProgressService>(),
         gameScoreService: _services.Single<IGameScoreService>(),
         gameFactory: _services.Single<IGameFactory>(),
-        inputService: _services.Single<IInputService>()));
+        inputService: _services.Single<IInputService>(),
+        displayInputService: _services.Single<IDisplayInputService>(),
+        gameTimer: _services.Single<IGameTimer>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
-        uiFactory:_services.Single<IUIFactory>()));
+        uiFactory: _services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(
         progressService: _services.Single<IPersistentProgressService>(),
         gameFactory: _services.Single<IGameFactory>()));
@@ -78,15 +88,17 @@ namespace CodeBase.Infrastructure.States
       assetProvider.Initialize();
       _services.RegisterSingle<IAssetProvider>(assetProvider);
     }
-    
+
     private void RegisterStaticDataService()
     {
       IStaticDataService staticData = new StaticDataService();
       staticData.Load();
       _services.RegisterSingle(staticData);
     }
+
     private void EnterLoadLevel() =>
       _stateMachine.Enter<LoadMenuLevelState, string>(MenuLevel);
+
     private static IInputService InputService() =>
       Application.isEditor
         ? new StandaloneInputService()
