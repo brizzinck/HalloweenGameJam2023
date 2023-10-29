@@ -19,5 +19,6 @@ namespace CodeBase.Services.StaticData
     NPCStaticData ForRandomNPC();
     NPCStaticData ForIdNPC(NPCId npcId);
     AbilityStaticData ForAbilities(AbilityID abilityID);
+    public GameTempData GameTempData { get; }
   }
-} 
+}

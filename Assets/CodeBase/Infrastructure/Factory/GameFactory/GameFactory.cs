@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using CodeBase.Abilities;
+using CodeBase.Hero;
 using CodeBase.Infrastructure.AssetManagement;
 using CodeBase.InteractiveObjects.Base;
 using CodeBase.InteractiveObjects.Logic;
@@ -56,6 +57,7 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
 		public async Task<GameObject> CreateHero()
 		{
 			GameObject hero = await InstantiateRegisteredAsync(AssetAddress.Hero);
+			hero.GetComponent<HeroMove>().Construct(_staticData, _inputService);
 			hero.transform.position = _staticData.ForLevel(SceneManager.GetActiveScene().name).HeroSpawnPoint;
 			_hero = hero;
 			return hero;

@@ -51,12 +51,13 @@ namespace CodeBase.Infrastructure.States
         implementation: new RandomService());
       _services.RegisterSingle<IGameStateMachine>(
         implementation: _stateMachine);
-      _services.RegisterSingle<IGameTimer>(
-        implementation: new GameTimer(_services.Single<IGameStateMachine>()));
       _services.RegisterSingle<IPersistentProgressService>(
         implementation: new PersistentProgressService());
       RegisterAssetProvider();
       RegisterStaticDataService();
+      _services.RegisterSingle<IGameTimer>(new GameTimer(
+        stateMachine: _services.Single<IGameStateMachine>(),
+        staticData: _services.Single<IStaticDataService>()));
       _services.RegisterSingle<IGameFactory>(new GameFactory(
         assets: _services.Single<IAssetProvider>(),
         staticData: _services.Single<IStaticDataService>(),
@@ -68,14 +69,14 @@ namespace CodeBase.Infrastructure.States
         stateMachine: _stateMachine,
         assets: _services.Single<IAssetProvider>(),
         staticData: _services.Single<IStaticDataService>(),
-        progressService:_services.Single<IPersistentProgressService>(),
+        progressService: _services.Single<IPersistentProgressService>(),
         gameScoreService: _services.Single<IGameScoreService>(),
         gameFactory: _services.Single<IGameFactory>(),
         inputService: _services.Single<IInputService>(),
         displayInputService: _services.Single<IDisplayInputService>(),
         gameTimer: _services.Single<IGameTimer>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
-        uiFactory:_services.Single<IUIFactory>()));
+        uiFactory: _services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(
         progressService: _services.Single<IPersistentProgressService>(),
         gameFactory: _services.Single<IGameFactory>()));
@@ -87,15 +88,17 @@ namespace CodeBase.Infrastructure.States
       assetProvider.Initialize();
       _services.RegisterSingle<IAssetProvider>(assetProvider);
     }
-    
+
     private void RegisterStaticDataService()
     {
       IStaticDataService staticData = new StaticDataService();
       staticData.Load();
       _services.RegisterSingle(staticData);
     }
+
     private void EnterLoadLevel() =>
       _stateMachine.Enter<LoadMenuLevelState, string>(MenuLevel);
+
     private static IInputService InputService() =>
       Application.isEditor
         ? new StandaloneInputService()

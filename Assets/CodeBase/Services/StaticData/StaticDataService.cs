@@ -19,19 +19,26 @@ namespace CodeBase.Services.StaticData
     private const string InteractiveObjects = "StaticData/InteractiveObjects";
     private const string NPCs = "StaticData/NPC";
     private const string Abilities = "StaticData/Abilities";
+    private const string GameStaticDataPath = "StaticData/Game/GameStaticData";
 
     private Dictionary<InteractiveID, InteractiveStaticData> _interactiveObjects;
     private Dictionary<AbilityID, AbilityStaticData> _abilityStaticData;
     private List<NPCStaticData> _npc = new List<NPCStaticData>();
     private Dictionary<string, LevelStaticData> _levels;
     private Dictionary<WindowId, WindowConfig> _windowConfigs;
-
-
+    private GameTempData _gameTempData;
+    public GameTempData GameTempData => _gameTempData;
     public void Load()
     {
       _levels = Resources
         .LoadAll<LevelStaticData>(LevelsDataPath)
         .ToDictionary(x => x.LevelKey, x => x);
+
+      GameStaticData gameStaticData = Resources
+        .Load<GameStaticData>(GameStaticDataPath);
+      _gameTempData = new GameTempData(
+        gameStaticData.GameTempData.TimeToEnd,
+        gameStaticData.GameTempData.SpeedHero);
       
       _interactiveObjects = Resources
         .LoadAll<InteractiveStaticData>(InteractiveObjects)
@@ -50,12 +57,12 @@ namespace CodeBase.Services.StaticData
         .Configs
         .ToDictionary(x => x.WindowId, x => x);
     }
-    
+
     public LevelStaticData ForLevel(string sceneKey) =>
       _levels.TryGetValue(sceneKey, out LevelStaticData staticData)
         ? staticData
         : null;
-    
+
     public InteractiveStaticData ForInteractiveObjects(InteractiveID id) =>
       _interactiveObjects.TryGetValue(id, out InteractiveStaticData staticData)
         ? staticData
@@ -76,7 +83,7 @@ namespace CodeBase.Services.StaticData
       _abilityStaticData.TryGetValue(abilityID, out AbilityStaticData abilityStaticData)
         ? abilityStaticData
         : null;
-
+    
     public WindowConfig ForWindow(WindowId windowId) =>
       _windowConfigs.TryGetValue(windowId, out WindowConfig windowConfig)
         ? windowConfig

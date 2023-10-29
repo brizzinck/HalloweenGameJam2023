@@ -1,6 +1,7 @@
 using System;
 using CodeBase.Constants;
 using CodeBase.Infrastructure.States;
+using CodeBase.Services.StaticData;
 using UnityEngine;
 
 namespace CodeBase.Services.GameLoopService
@@ -12,9 +13,13 @@ namespace CodeBase.Services.GameLoopService
     public float CurrentTime { get; set; }
     
     private readonly IGameStateMachine _stateMachine;
-    public GameTimer(IGameStateMachine stateMachine)
+    private readonly IStaticDataService _staticData;
+
+    public GameTimer(IGameStateMachine stateMachine, IStaticDataService staticData)
     {
       _stateMachine = stateMachine;
+      _staticData = staticData;
+      CurrentTime = staticData.GameTempData.TimeToEnd;
     }
 
     public void UpdateTimeToZero()
