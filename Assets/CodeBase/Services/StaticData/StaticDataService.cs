@@ -9,7 +9,6 @@ using CodeBase.StaticData;
 using CodeBase.StaticData.Windows;
 using CodeBase.UI.Services.Windows;
 using UnityEngine;
-
 namespace CodeBase.Services.StaticData
 {
   public class StaticDataService : IStaticDataService
