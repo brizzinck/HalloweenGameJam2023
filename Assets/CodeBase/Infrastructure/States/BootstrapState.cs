@@ -12,6 +12,7 @@ using CodeBase.Services.SaveLoad;
 using CodeBase.UI.Services.Factory;
 using CodeBase.UI.Services.Windows;
 using CodeBase.Services.Input;
+using CodeBase.Services.InteractiveObject;
 using UnityEngine;
 
 namespace CodeBase.Infrastructure.States
@@ -44,6 +45,8 @@ namespace CodeBase.Infrastructure.States
     {
       _services.RegisterSingle<IInputService>(
         implementation: InputService());
+      _services.RegisterSingle<IInteractive>(
+        implementation: new Interactive());
       _services.RegisterSingle<IDisplayInputService>(
         implementation: new DisplayInputService());
       _services.RegisterSingle<IRandomService>(
@@ -66,7 +69,8 @@ namespace CodeBase.Infrastructure.States
         inputService: _services.Single<IInputService>(),
         gameScoreService: _services.Single<IGameScoreService>(),
         displayInputService: _services.Single<IDisplayInputService>(),
-        gameTimer: _services.Single<IGameTimer>()));
+        gameTimer: _services.Single<IGameTimer>(),
+        interactive: _services.Single<IInteractive>()));
       _services.RegisterSingle<IAudioPlayer>(new AudioPlayer(
         gameFactory: _services.Single<IGameFactory>(),
         staticData: _services.Single<IStaticDataService>(),
@@ -81,7 +85,8 @@ namespace CodeBase.Infrastructure.States
         inputService: _services.Single<IInputService>(),
         displayInputService: _services.Single<IDisplayInputService>(),
         gameTimer: _services.Single<IGameTimer>(),
-        audioPlayer: _services.Single<IAudioPlayer>()));
+        audioPlayer: _services.Single<IAudioPlayer>(), 
+        interactive: _services.Single<IInteractive>()));
       _services.RegisterSingle<IWindowService>(new WindowService(
         uiFactory: _services.Single<IUIFactory>()));
       _services.RegisterSingle<ISaveLoadService>(new SaveLoadService(

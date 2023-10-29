@@ -11,6 +11,7 @@ namespace CodeBase.NPC
   {
     [SerializeField] private NPCAgroZone _npcAgroZone;
     [SerializeField] private NPCScore _npcScore;
+    [SerializeField] private NPCAnimator _npcAnimator;
     [SerializeField] private int _touch = 3;
     [SerializeField] private NPCMove _npcMove;
     private int _currentTouch;
@@ -39,6 +40,7 @@ namespace CodeBase.NPC
           _isTouch = false;
           _npcMove.ResetVelocity();
           _npcMove.enabled = false;
+          _npcAnimator.SetIdle();
           Sequence seq = DOTween.Sequence();
           seq.Append(transform.DOScale(_defaultScale * 1.1f, 0.2f));
           seq.Append(transform.DOScale(_defaultScale, 0.2f));

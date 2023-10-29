@@ -96,13 +96,18 @@ namespace CodeBase.NPC
           _currentSpeed = _defaultMovementSpeed;
       }
     }
-    private void Flip(Vector3 movementVector)
+    private void Flip(Vector3 targetPoint)
     {
-      if (movementVector.x < transform.position.x)
-        _spriteFlip.localScale = _spriteFlip.localScale.WithToX(Mathf.Abs(_spriteFlip.localScale.x));
-      else
+      Vector3 toTarget = (targetPoint - transform.position).normalized;
+      Vector3 forward = transform.right;
+      float dotProduct = Vector3.Dot(forward, toTarget);
+
+      if (dotProduct < 0)
         _spriteFlip.localScale = _spriteFlip.localScale.WithToX(-Mathf.Abs(_spriteFlip.localScale.x));
+      else
+        _spriteFlip.localScale = _spriteFlip.localScale.WithToX(Mathf.Abs(_spriteFlip.localScale.x));
     }
+
     public void ResetVelocity()
     {
       _rigidbody2D.velocity = Vector2.zero;
