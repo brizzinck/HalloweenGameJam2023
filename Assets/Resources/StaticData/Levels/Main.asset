@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Main
   m_EditorClassIdentifier: 
   LevelKey: Main
-  SceneClip: {fileID: 8300000, guid: aa75e76510aba1c4c86c28c2540ca5a6, type: 3}
+  SceneClip: {fileID: 8300000, guid: fa5b9c7c26c06024f84984606e33b495, type: 3}
   HeroSpawnPoint: {x: 1.6, y: -2.2, z: 0}
   InteractiveSpawnMarker:
   - Id: Main_b7d6a409-23b5-47ce-9685-615d1dca4356
