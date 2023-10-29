@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6248824990229441993}
   - component: {fileID: 901668210589667068}
   - component: {fileID: 4688507673445423853}
+  - component: {fileID: 1623224636767216919}
   m_Layer: 7
   m_Name: CampInteractive
   m_TagString: Interactive
@@ -103,6 +104,19 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 901668210589667068}
   _destroySprite: {fileID: 1424845526, guid: 7e5414a44598f9843ad1c92cffa6c858, type: 3}
   _costHappyScore: 50
+--- !u!114 &1623224636767216919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3099943484327253623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f7b18dc0164cb0a405d9b5ceb7b68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 
 --- !u!1 &8398879206216671776
 GameObject:
   m_ObjectHideFlags: 0
