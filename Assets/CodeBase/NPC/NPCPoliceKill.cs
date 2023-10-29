@@ -1,4 +1,3 @@
-using CodeBase.Extensions;
 using CodeBase.Services.StaticData;
 using CodeBase.StaticData;
 using DG.Tweening;
@@ -14,6 +13,7 @@ namespace CodeBase.NPC
     [SerializeField] private NPCAnimator _npcAnimator;
     [SerializeField] private int _touch = 3;
     [SerializeField] private NPCMove _npcMove;
+    private const string LayerMask = "NPCPolice";
     private int _currentTouch;
     private IStaticDataService _staticData;
     private LevelGameStaticData _levelGameStaticData;
@@ -31,9 +31,10 @@ namespace CodeBase.NPC
     {
       if (_isTouch && Input.GetMouseButtonDown(0) && _npcAgroZone.IsAgro)
       {
+        int layerMask = 1 << UnityEngine.LayerMask.NameToLayer(LayerMask);
         Vector3 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Collider2D point = Physics2D.OverlapPoint(clickPosition);
-        if (point != null && point.TryGetComponent(out NPCPoliceKill npcPoliceKill))
+        RaycastHit2D hit = Physics2D.Raycast(clickPosition, Vector2.zero, 0, layerMask);
+        if (hit.collider != null && hit.collider.TryGetComponent(out NPCPoliceKill npcPoliceKill))
         {
           npcPoliceKill._currentTouch--;
           _npcScore.GameScoreService.MinusHappyScore(1);

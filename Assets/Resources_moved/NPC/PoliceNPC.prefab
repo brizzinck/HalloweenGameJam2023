@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4443633128635134813}
   - component: {fileID: 695241642716289768}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GuardLegs_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 715061262, guid: dfe9853771ce3d04cb8abe483f000a73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.85882354}
   m_FlipX: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 1170995646991623000}
   - component: {fileID: 5039479035066839359}
   - component: {fileID: 279872604415383320}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: PoliceNPC
   m_TagString: NPC
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4932859509420750186}
   - component: {fileID: 2009869876088558913}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: GuardLegs_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -334,7 +334,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -1462428002, guid: dfe9853771ce3d04cb8abe483f000a73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.85882354}
   m_FlipX: 0
@@ -357,7 +357,7 @@ GameObject:
   - component: {fileID: 6028672607745440137}
   - component: {fileID: 5139969815516018201}
   - component: {fileID: 2658265165491924948}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -448,7 +448,7 @@ GameObject:
   - component: {fileID: 5025578869063518650}
   - component: {fileID: 8738901752714546369}
   - component: {fileID: 4129790399767469062}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Guard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +512,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: -2047693296, guid: 22bb0274d81666e47af4ebdab1c49615, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.85882354}
   m_FlipX: 0

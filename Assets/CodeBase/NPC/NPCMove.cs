@@ -54,6 +54,7 @@ namespace CodeBase.NPC
         SpeedCorrector(_npcAgroZone.IsAgro);
         _rigidbody2D.velocity = _currentMovePoint * _currentSpeed;
         _npcAnimator.SetWalk(true);
+        Flip();
       }
       else
       {
@@ -67,7 +68,6 @@ namespace CodeBase.NPC
       _directionChangeInterval = Random.Range(1.25f, 2f);
       float angle = Random.Range(0f, 2f * Mathf.PI);
       _currentMovePoint = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
-      Flip(_currentMovePoint);
     }
     private IEnumerator CheckStay()
     {
@@ -79,7 +79,6 @@ namespace CodeBase.NPC
     {
       _currentMovePoint = (to - transform.position).normalized;
       _timeSinceDirectionChange = 0.0f;
-      Flip(_currentMovePoint);
     }
     private void SpeedCorrector(bool agro)
     {
@@ -96,9 +95,9 @@ namespace CodeBase.NPC
           _currentSpeed = _defaultMovementSpeed;
       }
     }
-    private void Flip(Vector3 targetPoint)
+    private void Flip()
     {
-      if (_rigidbody2D.velocity.x > 0)
+      if ((_currentMovePoint * _currentSpeed).x < 0)
         _spriteFlip.localScale = _spriteFlip.localScale.WithToX(-Mathf.Abs(_spriteFlip.localScale.x));
       else
         _spriteFlip.localScale = _spriteFlip.localScale.WithToX(Mathf.Abs(_spriteFlip.localScale.x));

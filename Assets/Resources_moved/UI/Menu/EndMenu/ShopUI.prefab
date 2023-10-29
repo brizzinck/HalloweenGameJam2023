@@ -4568,7 +4568,7 @@ MonoBehaviour:
   _cost: 78
   _costText: {fileID: 4803282023722478499}
   _existText: {fileID: 2338260288692225768}
-  _abilityID: 1
+  _abilityID: 2
 --- !u!1 &5013313950182024605
 GameObject:
   m_ObjectHideFlags: 0

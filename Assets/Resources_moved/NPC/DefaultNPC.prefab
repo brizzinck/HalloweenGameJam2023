@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 6028672607745440137}
   - component: {fileID: 5139969815516018201}
   - component: {fileID: 2658265165491924948}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

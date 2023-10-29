@@ -2,7 +2,7 @@ using CodeBase.Abilities;
 using CodeBase.Services.StaticData;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+
 namespace CodeBase.UI.Elements
 {
   public class AbilityItemBuy : MonoBehaviour
