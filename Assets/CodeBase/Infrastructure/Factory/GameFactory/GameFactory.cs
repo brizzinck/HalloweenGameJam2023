@@ -137,7 +137,8 @@ namespace CodeBase.Infrastructure.Factory.GameFactory
       GameObject npc = Object.Instantiate(prefab, parent.position, Quaternion.identity, parent);
       npc.GetComponent<NPCAgroZone>().Construct(hero);
       npc.GetComponent<NPCScore>().Construct(_gameScoreService);
-      npc.GetComponent<NPCSkinSetter>().BaseConstruct(_staticData.ForDefaultSkinNPC());
+      if (npc.TryGetComponent(out NPCSkinSetter npcSkinSetter))
+        npcSkinSetter.BaseConstruct(_staticData.ForDefaultSkinNPC());
       return npc;
     }
 
