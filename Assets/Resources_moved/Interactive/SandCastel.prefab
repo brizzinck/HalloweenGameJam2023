@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5423513218039133246}
@@ -103,7 +103,7 @@ MonoBehaviour:
   _interactiveDetector: {fileID: 5696211054010279732}
   _spriteRenderer: {fileID: 901668210589667068}
   _destroySprite: {fileID: -331057323, guid: 7e5414a44598f9843ad1c92cffa6c858, type: 3}
-  _costHappyScore: 50
+  _costHappyScore: 4
 --- !u!114 &-2586321375830892969
 MonoBehaviour:
   m_ObjectHideFlags: 0
