@@ -3,6 +3,7 @@ namespace CodeBase.InteractiveObjects.Logic
   public enum InteractiveID
   {
     None,
-    Default
+    Default,
+    Camp
   }
 }
