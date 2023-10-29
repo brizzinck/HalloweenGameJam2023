@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using CodeBase.Hero;
 using CodeBase.InteractiveObjects.Logic;
 using CodeBase.Services.GameScoreService;
 using CodeBase.Services.Input;
@@ -13,8 +15,10 @@ namespace CodeBase.InteractiveObjects.Base
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private Sprite _destroySprite;
     [SerializeField] private int _costHappyScore;
+    [SerializeField] private float _waitToDestroy = 0.5f;
     private IGameScoreService _gameScoreService;
     private bool _isDestroy;
+    [HideInInspector] public HeroMove HeroMove;
     public bool IsDestroy => _isDestroy;
 
     private void Awake() =>
@@ -42,6 +46,16 @@ namespace CodeBase.InteractiveObjects.Base
       _gameScoreService.MinusHappyScore(_costHappyScore);
       _spriteRenderer.sprite = _destroySprite;
       _isDestroy = true;
+      StartCoroutine(StopMoveHero());
+    }
+
+    private IEnumerator StopMoveHero()
+    {
+      if (HeroMove == null)
+        yield break;
+      HeroMove.StopMove();
+      yield return new WaitForSeconds(_waitToDestroy);
+      HeroMove.enabled = true;
     }
   }
 }
