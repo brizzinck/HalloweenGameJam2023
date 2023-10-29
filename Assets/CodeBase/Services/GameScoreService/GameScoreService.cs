@@ -27,10 +27,10 @@ namespace CodeBase.Services.GameScoreService
     
     public void CalculateEndScore()
     {
-      _staticData.GameTempData.ChangeRating((int)
-        (_staticData.GameTempData.TimeToEnd / Random.Range(1, 100 -_happyScore)));
       _staticData.GameTempData.ChangeSoul((int)
-        (_staticData.GameTempData.CountRating / _staticData.GameTempData.TimeToEnd));
+        Random.Range(2, 100 - _happyScore));
+      _staticData.GameTempData.ChangeRating((int)
+        (100 - _happyScore));
     }
     
     public void AddHappyScore(int score)

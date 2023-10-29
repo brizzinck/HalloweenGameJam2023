@@ -7,17 +7,19 @@ namespace CodeBase.UI.Elements
 {
   public class AbilityItemBuy : MonoBehaviour
   {
-    [SerializeField] private Button _buyBtn;
     [SerializeField] private int _cost;
     [SerializeField] private TextMeshProUGUI _costText;
+    [SerializeField] private TextMeshProUGUI _existText;
     [SerializeField] private AbilityID _abilityID;
     private IStaticDataService _staticData;
     public void Construct(IStaticDataService staticData)
     {
       _staticData = staticData;
       _costText.text = _cost.ToString();
-      _buyBtn.onClick.AddListener(BuyAbility);
-      if (_staticData.ForAvailableAbilities(_abilityID)) 
+      
+      if (!_staticData.ForAvailableAbilities(_abilityID))
+        BuyAbility();
+      else
         UpdateToBuy();
     }
 
@@ -25,16 +27,22 @@ namespace CodeBase.UI.Elements
     {
       if (_staticData.GameTempData.CountSoul >= _cost)
       {
-        _staticData.GameTempData.ChangeSoul(-_cost);
         _staticData.GameTempData.AvailableAbilityIds.Add(_abilityID);
         UpdateToBuy();
       }
+      else
+        UpdateToNoBuy();
     }
 
     private void UpdateToBuy()
     {
-      _costText.text = "Уже куплено!";
-      _buyBtn.interactable = false;
+      _costText.gameObject.SetActive(false);
+      _existText.gameObject.SetActive(true);
+    }
+    private void UpdateToNoBuy()
+    {
+      _costText.gameObject.SetActive(true);
+      _existText.gameObject.SetActive(false);
     }
   }
 }

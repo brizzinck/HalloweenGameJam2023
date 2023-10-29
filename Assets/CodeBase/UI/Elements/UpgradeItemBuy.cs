@@ -12,6 +12,7 @@ namespace CodeBase.UI.Elements
     [SerializeField] protected BuyData[] buyData;
     [SerializeField] private TextMeshProUGUI _costText;
     [SerializeField] private TextMeshProUGUI _upgradeScoreText;
+    [SerializeField] private GameObject[] _offObject;
     [SerializeField] protected TextMeshProUGUI currentScoreText;
     protected int currentUpgrade;
     protected IStaticDataService staticData;
@@ -33,9 +34,9 @@ namespace CodeBase.UI.Elements
     
     private void CheckBuyUpgrade()
     {
-      if (currentUpgrade < buyData.Length && staticData.GameTempData.CountSoul >= buyData[currentUpgrade].Cost)
+      if (currentUpgrade < buyData.Length && staticData.GameTempData.CountRating >= buyData[currentUpgrade].Cost)
       {
-        staticData.GameTempData.ChangeSoul(-buyData[currentUpgrade].Cost);
+        staticData.GameTempData.ChangeRating(-buyData[currentUpgrade].Cost);
         BuyUpgrade();
         CalculateUpgrade();
         UpdateText();
@@ -50,10 +51,8 @@ namespace CodeBase.UI.Elements
         _upgradeScoreText.text = buyData[currentUpgrade].UpgradeToScore.ToString();
       }
       else
-      {
-        _costText.text = "Макс.";
-        _upgradeScoreText.text = "Макс.";
-      }
+        foreach (GameObject obj in _offObject)
+          obj.gameObject.SetActive(false);
     }
 
     protected abstract void BuyUpgrade();
