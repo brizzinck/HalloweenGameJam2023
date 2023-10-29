@@ -16,13 +16,31 @@ MonoBehaviour:
   SceneClip: {fileID: 8300000, guid: aa75e76510aba1c4c86c28c2540ca5a6, type: 3}
   HeroSpawnPoint: {x: 2.4, y: -10.2, z: 0}
   InteractiveSpawnMarker:
+  - Id: Main_b7bce769-afce-4365-9e91-2c73d281ff7b
+    InteractiveID: 5
+    Position: {x: -6.91, y: 8.25, z: -0.021649772}
   - Id: InteractiveSpawnerPoint_b97a3fdc-5097-41a7-a11d-0fafa2d428da
     InteractiveID: 2
     Position: {x: -4.97, y: 4.07, z: -0.021649772}
-  - Id: Main_b7bce769-afce-4365-9e91-2c73d281ff7b
-    InteractiveID: 2
-    Position: {x: -6.91, y: 8.25, z: -0.021649772}
   NPCSpawnMarker:
+  - NpcId: 0
+    Id: Main_c23c370a-c253-49d7-8205-b8617ca3cbe6
+    Position: {x: 13.723338, y: -15.294007, z: 0}
+  - NpcId: 0
+    Id: Main_720a416e-7e4a-4a32-9aa4-9d527e5f4f16
+    Position: {x: 7.8633375, y: -15.454007, z: 0}
+  - NpcId: 0
+    Id: Main_75925684-2df8-4789-bc2e-6f8db957f7ec
+    Position: {x: 2.5233383, y: -16.174007, z: 0}
+  - NpcId: 0
+    Id: Main_de39e87d-4d16-4d26-9d53-6034f7fb15d8
+    Position: {x: -4.1366615, y: -16.134008, z: 0}
+  - NpcId: 0
+    Id: Main_1e7b6bf1-c5c9-435f-bf21-3ea0dcb43bc8
+    Position: {x: 0.07333851, y: -15.974008, z: 0}
+  - NpcId: 0
+    Id: Main_d4233b60-8229-4448-b3b4-35d1cc0595f7
+    Position: {x: 10.663339, y: -15.454007, z: 0}
   - NpcId: 0
     Id: Main_b8f1c297-9efe-4ae8-8213-9515bd728a32
     Position: {x: 4.883338, y: -14.894008, z: 0}

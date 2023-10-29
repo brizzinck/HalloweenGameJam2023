@@ -47,7 +47,8 @@ namespace CodeBase.Infrastructure.States
           services.Single<ISaveLoadService>()),
 
         [typeof(LoadEndMenuState)] =
-          new LoadEndMenuState(this, endGameCurtain, sceneLoader, services.Single<IUIFactory>()),
+          new LoadEndMenuState(this, endGameCurtain, sceneLoader, services.Single<IUIFactory>(),
+            services.Single<IAudioPlayer>()),
 
         [typeof(GameLoopState)] = new GameLoopState(this),
 
