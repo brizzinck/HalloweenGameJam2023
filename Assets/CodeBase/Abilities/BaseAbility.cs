@@ -54,12 +54,18 @@ namespace CodeBase.Abilities
 
     protected virtual void EnterTorture(NPCWithSoul npcWithSoul)
     {
-      if (npcWithSouls.Count >= countSouls && currenyCooldown >= cooldown)
-        return;
+      if (CheckSoul()) return;
       gameScoreService.MinusHappyScore(removeHappyBySoul);
       processTorture = true;
       currentTimeToComplete = 0;
       AddNPCWithSoul(npcWithSoul);
+    }
+
+    protected bool CheckSoul()
+    {
+      if (npcWithSouls.Count >= countSouls || currenyCooldown >= cooldown)
+        return true;
+      return false;
     }
 
     protected virtual void ExitTorture()
