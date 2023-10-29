@@ -458,11 +458,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buyBtn: {fileID: 2996825325050780404}
   buyData:
-  - UpgradeToScore: 30
+  - UpgradeToScore: 40
     Cost: 30
-  - UpgradeToScore: 45
+  - UpgradeToScore: 50
     Cost: 80
-  - UpgradeToScore: 55
+  - UpgradeToScore: 60
     Cost: 190
   _costText: {fileID: 9106935624714295525}
   _upgradeScoreText: {fileID: 1491143750012865782}
