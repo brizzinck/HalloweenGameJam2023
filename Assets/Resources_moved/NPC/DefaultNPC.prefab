@@ -723,6 +723,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 279872604415383320}
   _detector: {fileID: 2658265165491924948}
   _npcAgroZone: {fileID: 1405250894308877341}
+  _spriteFlip: {fileID: 7432844914909144661}
 --- !u!114 &1405250894308877341
 MonoBehaviour:
   m_ObjectHideFlags: 0

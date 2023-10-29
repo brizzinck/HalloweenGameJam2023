@@ -13,6 +13,7 @@ namespace CodeBase.NPC
     [SerializeField] protected Rigidbody2D _rigidbody2D;
     [SerializeField] protected NPCBorderDetector _detector;
     [SerializeField] protected NPCAgroZone _npcAgroZone;
+    [SerializeField] protected Transform _spriteFlip;
     protected Vector3 _currentMovePoint;
     protected float _currentSpeed;
     protected float _directionChangeInterval = 1.25f;
@@ -97,10 +98,10 @@ namespace CodeBase.NPC
     }
     private void Flip(Vector3 movementVector)
     {
-      if (movementVector.x > transform.position.x)
-        transform.localScale = transform.localScale.WithToX(Mathf.Abs(transform.localScale.x));
+      if (movementVector.x < transform.position.x)
+        _spriteFlip.localScale = _spriteFlip.localScale.WithToX(Mathf.Abs(_spriteFlip.localScale.x));
       else
-        transform.localScale = transform.localScale.WithToX(-Mathf.Abs(transform.localScale.x));
+        _spriteFlip.localScale = _spriteFlip.localScale.WithToX(-Mathf.Abs(_spriteFlip.localScale.x));
     }
     public void ResetVelocity()
     {

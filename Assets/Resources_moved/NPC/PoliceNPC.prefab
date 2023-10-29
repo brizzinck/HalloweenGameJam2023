@@ -157,6 +157,7 @@ MonoBehaviour:
   _rigidbody2D: {fileID: 279872604415383320}
   _detector: {fileID: 2658265165491924948}
   _npcAgroZone: {fileID: 5028711785293731832}
+  _spriteFlip: {fileID: 2761199543253937149}
   _npcScore: {fileID: 1170995646991623000}
   _timeToAddHappyScore: 1.2
 --- !u!114 &8046188771746184523
@@ -174,6 +175,7 @@ MonoBehaviour:
   _npcAgroZone: {fileID: 5028711785293731832}
   _npcScore: {fileID: 1170995646991623000}
   _touch: 3
+  _npcMove: {fileID: 1160101550819042736}
 --- !u!114 &1170995646991623000
 MonoBehaviour:
   m_ObjectHideFlags: 0
